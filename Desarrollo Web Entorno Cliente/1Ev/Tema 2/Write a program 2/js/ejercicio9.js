@@ -1,17 +1,21 @@
 function ejercicio9(comp){
  var fruta = prompt("Porfavor, inserta una fruta de las que hay abajo", comp.value);
-var x= fruta.length;
-var cadena_invertida="hola";
-while (x>=0) {
-    cadena_invertida=cadena_invertida+fruta.charAt(x);
-}
-alert(cadena_invertida);    
-// switch (fruta) {
-//     case "Manzana":
-//         alert("Holi");
-//         break;
+var x;
+var arraycadena=[];
+var definitiva=[];
+for(x=fruta.length;x>=0;x--) {
+    arraycadena.push(fruta.charAt(x));
 
-//     default:
-//         break;
-//     }
+}  
+alert(arraycadena);
+definitiva = arraycadena.splice(0,1);
+alert(definitiva);
+switch (fruta) {
+    case "Manzana":
+        alert("Holi");
+        break;
+
+    default:
+        break;
+    }
 }
