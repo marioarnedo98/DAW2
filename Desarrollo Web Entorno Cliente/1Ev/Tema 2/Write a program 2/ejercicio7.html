@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function dimeTipoMotor(numeroMotor) {
+            switch (numeroMotor) {
+                case 0:
+                    alert("No hay establecido un valor definido para el tipo de bomba")
+                    break;
+                case 1:
+                    alert("La bomba es una bomba de agua")
+                break;
+                case 2:
+                    alert("La bomba es una bomba de gasolina")
+                break;
+                case 3:
+                    alert("La bomba es una de hormigon")
+                break;
+                case 4:
+                    alert("La bomba es una de pasta alimienticia")
+                break;
+                default:
+                    alert("No existe un valor valido para este tipo");
+                break;
+            }
+        }
+    </script>
+</head>
+<body>
+<select id="seleccion">
+    <option>0</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+</select>
+<input type="button" value="boton" onclick="dimeTipoMotor(document.getElementById('seleccion').selectedIndex);">
+</body>
+</html>

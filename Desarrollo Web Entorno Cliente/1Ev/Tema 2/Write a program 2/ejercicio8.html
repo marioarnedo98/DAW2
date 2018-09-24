@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" class="textoo">
+    <input type="text" name="" class="textoo">
+    <input type="text" name="" class="textoo">
+<input type="button" value="Introducir nombres" onclick="ejercicio8()">
+    <script>
+        function ejercicio8(){
+            var elem = document.getElementsByClassName("textoo");
+  var nombres = [];
+  for (var i = 0; i < elem.length; ++i) {
+    if (typeof elem[i].value !== "undefined") {
+        nombres.push(elem[i].value);
+      }
+    }
+  var test = nombres;
+  alert(test);
+        }
+    </script>
+</body>
+</html>
