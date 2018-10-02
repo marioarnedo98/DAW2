@@ -7,14 +7,21 @@
     <title>Document</title>
     <script>
     function ParImpar(){
-        var numero= prompt("Introduce un valor numerico",0);
-       var num= parseInt(numero);
-       if (num%2==0) {
-           alert("Es par");
-       }else{
-           alert("Es impar");
-       }
-    }
+        revisor=false;
+        // var numero= prompt("Introduce un valor numerico",0);
+
+            while(revisor==false){
+                var numero= prompt("Introduce un valor numerico",0);
+                if(numero%2==0){
+                        revisor = true;
+                        alert("Es par!");
+                }
+                    else{
+                        revisor=false;
+                    alert("Es impar");
+                    }
+        }
+}
     </script>
 </head>
 <body>
