@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Ejercicio html de css </title>
+    <style>
+     .static{
+         position: static;
+         background: #DEDCFF;
+         border: 1px solid black;
+         border-style: dotted;
+     }
+     .absolute_1{
+    position: absolute;
+    top: 140px;
+    left: 100px;
+    width: 300px;
+    background: orangered;
+    height: 160px;
+}
+.absolute_1 p{
+    padding: 7px;
+}
+     .absolute_2{
+         position: absolute;
+         bottom: 0px;
+         right: 0px;
+         background: #DEDCFF;
+         width: 100px;
+     }
+    </style>
+  </head>
+  <body>
+      <h1>Static y Absolute</h1>
+    <div class="static">
+        <p>El posicionamiento es estatico, las dos capas absolutes se posicionan despues de la estatic que se coloca arriba</p>
+    </div>
+    <div class="absolute_1">
+        <p>Esta capa tiene posicion absoluta</p>
+        <p>Permite especificar top y left para colocarla con respecto a la esquina superior izquierda</p>
+    </div>
+    <div class="absolute_2">
+        <p>Posicionamiento absoluto con atributos bottom y right</p>
+    </div>
+  </body>
+</html>

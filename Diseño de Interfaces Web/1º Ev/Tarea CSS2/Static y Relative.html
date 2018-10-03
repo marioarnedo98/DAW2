@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Ejercicio html de css </title>
+    <style>
+     .static{
+         position: static;
+         background: #660066;
+         border: 3px dotted black ;
+         width: 30%;
+         color: #ffff;
+     }
+     .static p{
+         padding: 1px;
+         text-align: center;
+     }
+     .relative_1{
+    position: relative;
+    width: 300px;
+    left: 45px;
+    background: #006765;
+    height: 80px;
+    color: #ffff;
+    }
+.relative_1 p{
+    padding: 7px;
+}
+.relative_2{
+    width: 25px;
+    position: relative;
+    top: -110px;
+}
+    </style>
+  </head>
+  <body>
+      <h1>Static y relative</h1>
+    <div class="static">
+        <p>No define la posicion, ya que es estatico</p>
+    </div>
+        <div class="relative_1"> <p>Capa de posicionamiento relative se tiene en cuenta esta capa para posicionar las siguientes</p>
+    </div>
+    <div class="relative_2">
+    <h1>La</h1>
+</div>
+  </body>
+</html>
