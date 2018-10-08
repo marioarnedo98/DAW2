@@ -13,6 +13,7 @@ La imagen del anuncio tendra unas dimensiones de 350*174
 La imagen del fondo del Contacto tendra unas dimensiones de 1920*1248
     1.5 Pagina sobre mi - Titulos UFC
 Las imagenes de los titulos UFC tendran unas dimensiones de 320*320px
-
+    1.6 Galeria - imagenes
+Las imagenes de la galeria, deberan de tener unas dimensiones de 940*650px
 2. Estilos
 Todos los nuevos estilos css se haran en el archivo colocado en assets/css/styles.css
