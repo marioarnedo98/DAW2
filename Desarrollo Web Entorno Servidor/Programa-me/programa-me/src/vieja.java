@@ -5,30 +5,30 @@ import java.util.*;
 
 public class vieja {
 
-	public static void separarNietos(String nombreaBuscar, String nietos) {
-		nietos.toLowerCase();
-		String partes[] = nietos.split(",");//separamos por comas
-		int j=partes.length-1;//obtenemos el ultimo valor (partes[j])
-		System.out.print(partes.length);
-		if(nombreaBuscar.equals(partes[j])) {
-			System.out.println("Coinciden");
+	public static void separarNietos(String nombreaBuscar, int numeros, String nietos) {
+		String partes[] = nietos.split(" ");// separamos por espacios
+		int j = partes.length - 1;// obtenemos el ultimo valor (partes[j])
+		if (partes.length > 2) {
+			if (nombreaBuscar.equals(partes[j])) {
+				System.out.println("VERDADERA");
+			} else {
+				System.out.println("FALSA");
+			}
+		}else {
+			System.out.println("FALSA");
 		}
-		else {
-			System.out.println("No coincide");
-		}
-		
 	}
 
 	public static void main(String[] args) {
-		 Scanner entrada = new java.util.Scanner( System.in ) ;
-	        int numCasos ;
-	        numCasos = entrada.nextInt ( ) ;
-	        for ( int i = 0 ; i < numCasos ; i++) {
-	        	String nombreaBuscar_=entrada.next();
-	        	int numeros=entrada.nextInt();
-	        	String nietos_scanner=entrada.next();
-	        	separarNietos(nombreaBuscar_, nietos_scanner);
-	        }
-	       
+		Scanner entrada = new java.util.Scanner(System.in);
+		int numCasos;
+		numCasos = entrada.nextInt();
+		for (int i = 0; i < numCasos; i++) {
+			String nombreaBuscar_ = entrada.next();
+			int numeros = entrada.nextInt();
+			String nietos = entrada.nextLine();
+			separarNietos(nombreaBuscar_, numeros, nietos);
+		}
+
 	}
 }
