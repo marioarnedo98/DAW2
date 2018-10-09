@@ -4,12 +4,8 @@ import java.util.ArrayList;
 import java.util.*;
 
 public class vieja {
-	String nombreaBuscar;
-	String nietos;
 
-	public void separarNietos(String nombreaBuscar, String nietos) {
-		this.nombreaBuscar = nombreaBuscar;
-		this.nietos = nietos;
+	public static void separarNietos(String nombreaBuscar, String nietos) {
 		nietos.toLowerCase();
 		String partes[] = nietos.split(",");//separamos por comas
 		int j=partes.length-1;//obtenemos el ultimo valor (partes[j])
@@ -24,8 +20,15 @@ public class vieja {
 	}
 
 	public static void main(String[] args) {
-
-		vieja t1 = new vieja();
-		t1.separarNietos("mario","juan,pepe,maria,mario");
+		 Scanner entrada = new java.util.Scanner( System.in ) ;
+	        int numCasos ;
+	        numCasos = entrada.nextInt ( ) ;
+	        for ( int i = 0 ; i < numCasos ; i++) {
+	        	String nombreaBuscar_=entrada.next();
+	        	int numeros=entrada.nextInt();
+	        	String nietos_scanner=entrada.next();
+	        	separarNietos(nombreaBuscar_, nietos_scanner);
+	        }
+	       
 	}
 }

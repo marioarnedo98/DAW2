@@ -33,11 +33,18 @@ var elementosInput = document.getElementsByTagName('input'); //Elementos input
 
 var elementosSelect = document.getElementsByTagName('select');
 
-var arrayNodos = Array.prototype.slice.call(elementosInput);
-
-arrayNodos.push(Array.prototype.slice.call(elementosSelect));
+var arrayNodos = [];
+addNodeListToArray(elementosInput,arrayNodos);
+addNodeListToArray(elementosSelect,arrayNodos);
 
 alert ('Tenemos un número de elementos input ó select en el formulario: '+ arrayNodos.length);
+}
+function addNodeListToArray(elNodeList, ElArray){
+    for(var i=0; i<elNodeList.length; i++){
+        var elementoactual=elNodeList[i];
+        ElArray.push(elementoactual);
+    }
+    alert("Añadidos " +elNodeList+ " Elementos");
 }
 </script>
 </head>
