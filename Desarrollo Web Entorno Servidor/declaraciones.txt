@@ -1,0 +1,4 @@
+Declaraciones:
+    Los 3 primeros intentos eran de "prueba" ya que yo mismo le metia los valores, ya que no sabia tenia que ser el input(Scanner)
+    Los demas ya si que son de verdad, no me di cuenta que habia que observar que el nombre no se repitiese en los valores que le ponias
+    :D

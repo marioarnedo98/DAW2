@@ -7,15 +7,21 @@ public class vieja {
 
 	public static void separarNietos(String nombreaBuscar, int numeros, String nietos) {
 		String partes[] = nietos.split(" ");// separamos por espacios
+		int contador=0;
 		int j = partes.length - 1;// obtenemos el ultimo valor (partes[j])
 		if (partes.length > 2) {
-			if (nombreaBuscar.equals(partes[j])) {
-				System.out.println("VERDADERA");
+			for (int i = 0; i < j; i++) {
+				if (partes[i].equals(partes[j])) {
+					contador++;
+				}
+			}
+				if (nombreaBuscar.equals(partes[j]) && contador==0) {
+					System.out.println("VERDADERA");
+				} else {
+					System.out.println("FALSA");
+				}
 			} else {
 				System.out.println("FALSA");
-			}
-		}else {
-			System.out.println("FALSA");
 		}
 	}
 
