@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio IVA</title>
+    <script>
+        function aplicarIVA(valorProducto, IVA){
+            var productoConIVA=valorProducto*IVA;
+            alert("El precio del producto, aplicando el iva del "+IVA+" es: " +productoConIVA);
+        }
+    </script>
+</head>
+<!-- esta es una forma -->
+<body onload="aplicarIVA(35,17)">
+    <!-- Esta es otra forma -->
+    <script>
+        aplicarIVA(13,2);
+    </script>
+</body>
+</html>
