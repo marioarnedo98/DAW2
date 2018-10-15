@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Texto inline</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    #editable{
+        border: 5px solid black;
+        background: #e6e6e6;
+        width: 300px;
+        min-height: 150px;
+        padding: 10px;
+    }
+    </style>
+    <script>
+    function negrita(){
+        document.execCommand("bold", false, null);
+    }
+    function cursiva(){
+        document.execCommand("italic", false, null);
+    }
+    function subrayado(){
+        document.execCommand("underline", false, null);
+    }
+    function hipervinculo(){
+        var direccion= prompt("Introduce la url");
+        document.execCommand("createlink", false, direccion);
+    }
+    function codigo(){
+        var conte= document.getElementById("editable").innerHTML;
+        alert(conte);
+    }
+    </script>
+</head>
+<body>
+    <h2>Escribe aqui tu contenido</h2>
+    <div>
+        <input type="button" value="Negrita" onclick="negrita()">
+        <input type="button" value="Cursiva" onclick="cursiva()">
+        <input type="button" value="Subrayado" onclick="subrayado()">
+        <input type="button" value="Hipervinculo" onclick="hipervinculo()">
+        <input type="button" value="codigo" onclick="codigo()">
+    </div>
+    <div id="editable" contenteditable="true"></div>
+</body>
+</html>
