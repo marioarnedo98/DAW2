@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Texto inline</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="override.css">
+    <script>
+    function negrita(){
+        document.execCommand("bold", false, null);
+    }
+    function cursiva(){
+        document.execCommand("italic", false, null);
+    }
+    function subrayado(){
+        document.execCommand("underline", false, null);
+    }
+    function hipervinculo(){
+        var direccion= prompt("Introduce la url");
+        document.execCommand("createlink", false, direccion);
+    }
+    function codigo(){
+        var conte= document.getElementById("editable").innerHTML;
+        alert(conte);
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="entrada">
+    <h3>Mensajes publicados</h3>
+</div>
+   <div class="presentacion">
+       <p>La <a href="https://www.apple.com/es/ios/app-store/">App Store</a> es <u>quizas</u> la tienda de aplicaciones con mejores <b>clientes de Twitter</b>, grandes ejemplos como <i>Tweetbot</i> o <i>Twittelator Neue </i><span class="rojo">son</span> simplemente excepcionales</p>
+   </div>
+   <div class="mensajes"></div>
+   <div class="texto">
+    <h6>Publica aquí tu mensaje</h6>
+    <div class="botones">
+        <input type="button" class="negrita" onclick="negrita()">
+        <input type="button" class="cursiva" onclick="cursiva()">
+        <input type="button" class="subrayado" onclick="subrayado()">
+        <input type="button" class="izquierda" onclick="">
+        <input type="button" class="centrado" onclick="">
+        <input type="button" class="derecha" onclick="">
+        <input type="button" class="justificado" onclick="">
+        <input type="button" class="lista" onclick="">
+        <input type="button" class="numeracion" onclick="">
+        <input type="button" class="subindice" onclick="">
+        <input type="button" class="hiperindice" onclick="">
+        <input type="button" class="color" onclick="">
+        <input type="button" class="marcado" onclick="">
+        <input type="button" class="imagen" onclick="">
+        <input type="button" class="hipervinculo" onclick="hipervinculo()">
+    </div>
+    <div id="editable" contenteditable="true"></div>
+</div>
+</div>
+</body>
+</html>
