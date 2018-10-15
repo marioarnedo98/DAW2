@@ -1,0 +1,7 @@
+sudo cp /etc/apache2/sites-available/000-default.conf 
+/etc/apache2/sites-available/xxxxxx.conf
+Dentro de aqui, cambiar el ServerName y el DocumentRoot, seguidamente hay que crear la carpeta
+que hemos dicho en el DocumentRoot
+chown www-data:www-data (carpeta DocumentRoot)
+sudo a2ensite xxxxxx.conf
+sudo apache2ctl restart
