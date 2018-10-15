@@ -20,11 +20,51 @@
     function subrayado(){
         document.execCommand("underline", false, null);
     }
+    function izquierda(){
+        document.execCommand("justifyLeft" , false,null);
+    }
+    function centrado(){
+        document.execCommand("justifyCenter" , false,null);
+    }
+    function derecha(){
+        document.execCommand("justifyRight" , false,null);
+    }
+    function justificado(){
+        document.execCommand("justifyFull" , false,null);
+    }
+    function lista(){
+        document.execCommand("insertUnorderedList" , false,null);
+    }
+    function numeracion(){
+        document.execCommand("insertOrderedList" , false,null);
+    }
+    function subindice(){
+        document.execCommand("subscript" , false,null);
+    }
+    function hiperindice(){
+        document.execCommand("superscript" , false,null);
+    }
+    function hiperindice(){
+        document.execCommand("superscript" , false,null);
+    }
+    function color(){
+        document.execCommand('foreColor', false, "red");
+    }
+    function imagen(){
+        var url_image= prompt("Introduce la URL de la imagen");
+        document.execCommand("insertImage",false,url_image);
+    }
+    function marcado(){
+        document.execCommand("styleWithCSS", true, null);
+        document.execCommand("hiliteColor",false, "yellow");
+    }
     function hipervinculo(){
         var direccion= prompt("Introduce la url");
-        document.execCommand("createlink", false, direccion);
+        if (!document.execCommand("HiliteColor", false, "Yellow")) {
+        document.execCommand("BackColor", false, "Yellow");
     }
-    function codigo(){
+    }
+    function get_codigo(){
         var conte= document.getElementById("editable").innerHTML;
         alert(conte);
     }
@@ -45,22 +85,22 @@
         <input type="button" id="negrita" onclick="negrita()">
         <input type="button" id="cursiva" onclick="cursiva()">
         <input type="button" id="subrayado" onclick="subrayado()">
-        <input type="button" id="izquierda" onclick="">
-        <input type="button" id="centrado" onclick="">
-        <input type="button" id="derecha" onclick="">
-        <input type="button" id="justificado" onclick="">
-        <input type="button" id="lista" onclick="">
-        <input type="button" id="numeracion" onclick="">
-        <input type="button" id="subindice" onclick="">
-        <input type="button" id="hiperindice" onclick="">
-        <input type="button" id="color" onclick="">
-        <input type="button" id="marcado" onclick="">
-        <input type="button" id="imagen" onclick="">
+        <input type="button" id="izquierda" onclick="izquierda()">
+        <input type="button" id="centrado" onclick="centrado()">
+        <input type="button" id="derecha" onclick="derecha()">
+        <input type="button" id="justificado" onclick="justificado()">
+        <input type="button" id="lista" onclick="lista()">
+        <input type="button" id="numeracion" onclick="numeracion()">
+        <input type="button" id="subindice" onclick="subindice()">
+        <input type="button" id="hiperindice" onclick="hiperindice()">
+        <input type="button" id="color" onclick="color()">
+        <input type="button" id="marcado" onclick="marcado()">
+        <input type="button" id="imagen" onclick="imagen()">
         <input type="button" id="hipervinculo" onclick="hipervinculo()">
     </div>
     <div id="editable" contenteditable="true"></div>
     <div class="col-md-12 text-center"> 
-    <input type="button" class="enviar" value="Enviar" onclick="">
+    <input type="button" class="enviar" value="Enviar" onclick="get_codigo()">
 </div>
 </div>
 </body>
