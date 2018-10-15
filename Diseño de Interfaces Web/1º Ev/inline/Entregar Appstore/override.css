@@ -1,39 +1,124 @@
-body{
+body {
     background: #7c7c7c;
 }
-.entrada{
+
+.entrada {
     background: rgb(59, 59, 59);
-    margin-top:15px; 
+    margin-top: 15px;
     border: 3px solid white;
 }
-.entrada h3{
+
+.entrada h3 {
     text-align: center;
     color: white;
 }
-.rojo{
+
+.rojo {
     color: red;
 }
-.presentacion{
+
+.presentacion {
     margin-top: 10px;
     padding: 5px;
     background: rgb(117, 117, 117);
     border: 3px solid white;
     border-radius: 25px;
 }
-.texto{
+
+.texto {
     background: rgb(206, 206, 206);
     margin-top: 15px;
     padding: 5px;
-    border: 3px solid rgb(206, 206, 206);;
+    border: 3px solid rgb(206, 206, 206);
+    ;
     border-radius: 25px;
 }
-.texto h6{
+
+.texto h6 {
     text-align: center;
 }
-.texto #editable{
+
+.texto #editable {
     width: 95%;
     margin: 0 auto;
     background: rgb(117, 117, 117);
     border: 3px solid black;
     height: 100px;
+}
+
+.texto .enviar {
+    margin-top: 5px;
+}
+
+#negrita {
+    background: url(botones/negrita.png);
+}
+
+#cursiva {
+    background: url(botones/negrita.png);
+}
+
+#subrayado {
+    background: url(botones/negrita.png);
+
+}
+
+#izquierda {
+    background: url(botones/negrita.png);
+
+}
+
+#centrado {
+    background: url(botones/negrita.png);
+
+}
+
+#derecha {
+    background: url(botones/negrita.png);
+
+}
+
+#justificado {
+    background: url(botones/negrita.png);
+
+}
+
+#lista {
+    background: url(botones/negrita.png);
+
+}
+
+#numeracion {
+    background: url(botones/negrita.png);
+
+}
+
+#subindice {
+    background: url(botones/negrita.png);
+
+}
+
+#hiperindice {
+    background: url(botones/negrita.png);
+
+}
+
+#color {
+    background: url(botones/negrita.png);
+
+}
+
+#marcado {
+    background: url(botones/negrita.png);
+
+}
+
+#imagen {
+    background: url(botones/negrita.png);
+
+}
+
+#hipervinculo {
+    background: url(botones/negrita.png);
+
 }

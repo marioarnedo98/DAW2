@@ -41,24 +41,26 @@
    <div class="mensajes"></div>
    <div class="texto">
     <h6>Publica aquí tu mensaje</h6>
-    <div class="botones">
-        <input type="button" class="negrita" onclick="negrita()">
-        <input type="button" class="cursiva" onclick="cursiva()">
-        <input type="button" class="subrayado" onclick="subrayado()">
-        <input type="button" class="izquierda" onclick="">
-        <input type="button" class="centrado" onclick="">
-        <input type="button" class="derecha" onclick="">
-        <input type="button" class="justificado" onclick="">
-        <input type="button" class="lista" onclick="">
-        <input type="button" class="numeracion" onclick="">
-        <input type="button" class="subindice" onclick="">
-        <input type="button" class="hiperindice" onclick="">
-        <input type="button" class="color" onclick="">
-        <input type="button" class="marcado" onclick="">
-        <input type="button" class="imagen" onclick="">
-        <input type="button" class="hipervinculo" onclick="hipervinculo()">
+    <div class="botones col-md-12">
+        <input type="button" id="negrita" onclick="negrita()">
+        <input type="button" id="cursiva" onclick="cursiva()">
+        <input type="button" id="subrayado" onclick="subrayado()">
+        <input type="button" id="izquierda" onclick="">
+        <input type="button" id="centrado" onclick="">
+        <input type="button" id="derecha" onclick="">
+        <input type="button" id="justificado" onclick="">
+        <input type="button" id="lista" onclick="">
+        <input type="button" id="numeracion" onclick="">
+        <input type="button" id="subindice" onclick="">
+        <input type="button" id="hiperindice" onclick="">
+        <input type="button" id="color" onclick="">
+        <input type="button" id="marcado" onclick="">
+        <input type="button" id="imagen" onclick="">
+        <input type="button" id="hipervinculo" onclick="hipervinculo()">
     </div>
     <div id="editable" contenteditable="true"></div>
+    <div class="col-md-12 text-center"> 
+    <input type="button" class="enviar" value="Enviar" onclick="">
 </div>
 </div>
 </body>
