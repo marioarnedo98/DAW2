@@ -67,6 +67,7 @@
     function get_codigo(){
         var conte= document.getElementById("editable").innerHTML;
         alert(conte);
+        document.getElementById('mensajes').innerHTML=conte;
     }
     </script>
 </head>
@@ -78,7 +79,10 @@
    <div class="presentacion">
        <p>La <a href="https://www.apple.com/es/ios/app-store/">App Store</a> es <u>quizas</u> la tienda de aplicaciones con mejores <b>clientes de Twitter</b>, grandes ejemplos como <i>Tweetbot</i> o <i>Twittelator Neue </i><span class="rojo">son</span> simplemente excepcionales</p>
    </div>
-   <div class="mensajes"></div>
+   <div id="mensajes">
+ 
+
+   </div>
    <div class="texto">
     <h6>Publica aquí tu mensaje</h6>
     <div class="botones col-md-12">
