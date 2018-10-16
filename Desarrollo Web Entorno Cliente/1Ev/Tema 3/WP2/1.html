@@ -34,7 +34,7 @@
         // ejercicioG
         var date_g = new Date();
         var micumple_g = new Date("2018,12,03");
-        if (date_g != micumple_f) {
+        if (date_g.getTime() != micumple_f.getTime()) {
             alert("Hoy no es mi cumple");
         } else {
             alert("Felictarme! es mi cumple")

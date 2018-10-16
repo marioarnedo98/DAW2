@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function imprimirDatos(){
+            document.write("<br> Marca: "+this.marca);
+            document.write("<br> Modelo: "+this.modelo);
+            document.write("<br> Año: "+this.anyo);
+        }
+        function coche(marca_in, modelo_in, anyo_in) {
+            this.marca = marca_in;
+            this.modelo = modelo_in;
+            this.anyo = anyo_in;
+        }
+        var miCoche= new coche("Peugeot", "220cc", "2003");
+        miCoche.imprimirDatos();
+        // var coches = new Array(4);
+        // coche[0] = new coche("Ferrari", "Scaglietti", "2010");
+        // coche[1] = new coche("BMW", "Z4", "2010");
+        // coche[2] = new coche("Seat", "Toledo", "1999");
+        // coche[3] = new coche("Fiat", "500", "1995");
+        // for (i = 0; i < coches.length; i++) {
+        //     document.write("Marca: " + coches[i].marca + " - Modelo: " + coches[i].modelo + " - Año fabricacion: " +
+        //         coches[i].anyo + "<br>");
+        // }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

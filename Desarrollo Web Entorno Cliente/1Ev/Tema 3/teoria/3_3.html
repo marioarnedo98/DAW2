@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hola</title>
+    <script>
+        function ProductoAlimenticio(codigo, nombre,precio){
+            this.codigo=codigo;
+            this.nombre=nombre;
+            this.precio=precio;
+        }
+        function imprimirDatos(){
+           alert(this.marca);
+           alert(this.modelo);
+           alert(this.anyo);
+        }
+         var comida = new Array(4);
+        comida[0] = new ProductoAlimenticio("252", "Manzana", "3");
+        comida[1] = new ProductoAlimenticio("35", "Atun", "15");
+        comida[2] = new ProductoAlimenticio("8", "Pollo", "9");
+        comida[3] = new ProductoAlimenticio("17", "Beicon", "6");
+        for (i = 0; i < comida.length; i++) {
+            imprimirDatos();
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
