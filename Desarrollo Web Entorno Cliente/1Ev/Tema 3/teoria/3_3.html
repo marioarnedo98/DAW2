@@ -10,11 +10,10 @@
             this.codigo=codigo;
             this.nombre=nombre;
             this.precio=precio;
+            this.imprimirDatos=imprimirDatos;
         }
         function imprimirDatos(){
-           alert(this.marca);
-           alert(this.modelo);
-           alert(this.anyo);
+           alert("Codigo "+this.codigo+" Precio "+this.precio+" Nombre "+this.nombre);
         }
          var comida = new Array(4);
         comida[0] = new ProductoAlimenticio("252", "Manzana", "3");
@@ -22,7 +21,7 @@
         comida[2] = new ProductoAlimenticio("8", "Pollo", "9");
         comida[3] = new ProductoAlimenticio("17", "Beicon", "6");
         for (i = 0; i < comida.length; i++) {
-            imprimirDatos();
+            comida[i].imprimirDatos();
         }
     </script>
 </head>
