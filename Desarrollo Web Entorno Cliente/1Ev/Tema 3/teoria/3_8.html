@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var dias= [ 
+            "Lunes",
+            "Martes",
+            "Miercoles",
+            "Jueves",
+            "Viernes",
+            "Sabado",
+            "Domingo"
+        ];
+        //metemos los festivos en otro array y lo borramos de dias
+       var festivos= dias.splice(5,7);
+      //imprimimos los dias laborables
+      alert("Laborables: "+dias);
+      //imprimimos los festivos
+      alert("Festivos "+ festivos);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
