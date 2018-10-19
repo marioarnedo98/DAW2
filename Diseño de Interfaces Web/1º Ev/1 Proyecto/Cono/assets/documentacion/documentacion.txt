@@ -1,0 +1,19 @@
+﻿Documentacion de la pagina web:
+1. Imágenes
+Todas las imagenes deberan de tener estas dimensiones para que el responsive de la pagina funcione
+    1.1 Pagina principal - Carrusel
+Las imagenes del carrusel tendran unas dimensiones de 1400*900 obligatoriamente
+    1.2 Pagina principal - Introduccion
+Las 3 imagenes de introduccion a las diferentes secciones de la web tendran unas dimensiones de 640*426
+	1.3 Pagina principal-Sponsors
+Los sponsors tendran unas dimensiones de 255*323
+    1.3 Pagina Calendario - Anuncio (?)
+La imagen del anuncio tendra unas dimensiones de 350*174
+    1.4 Pagina Contacto - Fondo
+La imagen del fondo del Contacto tendra unas dimensiones de 1920*1248
+    1.5 Pagina sobre mi - Titulos UFC
+Las imagenes de los titulos UFC tendran unas dimensiones de 320*320px
+    1.6 Galeria - imagenes
+Las imagenes de la galeria, deberan de tener unas dimensiones de 940*623px
+2. Estilos
+Todos los nuevos estilos css se haran en el archivo colocado en assets/css/styles.css

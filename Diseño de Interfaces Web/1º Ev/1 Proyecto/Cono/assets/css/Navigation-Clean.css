@@ -1,5 +1,16 @@
 .navigation-clean {
-  background:#fff;
+  background:#191919;
+  padding-top:.75rem;
+  padding-bottom:.75rem;
+  color:#333;
+  border-radius:0;
+  box-shadow:none;
+  border:none;
+  margin-bottom:0;
+}
+.calendario .navigation-clean{
+  background: transparent;
+  /* background: linear-gradient(#fff, rgba(255, 255, 255, 0) 99%); */
   padding-top:.75rem;
   padding-bottom:.75rem;
   color:#333;
