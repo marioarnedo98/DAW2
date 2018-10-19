@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    var arr=  [4,0,3,4,7,3,5,8,1,8,8,0,2,3,1,2,5,7,3,2,5,1];
+    var pares=[];
+    var impares=[];
+    for(var i=0; i<arr.length;i++){
+        if(arr[i]%2==0){
+            pares.push(arr[i]);
+        }else{
+            impares.push(arr[i]);
+        }
+    }
+    //orndenamos las variables
+    var pares_ord=pares.sort();
+    var impares_ord= impares.sort();
+    //imprimimos primero los pares ordenados
+    alert(pares_ord+"\n Impares: "+impares_ord);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
