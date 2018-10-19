@@ -1,0 +1,14 @@
+13 reglas del Sistema de columnsa de Bootstrap
+1   Son 3 los elementos que conforman este sistema: Un contenedor, las filas y las columnas
+2   Tenemos 2 tipos de contenedores, .container y .container-fluid
+3   Las filas tienen que ser hijas directas de un contenedor
+4   Las columnas tiene que ser hijas directas de una fila
+5   Una fila puede tner 12 columnas como maximo
+6   Si superamos las 12 columnas por fila, las siguientes saltaran abajo formando una nueva fila
+7   El contenido debe ir dentro de las columnas
+8   La clase col nos permite crear columnas de proporciones identicas
+9   Podemos modificar la medida de una columnas dependiendo del tamaño de la pantalla
+10  Los contextos se heredan de menor a mayor
+11  Podemos crear columnas vacias
+12  Podemos crear columnas anidadas
+13 Podemos reordenar las columnas
