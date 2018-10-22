@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Geoposicionamiento</title>
+    <script>
+    function exito(position){
+        var cadena = "Info Disponible: \n";
+        cadena+= "Latitud "+position.coords.latitude +"\n";
+        cadena+="Longitud "+position.coords.longitude +"\n"; 
+        cadena+="Precision "+position.coords.accuracy +"\n";
+        cadena+="Altitud "+position.coords.altitude +"\n";
+        cadena+="Precision de Altitud "+position.coords.altitudeAccuracy +"\n";
+        cadena+="Desplazamiento "+position.coords.heading +"\n";
+        cadena+="Desplazamiento "+position.coords.speed +"\n";
+        cadena+="Desplazamiento "+position.timestamp +"\n";
+        alert (cadena);
+    }
+    function error(){
+        alert('Ha ocurrido un error');
+    }
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(exito, error);
+    }
+    else{
+        alert('Lo sentimos, el navegador no sporta')
+    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
