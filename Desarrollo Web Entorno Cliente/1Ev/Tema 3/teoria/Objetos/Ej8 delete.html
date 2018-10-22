@@ -1,0 +1,26 @@
+<html>
+<body>
+
+<p>You can delete object properties.</p>
+
+<p id="demo"></p>
+
+<script>
+var person = {
+    firstname:"John",
+    lastname:"Doe",
+    age:50,
+    eyecolor:"blue"
+};
+delete person.age;
+// delete solo es para propiedades de objeto, no para variables ni funciones
+//objetos JavaScript heredan las propiedades de su prototipo.
+
+//La palabra reservada delete no elimina las propiedades heredadas, pero si se elimina 
+//una propiedad de prototipo, que afectará a todos los objetos heredados del prototipo.
+document.getElementById("demo").innerHTML =
+person.firstname + " is " + person.age + " years old.";
+</script>
+
+</body>
+</html>

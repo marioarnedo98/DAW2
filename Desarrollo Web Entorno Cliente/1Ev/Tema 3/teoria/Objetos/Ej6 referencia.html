@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<p>JavaScript objects are mutable.</p>
+<p>Any changes to a copy of an object will also change the original.</p>
+
+<p id="demo"></p>
+
+<script>
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
+
+var x = person;
+x.age = 10;
+// x contiene la dirección de person, es decir le apunta
+document.getElementById("demo").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+//Las variables JavaScript no son mutables. Sólo los objetos de JavaScript.
+var z= 5;
+var y=8;
+z=y;
+document.getElementById("demo").innerHTML+=
+" La variable z( guarda una copia de y) is " + z +  "La variable y is" + y ;
+</script>
+
+</body>
+</html>

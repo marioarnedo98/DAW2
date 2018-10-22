@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>object</title>
+  <script type="text/javascript">
+  
+function Alumno(firstName) {
+  this.firstName = firstName;
+};
+// Add a couple of methods to Alumno.prototype
+Alumno.prototype.decirSaludo = function() {
+  console.log("Hello, I'm " + this.firstName);
+};
+Alumno.prototype.walk = function(){
+  console.log("I am walking!");
+};
+
+var alumnoA = new Alumno("Pepe");
+var alumnoB = new Alumno("Ana");
+
+// call the Person sayHello method.
+alumnoA.decirSaludo(); // logs "Hello, I'm Pepe"
+alumnoB.decirSaludo(); // logs "Hello, I'm Ana"
+
+// Define the AlumnoEso constructor
+function AlumnoEso(firstName, subject) {
+  // Call the parent constructor, making sure (using call)
+  // that "this" is set correctly during the call
+  Alumno.call(this, firstName);
+
+  // Initialize our AlumnoEso-specific properties
+  this.subject = subject;
+}
+
+// Create a Student.prototype object that inherits from Person.prototype.
+// Note: A common error here is to use "new Person()" to create the
+// Student.prototype. That's incorrect for several reasons, not least 
+// that we don't have anything to give Person for the "firstName" 
+// argument. The correct place to call Person is above, where we call 
+// it from Student.
+AlumnoEso.prototype = Object.create(Alumno.prototype); // See note below
+
+// Set the "constructor" property to refer to Student
+AlumnoEso.prototype.constructor = AlumnoEso;
+
+// Replace the "sayHello" method
+AlumnoEso.prototype.decirSaludo = function(){
+  console.log("Hello, I'm " + this.firstName + ". I'm studying " + this.subject + ".");
+};
+
+// Add a "sayGoodBye" method
+AlumnoEso.prototype.decirAdios = function(){
+  console.log("Goodbye!");
+};
+
+// Example usage:
+var alumno1 = new AlumnoEso("Juan", "Matemáticas");
+alumno1.decirSaludo();   // "Hello, I'm Juan. I'm studying Matematicas."
+alumno1.walk();       // "I am walking!"
+alumno1.decirAdios(); // "Goodbye!"
+
+var alumno2 = new Alumno("Pedro");
+alumno2.decirSaludo();   // "Hello, I'm Pedro. 
+alumno2.walk();       // "I am walking!"
+alumno2.decirAdios(); // undefined- no tiene definido este método
+
+// Check that instanceof works correctly
+console.log(alumno1 instanceof Alumno);  // true 
+console.log(alumno1 instanceof AlumnoEso); // true
+  
+
+
+</script>
+  </head> 
+</body>
+</html>
