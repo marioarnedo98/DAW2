@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script>
+//Uso del constructor de objetos
+//Los ejemplos anteriores son limitados en muchas situaciones. Ellos sólo crean un único objeto.
+
+//A veces nos gusta tener un "tipo de objeto" que se puede utilizar para crear muchos objetos de un mismo tipo.
+
+//La forma habitual de crear un "tipo de objeto" es utilizar una función de objeto constructor:
+//
+
+function person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+
+var myFather = new person("John", "Doe", 50, "blue");
+var myMother = new person("Sally", "Rally", 48, "green");
+
+document.getElementById("demo").innerHTML =
+"My father is " + myFather.age + ". My mother is " + myMother.age; 
+</script>
+
+</body>
+</html>

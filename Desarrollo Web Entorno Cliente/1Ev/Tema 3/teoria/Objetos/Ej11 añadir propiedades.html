@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+
+var myFather = new Person("John", "Doe", 50, "blue");
+var myMother = new Person("Sally", "Rally", 48, "green");
+
+myFather.nationality = "English";
+//AÑADO UNA PROPIEDAD SOLO A MYFATHER
+document.getElementById("demo").innerHTML +=
+"My father is " + myFather.nationality; 
+
+//AÑADO UN MÉTODO SOLO A MYFATHER
+myFather.name = function() {
+    return this.firstName + " " + this.lastName;
+};
+document.getElementById("demo").innerHTML +=
+"My father is FULL" + myFather.name();
+//CUIDADO
+document.getElementById("demo").innerHTML +=
+"My mother is " + myMother.nationality + myMother.name(); 
+</script>
+
+</body>
+</html>
