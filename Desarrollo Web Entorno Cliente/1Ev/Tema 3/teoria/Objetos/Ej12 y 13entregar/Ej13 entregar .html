@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var person = {
+    firstName : "John",
+    lastName  : "Doe",
+    age       : 50,
+    eyeColor  : "blue",
+    name_nation : function() {
+       return this.firstName + " " + this.nationality;
+    },
+    changeName = function (name) {
+        this.lastName = name;
+    }
+};
+person.nationality = "French";
+document.getElementById("demo").innerHTML = person.name_nation();
+name= prompt("Introduce el nuevo nombre");
+person.changeName(name);
+</script>
+<!-- Los cambios se producen en la instancia del objeto, ya que el prototype es una plantilla -->
+</body>
+</html>
