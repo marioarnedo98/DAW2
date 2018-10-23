@@ -3,24 +3,29 @@
 <body>
 
 <p id="demo"></p>
+<p id="demo1"></p>
 
 <script>
-var person = {
-    firstName : "John",
-    lastName  : "Doe",
-    age       : 50,
-    eyeColor  : "blue",
-    name_nation : function() {
-       return this.firstName + " " + this.nationality;
-    },
-    changeName = function (name) {
+function person(firstName,lastName,age,eyeColor) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.eyeColor = eyeColor;
+    this.changeName = function (name) {
         this.lastName = name;
-    }
-};
-person.nationality = "French";
-document.getElementById("demo").innerHTML = person.name_nation();
-name= prompt("Introduce el nuevo nombre");
-person.changeName(name);
+    };
+}
+var Ej13 = new person("John", "Doe", 50, "blue");
+Ej13.nationality = "French";
+
+var name= prompt("Introduce el nuevo nombre");
+Ej13.changeName(name);
+Ej13.name_nation=function(){
+    return this.firstName+" "+this.nationality;
+}
+
+document.getElementById("demo").innerHTML = Ej13.name_nation();
+document.getElementById("demo1").innerHTML = Ej13.firstName+Ej13.lastName+Ej13.age+Ej13.eyeColor;
 </script>
 <!-- Los cambios se producen en la instancia del objeto, ya que el prototype es una plantilla -->
 </body>
