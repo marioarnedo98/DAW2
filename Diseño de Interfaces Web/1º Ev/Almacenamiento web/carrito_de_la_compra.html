@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Carrito de la compra - Luis Luzuriaga</title>
+
+    <script>
+
+        // Elementos estáticos (Precio de los productos)
+        var precioPorId = [];
+        precioPorId[1] = 977;
+        precioPorId[2] = 787;
+        precioPorId[3] = 1073;
+        precioPorId[4] = 585;
+        precioPorId[5] = 889;
+
+        function añadirCarrito(numeroProducto) {
+            var numeroDeElementos = Number(document.getElementById('valueP' + numeroProducto).value);
+
+
+            var precioTotalActual = 0;
+            if (sessionStorage.getItem('precioTotal') != null)
+                precioTotalActual = Number(sessionStorage.getItem('precioTotal'));
+
+
+            if ((Number(numeroDeElementos) == 0))
+                precioTotalActual -= (sessionStorage.getItem(numeroProducto) * precioPorId[numeroProducto]);
+            else
+                precioTotalActual += (Number(numeroDeElementos) * precioPorId[numeroProducto]);
+
+
+            sessionStorage.setItem(numeroProducto, numeroDeElementos);
+            sessionStorage.setItem('precioTotal', precioTotalActual);
+
+            pintarTabla();
+        }
+
+        function pintarTabla() {
+            var carritoActual = [];
+            document.getElementById('carritoActual').innerHTML = '';
+            document.getElementById('precioTotal').innerHTML = 'Total: ' + sessionStorage.getItem('precioTotal');
+
+            if (sessionStorage.getItem(1) != 0 && sessionStorage.getItem(1) != null)
+                carritoActual.push('- '.concat(sessionStorage.getItem(1)).concat(' ordenadores DELL con un precio de ' + (precioPorId[1] * sessionStorage.getItem(1))));
+
+            if (sessionStorage.getItem(2) != 0 && sessionStorage.getItem(2) != null)
+                carritoActual.push('- '.concat(sessionStorage.getItem(2)).concat(' ordenadores SONY con un precio de ' + (precioPorId[2] * sessionStorage.getItem(2))));
+
+            if (sessionStorage.getItem(3) != 0 && sessionStorage.getItem(3) != null)
+                carritoActual.push('- '.concat(sessionStorage.getItem(3)).concat(' ordenadores APPLE con un precio de ' + (precioPorId[3] * sessionStorage.getItem(3))));
+
+            if (sessionStorage.getItem(4) != 0 && sessionStorage.getItem(4) != null)
+                carritoActual.push('- '.concat(sessionStorage.getItem(4)).concat(' ordenadores PBELL con un precio de ' + (precioPorId[4] * sessionStorage.getItem(4))));
+
+            if (sessionStorage.getItem(5) != 0 && sessionStorage.getItem(5) != null)
+                carritoActual.push('- '.concat(sessionStorage.getItem(5)).concat(' ordenadores ACER con un precio de ' + (precioPorId[5] * sessionStorage.getItem(5))));
+
+
+            for (var i = 0; i < carritoActual.length; i++)
+                document.getElementById('carritoActual').innerHTML += carritoActual[i] + '<br>';
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Artículos</h2>
+        <p>Haz clic en comprar para ir añadiendo artículos al carrito o "Refrescar tabla para cargar el carrito
+            anterior."</p>
+
+        <button type="button" class="btn btn-warning" onclick="pintarTabla()">Refrescar Tabla</button>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Artículo</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="./Fotos_Carrito/1.png"></td>
+                    <td>Ordenador DELL</td>
+                    <td>977$</td>
+                    <td> <input id="valueP1" type="number" value="0" min="0"> </td>
+                    <td> <button type="button" class="btn btn-primary" onclick="añadirCarrito(1)">Añadir</button>
+                    </td>
+                </tr>
+
+                <tr class="success">
+                    <td><img src="./Fotos_Carrito/2.png"></td>
+                    <td>Ordenador SONY</td>
+                    <td>787$</td>
+                    <td> <input id="valueP2" type="number" value="0" min="0"> </td>
+                    <td> <button type="button" class="btn btn-primary" onclick="añadirCarrito(2)">Añadir</button>
+                    </td>
+                </tr>
+
+                <tr class="danger">
+                    <td><img src="./Fotos_Carrito/3.png"></td>
+                    <td>Ordenador APPLE</td>
+                    <td>1073$</td>
+                    <td> <input id="valueP3" type="number" value="0" min="0"> </td>
+                    <td> <button type="button" class="btn btn-primary" onclick="añadirCarrito(3)">Añadir</button>
+                    </td>
+                </tr>
+
+                <tr class="info">
+                    <td><img src="./Fotos_Carrito/4.png"></td>
+                    <td>Ordenador PBELL</td>
+                    <td>585$</td>
+                    <td> <input id="valueP4" type="number" value="0" min="0"> </td>
+                    <td> <button type="button" class="btn btn-primary" onclick="añadirCarrito(4)">Añadir</button>
+                    </td>
+                </tr>
+
+                <tr class="warning">
+                    <td><img src="./Fotos_Carrito/5.png"></td>
+                    <td>Ordenador ACER</td>
+                    <td>889$</td>
+                    <td> <input id="valueP5" type="number" value="0" min="0"> </td>
+                    <td> <button type="button" class="btn btn-primary" onclick="añadirCarrito(5)">Añadir</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <p class="h1">Tu carrito actualmente consiste en: </p>
+        <p class="h2" id="carritoActual"></p>
+        <h2 id="precioTotal" style="color: red">Total: </h2>
+    </div>
+
+
+
+</body>
+
+</html>

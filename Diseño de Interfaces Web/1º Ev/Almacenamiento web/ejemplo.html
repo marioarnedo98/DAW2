@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sesion Storage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #listado, #botones{
+            border: 2px solid black;
+            width: 415px;
+            margin: 5px auto;
+        }
+        #listado{
+            min-height: 200px;
+        }
+    </style>
+    <script>
+        var cantidad = sessionStorage.length;
+        function almacenar(){
+            var contenido= document.getElementById("elemento").value;
+            sessionStorage.setItem("Elemento" +cantidad,contenido);
+            cantidad++;
+        }
+        function verElemento(){
+            var posicion = document.getElementById("verEl").value;
+            var clave = sessionStorage.key(posicion);
+            var dato = sessionStorage.getItem(clave);
+            document.getElementById("listado").innerHTML = clave +" = "+dato;
+        }
+        function ver(){
+            var cont= sessionStorage.length;
+            document.getElementById("listado").innerHTML = "";
+            for(i=0; i<cont; i++){
+                var clave = sessionStorage.key(i);
+                var dato = sessionStorage.getItem(clave);
+                document.getElementById("listado").innerHTML += clave+" = "+dato+"<br>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="botones">
+        <input type="text" id="elemento">
+        <input type="button" value="Guardar" onclick="almacenar()">
+
+        <input type="number" value="0" id="verEl">
+        <input type="button" value="Ver Elemento" onclick="verElemento()">
+        <input type="button" value="Ver listado" onclick="ver()"><br>
+
+        <input type="number" value="0" id="verEl">
+        <input type="button" value="Ver Elemento" onclick="verElemento()">
+        <input type="button" value="Ver listado" onclick="ver()"><br>
+    </div>
+    <div id="listado"></div>
+</body>
+</html>
