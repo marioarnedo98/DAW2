@@ -4,8 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <title>Carrito de la compra - Luis Luzuriaga</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="tienda.css">
+    <link rel="shortcut icon" href="img-carro/favicon.jpg">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Carrito de la compra</title>
     <script>
 
         // Elementos estáticos (Precio de los productos)
@@ -16,50 +19,50 @@
         precioPorId[4] = 585;
         precioPorId[5] = 889;
 
-        function añadirCarrito(numeroProducto) {
-            var numeroDeElementos = Number(document.getElementById('valueP' + numeroProducto).value);
+        function add(id_producto) {
+            var conteo = Number(document.getElementById('valueP' + id_producto).value);
 
 
-            var precioTotalActual = 0;
+            var precio_actual = 0;
             if (sessionStorage.getItem('precioTotal') != null)
-                precioTotalActual = Number(sessionStorage.getItem('precioTotal'));
+                precio_actual = Number(sessionStorage.getItem('precioTotal'));
 
 
-            if ((Number(numeroDeElementos) == 0))
-                precioTotalActual -= (sessionStorage.getItem(numeroProducto) * precioPorId[numeroProducto]);
+            if ((Number(conteo) == 0))
+                precio_actual -= (sessionStorage.getItem(id_producto) * precioPorId[id_producto]);
             else
-                precioTotalActual += (Number(numeroDeElementos) * precioPorId[numeroProducto]);
+                precio_actual += (Number(conteo) * precioPorId[id_producto]);
 
 
-            sessionStorage.setItem(numeroProducto, numeroDeElementos);
-            sessionStorage.setItem('precioTotal', precioTotalActual);
+            sessionStorage.setItem(id_producto, conteo);
+            sessionStorage.setItem('precioTotal', precio_actual);
 
-            pintarTabla();
+            print();
         }
 
-        function pintarTabla() {
-            var carritoActual = [];
-            document.getElementById('carritoActual').innerHTML = '';
+        function print() {
+            var carro = [];
+            document.getElementById('carro').innerHTML = '';
             document.getElementById('precioTotal').innerHTML = 'Total: ' + sessionStorage.getItem('precioTotal');
 
             if (sessionStorage.getItem(1) != 0 && sessionStorage.getItem(1) != null)
-                carritoActual.push('- '.concat(sessionStorage.getItem(1)).concat(' ordenadores DELL con un precio de ' + (precioPorId[1] * sessionStorage.getItem(1))));
+                carro.push(sessionStorage.getItem(1).concat(' ordenadores DELL con un precio de ' + (precioPorId[1] * sessionStorage.getItem(1))));
 
             if (sessionStorage.getItem(2) != 0 && sessionStorage.getItem(2) != null)
-                carritoActual.push('- '.concat(sessionStorage.getItem(2)).concat(' ordenadores SONY con un precio de ' + (precioPorId[2] * sessionStorage.getItem(2))));
+                carro.push(sessionStorage.getItem(2).concat(' ordenadores SONY con un precio de ' + (precioPorId[2] * sessionStorage.getItem(2))));
 
             if (sessionStorage.getItem(3) != 0 && sessionStorage.getItem(3) != null)
-                carritoActual.push('- '.concat(sessionStorage.getItem(3)).concat(' ordenadores APPLE con un precio de ' + (precioPorId[3] * sessionStorage.getItem(3))));
+                carro.push(sessionStorage.getItem(3).concat(' ordenadores APPLE con un precio de ' + (precioPorId[3] * sessionStorage.getItem(3))));
 
             if (sessionStorage.getItem(4) != 0 && sessionStorage.getItem(4) != null)
-                carritoActual.push('- '.concat(sessionStorage.getItem(4)).concat(' ordenadores PBELL con un precio de ' + (precioPorId[4] * sessionStorage.getItem(4))));
+                carro.push(sessionStorage.getItem(4).concat(' ordenadores PBELL con un precio de ' + (precioPorId[4] * sessionStorage.getItem(4))));
 
             if (sessionStorage.getItem(5) != 0 && sessionStorage.getItem(5) != null)
-                carritoActual.push('- '.concat(sessionStorage.getItem(5)).concat(' ordenadores ACER con un precio de ' + (precioPorId[5] * sessionStorage.getItem(5))));
+                carro.push(sessionStorage.getItem(5).concat(' ordenadores ACER con un precio de ' + (precioPorId[5] * sessionStorage.getItem(5))));
 
 
-            for (var i = 0; i < carritoActual.length; i++)
-                document.getElementById('carritoActual').innerHTML += carritoActual[i] + '<br>';
+            for (var i = 0; i < carro.length; i++)
+                document.getElementById('carro').innerHTML += carro[i] + '<br>';
 
         }
     </script>
@@ -67,12 +70,8 @@
 
 <body>
 
-    <div class="container">
-        <h2>Artículos</h2>
-        <p>Haz clic en comprar para ir añadiendo artículos al carrito o "Refrescar tabla para cargar el carrito
-            anterior."</p>
-
-        <button type="button" class="btn btn-warning" onclick="pintarTabla()">Refrescar Tabla</button>
+    <div class="container main">
+        <h3>Tienda Online</h3>
         <table class="table">
             <thead>
                 <tr>
@@ -85,47 +84,47 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><img src="./Fotos_Carrito/1.png"></td>
-                    <td>Ordenador DELL</td>
-                    <td>977$</td>
+                    <td><img class="img-content" src="img-carro/dell.jpg"></td>
+                    <td><h3>Ordenador Dell</h3></td>
+                    <td>977€</td>
                     <td> <input id="valueP1" type="number" value="0" min="0"> </td>
-                    <td> <button type="button" class="btn btn-primary" onclick="añadirCarrito(1)">Añadir</button>
+                    <td> <button type="button" class="btn btn-primary" onclick="add(1)">Comprar</button>
                     </td>
                 </tr>
 
-                <tr class="success">
-                    <td><img src="./Fotos_Carrito/2.png"></td>
-                    <td>Ordenador SONY</td>
-                    <td>787$</td>
+                <tr>
+                    <td><img class="img-content" src="img-carro/sony.jpg"></td>
+                    <td><h3>Ordenador Sony</h3></td>
+                    <td>787€</td>
                     <td> <input id="valueP2" type="number" value="0" min="0"> </td>
-                    <td> <button type="button" class="btn btn-primary" onclick="añadirCarrito(2)">Añadir</button>
+                    <td> <button type="button" class="btn btn-primary" onclick="add(2)">Comprar</button>
                     </td>
                 </tr>
 
-                <tr class="danger">
-                    <td><img src="./Fotos_Carrito/3.png"></td>
-                    <td>Ordenador APPLE</td>
-                    <td>1073$</td>
+                <tr>
+                    <td><img class="img-content" src="img-carro/apple.png"></td>
+                    <td><h3>Ordenador Apple</h3</td>
+                    <td>1073€</td>
                     <td> <input id="valueP3" type="number" value="0" min="0"> </td>
-                    <td> <button type="button" class="btn btn-primary" onclick="añadirCarrito(3)">Añadir</button>
+                    <td> <button type="button" class="btn btn-primary" onclick="add(3)">Comprar</button>
                     </td>
                 </tr>
 
-                <tr class="info">
-                    <td><img src="./Fotos_Carrito/4.png"></td>
-                    <td>Ordenador PBELL</td>
-                    <td>585$</td>
+                <tr>
+                    <td><img class="img-content" src="img-carro/hp.jpg"></td>
+                    <td><h3>Ordenador HP</h3></td>
+                    <td>585€</td>
                     <td> <input id="valueP4" type="number" value="0" min="0"> </td>
-                    <td> <button type="button" class="btn btn-primary" onclick="añadirCarrito(4)">Añadir</button>
+                    <td> <button type="button" class="btn btn-primary" onclick="add(4)">Comprar</button>
                     </td>
                 </tr>
 
-                <tr class="warning">
-                    <td><img src="./Fotos_Carrito/5.png"></td>
-                    <td>Ordenador ACER</td>
-                    <td>889$</td>
+                <tr>
+                    <td><img class="img-content" src="img-carro/acer.jpg"></td>
+                    <td><h3>Ordenador Acer</h3></td>
+                    <td>889€</td>
                     <td> <input id="valueP5" type="number" value="0" min="0"> </td>
-                    <td> <button type="button" class="btn btn-primary" onclick="añadirCarrito(5)">Añadir</button>
+                    <td> <button type="button" class="btn btn-primary" onclick="add(5)">Comprar</button>
                     </td>
                 </tr>
 
@@ -136,9 +135,9 @@
     <hr>
 
     <div class="container">
-        <p class="h1">Tu carrito actualmente consiste en: </p>
-        <p class="h2" id="carritoActual"></p>
-        <h2 id="precioTotal" style="color: red">Total: </h2>
+        <h1><i class="fa fa-shopping-bag"></i> Lista de la compra: </h1>
+        <p class="h2" id="carro"></p>
+        <h2 id="precioTotal">Total </h2>
     </div>
 
 

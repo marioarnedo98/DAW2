@@ -1,0 +1,31 @@
+.table .img-content{
+    height: 180px;
+}
+.table{
+    background: #A9FFFF;
+    border-radius: 30px;
+
+}
+h3{
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+.main{
+    margin-top: 25px;
+    background: #AAA9F5;
+    border-radius: 50px;
+}
+html .container{
+    font-family: 'Roboto', sans-serif;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    vertical-align: middle;
+}
+.table thead tr th:nth-child(2),
+.table thead tr th:first-child{
+    text-align: center;
+}
+.table thead tr th{
+    padding: 20px;
+}
