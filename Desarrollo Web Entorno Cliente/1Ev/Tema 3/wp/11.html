@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function ejercicio11(tlf) {
+            var patron1 = /^943[0-9]{6}$/;
+            var patron2 = /^943-[0-9]{3}-[0-9]{3}$/;
+            var patron3 = /^943\s[0-9]{3}\s[0-9]{3}$/;
+            var exprReg1 = new RegExp(patron1);
+            var exprReg2 = new RegExp(patron2);
+            var exprReg3 = new RegExp(patron3);
+            if (tlf.match(exprReg1)) {
+                console.log("Ok " + tlf);
+            } else if (tlf.match(exprReg2)) {
+                console.log("Ok " + tlf);
+            } else if (tlf.match(exprReg3)) {
+                console.log("Ok " + tlf);
+            }
+            else {
+                console.log("No Ok " + tlf)
+            }
+        }
+        ejercicio11("943-852-978");
+        ejercicio11("943 852 978");
+        ejercicio11("943852978");
+        ejercicio11("94385278");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

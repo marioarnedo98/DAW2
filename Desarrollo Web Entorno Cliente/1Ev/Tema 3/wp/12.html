@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function ejercicio12(texto) {
+            var patron1 = /[0-9]\u0024+/g;
+            var exprReg1 = new RegExp(patron1);
+                var dolar= "€";
+                if(texto.match(patron1)){
+                   var resultado= texto.replace(patron1,dolar);
+                   console.log(resultado);
+                }
+                else{
+                    console.log("No hay"+patron1+" En el texto");
+                }
+               }
+            ejercicio12("El coste del equipo es de 90.25$ iva incluido. Se aceptan $ y €.");
+            ejercicio12("El precio del artículo sin IVA es 90.25$, y con IVA 115.65$. Se admite el pago en $ y €")   
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
