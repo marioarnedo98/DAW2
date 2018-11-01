@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function ejercicio11(texto) {
+ 
+
+ var textolimpio = texto.toLowerCase();
+
+
+ var letrasEspacios = textolimpio.split("");
+
+ var quitaespacios = "";
+ for(i in letrasEspacios) {
+   if(letrasEspacios[i] != " ") {
+     quitaespacios += letrasEspacios[i];
+   }
+ }
+
+ var letras = quitaespacios.split("");
+ var letrasReves = quitaespacios.split("").reverse();
+
+ var iguales = true;
+ for(i in letras) {
+   if(letras[i] != letrasReves[i]) {
+    iguales = false;
+   }
+ }
+ if(iguales) {
+   alert (texto += " es un palíndromo");
+ }
+ else {
+ alert (texto += " no es un palíndromo");
+ }
+
+}
+
+ejercicio11("La ruta nos aporto otro paso natural");
+ejercicio11("Esta frase no se parece a ningun Palindromo");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

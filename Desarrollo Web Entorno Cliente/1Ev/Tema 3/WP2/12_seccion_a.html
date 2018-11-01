@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+     function ejercicio12(texto){
+        var patronA = /([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}/;
+        var exprSeccionA = new RegExp(patronA);
+        if(texto.match(exprSeccionA)){
+            console.log("Ok");
+        }
+        else{
+            console.log("No ok");
+        }
+     }
+     ejercicio12("Nací el 05/04/1982 en Zaragoza");
+     ejercicio12("Nací el 05/Mayo/1982 en Zaragoza");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
