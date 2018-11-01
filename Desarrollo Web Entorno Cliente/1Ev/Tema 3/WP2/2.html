@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+   function ejercicio2mapa(){
+    function exito(position){
+        var cadena = "Info Disponible: \n";
+        cadena+= "Latitud "+position.coords.latitude +"\n";
+        cadena+="Longitud "+position.coords.longitude +"\n"; 
+        cadena+="Precision "+position.coords.accuracy +"\n";
+        cadena+="Altitud "+position.coords.altitude +"\n";
+        cadena+="Precision de Altitud "+position.coords.altitudeAccuracy +"\n";
+        cadena+="Desplazamiento "+position.coords.heading +"\n";
+        cadena+="Desplazamiento "+position.coords.speed +"\n";
+        cadena+="Desplazamiento "+position.timestamp +"\n";
+        alert (cadena);
+    }
+    function error(){
+        alert('Ha ocurrido un error');
+    }
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(exito, error);
+    }
+    else{
+        alert('Lo sentimos, el navegador no sporta')
+    }
+   }
+   function ejercicio2recargar(){
+       //aunque se puede poner directamente lo meto en esta funcion
+       location.reload();
+   }
+   function ejercicio2nuevapestaña(){
+       window.open();
+   }
+   function ejercicio2actual(){
+       var date= new Date();
+       alert(date);
+   }
+   
+    </script>
+</head>
+<body>
+    <button onclick="ejercicio2mapa()">Ejercicio 2 Mapa</button>
+    <button onclick="ejercicio2recargar()">Ejercicio2Recargar</button>
+    <button onclick="ejercicio2nuevapestaña()">Ejercicio2Nueva Pestaña</button>
+    <button onclick="setInterval(ejercicio2actual(),2);">Ejercicio 2 Fecha</button>
+</body>
+</html>
