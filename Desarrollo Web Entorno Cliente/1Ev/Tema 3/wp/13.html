@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function ejercicio13(texto) {
+            var patron1 = /^[1|3|5|7|9][0-9]{4}[\S|\P]$/;
+            var exprReg1 = new RegExp(patron1);
+                if(texto.match(patron1)){
+                   console.log("OK" +texto);
+                }
+                else{
+                    console.log("No ok"+texto);
+                }
+               }
+            ejercicio13("14456S"); 
+            ejercicio13("33334P"); 
+            ejercicio13("24456S");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

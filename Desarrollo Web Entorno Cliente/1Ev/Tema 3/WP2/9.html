@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+     var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H',
+'L', 'C', 'K', 'E', 'T'];
+    var dni_num= parseInt (prompt("Inserta el numero de DNI que tienes"));
+    var letra_insertada = prompt("Inserta tu letra del DNI");
+    if(dni_num<0||dni_num>99999999){
+        alert("DNI no valido");
+    }
+    var dni_letra= Math.round(dni_num/23);
+    if (letras[dni_letra]==letra_insertada){
+        alert("Correcto, siga para alante");
+    }
+    else{
+        alert("No es correcto");
+    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
