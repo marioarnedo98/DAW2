@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+     function ejercicio12a(texto){
+        var patronA = /([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}/;
+        var exprSeccionA = new RegExp(patronA);
+        if(texto.match(exprSeccionA)){
+            console.log("Ok");
+        }
+        else{
+            console.log("No ok");
+        }
+     }
+     function ejercicio12b(textoB){
+         var patronB=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)$/;
+         var exprSeccionB = new RegExp(patronB);
+        if(textoB.match(exprSeccionB)){
+            console.log("Ok")
+        }else{
+            console.log("No ok");
+        }
+     }
+     function ejercicio12c(textoC){
+            var patronC = /^([A-Za-z]{0}?[A-Za-z\']+[\s])+([A-Za-z]{0}?[A-Za-z\'])+[\s]?([A-Za-z]{0}?[A-Za-z\'])?$/g;
+            var exprSeccionC = new RegExp (patronC);
+            if(textoC.match(exprSeccionC)){
+                console.log("Ok");
+                var textoC_partido= (textoC.split(" "));
+                console.log(textoC_partido[1]+","+ textoC_partido[0]);
+            }
+            else{
+                console.log("No coincide");
+            }
+     }
+     function ejercicio12d(textoD){
+         var patrond=/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/;
+         var exprSeccionD = new RegExp(patrond);
+         if(textoD.match(exprSeccionD)){
+             console.log("Hay una etiqueta Script dentro, cuidado");
+         }
+         else{
+             console.log("limpio");
+         }
+     }
+     ejercicio12a("Nací el 05/04/1982 en Zaragoza");
+    ejercicio12b("marioarnedo1@gmail.com");
+    ejercicio12c ("Mario Arnedo");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
