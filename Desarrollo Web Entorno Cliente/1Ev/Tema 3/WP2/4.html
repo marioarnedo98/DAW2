@@ -7,10 +7,27 @@
     <title>Document</title>
     <script>
     var arr= [4,0,3,4,7,3,5,8,1,8,8,0,2,3,1,2,5,7,3,2,5,1];
-   alert (arr.indexOf(3));
+   var pos=0;
+   var contador=0;
+   var nuevoarray=[];
+   var interruptor= true;
+   function ver(){
+       var posicion_original=0;
+       while(interruptor){
+           pos= arr.indexOf(3);
+           if(pos<0){
+               interruptor=false;
+           }else{
+               console.log("En el vector actual, la pos es "+pos);
+               posicion_original+=pos+1;
+               arr.splice(0,pos+1);
+               console.log(arr);
+               console.log("En el vector original, en el puesto "+posicion_original);
+           }
+       }
+   }
     </script>
 </head>
 <body>
-    
 </body>
 </html>
