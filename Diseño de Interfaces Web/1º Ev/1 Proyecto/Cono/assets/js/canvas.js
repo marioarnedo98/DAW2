@@ -1,121 +1,82 @@
-$(function(){
-var bg_animated = false;
-var bg_number_of_curves = 64;
+let particles = []
+let pcolor = '#ccc'
+let particlesCoords = []
+let particlesFinalCoords = []
 
-var canvas = document.getElementById("animation-canvas");
-var ctx = canvas.getContext("2d");
-window.requestAnimFrame = (function() {
-  return window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
-    function(callback) {
-      window.setTimeout(callback, 1000 / 60);
-    };
-})();
+const Particle = function (pos, trg) {
+  this.pos = pos.copy()
+  this.trg = trg.copy()
+  this.velocity = createVector(0, 0)
+  this.acc = createVector(0, 0)
 
-var curves_array = [];
-var curve = function(abc1x, abc1y, abc2x, abc2y, x, y, abc1xvx, abc1xvy, abc1yvx, abc1yvy, abc2xvx, abc2xvy, abc2yvx, abc2yvy) {
-  this.abc1x = abc1x;
-  this.abc1y = abc1y;
-  this.abc2x = abc2x;
-  this.abc2y = abc2y;
-  this.x = x;
-  this.y = y;
+  this.applyForce = function () {
+    const mouse = createVector(mouseX, mouseY)
+    this.acc = p5.Vector.sub(this.pos, mouse)
+    this.acc.setMag(800 / this.acc.mag())
+  }
 
-  this.abc1xvx = abc1xvx;
-  this.abc1xvy = abc1xvy;
-  this.abc1yvx = abc1yvx;
-  this.abc1yvy = abc1yvy;
+  this.update = function () {
+    this.velocity = p5.Vector.sub(this.trg, this.pos)
+    this.velocity.add(this.acc)
+    this.velocity.mult(.1)
+    this.velocity.limit(10)
+    this.pos.add(this.velocity)
+  }
 
-  this.abc2xvx = abc2xvx;
-  this.abc2xvy = abc2xvy;
-  this.abc2yvx = abc2yvx;
-  this.abc2yvy = abc2yvy;
-};
-
-function bgCanvasResize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-
-function bgCanvasInit() {
-  for (var i = 0; i < bg_number_of_curves; i++) {
-    var abc1x = Math.random() * canvas.width;
-    var abc1y = Math.random() * canvas.height;
-    var abc2x = Math.random() * canvas.width;
-    var abc2y = Math.random() * canvas.height;
-    var x = 0;
-    var y = 0;
-
-    var abc1xvx = Math.random() * 2 - 1;
-    var abc1xvy = Math.random() * 2 - 1;
-
-    var abc1yvx = Math.random() * 2 - 1;
-    var abc1yvy = Math.random() * 2 - 1;
-
-    var abc2xvx = Math.random() * 2 - 1;
-    var abc2xvy = Math.random() * 2 - 1;
-
-    var abc2yvx = Math.random() * 2 - 1;
-    var abc2yvy = Math.random() * 2 - 1;
-
-    curves_array.push(
-      new curve(
-        abc1x, abc1y, abc2x, abc2y,
-        x, y,
-        abc1xvx, abc1xvy, abc1yvx, abc1yvy,
-        abc2xvx, abc2xvy, abc2yvx, abc2yvy
-      )
-    );
+  this.render = function () {
+    fill(pcolor)
+    ellipse(this.pos.x, this.pos.y, 4)
   }
 }
 
-function bgCanvasDraw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  ctx.lineWidth = 1;
-  ctx.strokeStyle = $("#animation-wrap").css('color');
+function setup () {
+  createCanvas(windowWidth, windowHeight).parent(document.body)
+  background(200)
+  textFont('Tahoma', 100)
+  noStroke()
 
-  for (var i = 0; i < curves_array.length; i++) {
+  const str1 = 'Conor McGregor'
+  text(str1, (width - textWidth(str1)) / 2, height / 2)
+  textSize(200)
 
-    ctx.beginPath();
-    ctx.moveTo(-100, canvas.height + 100);
-    ctx.bezierCurveTo(
-      curves_array[i].abc1x, curves_array[i].abc1y,
-      curves_array[i].abc2x, curves_array[i].abc2y,
-      canvas.width + 100, curves_array[i].y - 100
-    );
-    ctx.stroke();
-
-    if (curves_array[i].abc1x < 0 || curves_array[i].abc1x > canvas.width) {
-      curves_array[i].abc1x -= curves_array[i].abc1xvx;
-      curves_array[i].abc1xvx *= -1;
+  for (let x = 0; x < width; x += 2.4) {
+    for (let y = 0; y < height; y += 2.4) {
+      const c = get(x, y)
+      if (c[0] == 0) { 
+        particlesCoords.push(createVector(x, y))
+      }
     }
-    if (curves_array[i].abc1y < 0 || curves_array[i].abc1y > canvas.height) {
-      curves_array[i].abc1y -= curves_array[i].abc1yvy;
-      curves_array[i].abc1yvy *= -1;
-    }
-
-    if (curves_array[i].abc2x < 0 || curves_array[i].abc2x > canvas.width) {
-      curves_array[i].abc2x -= curves_array[i].abc2xvx;
-      curves_array[i].abc2xvx *= -1;
-    }
-    if (curves_array[i].abc2y < 0 || curves_array[i].abc2y > canvas.height) {
-      curves_array[i].abc2y -= curves_array[i].abc2yvy;
-      curves_array[i].abc2yvy *= -1;
-    }
-    curves_array[i].abc1y += curves_array[i].abc1yvy;
-    curves_array[i].abc1x += curves_array[i].abc1xvx;
-    curves_array[i].abc2x += curves_array[i].abc2xvx;
   }
-  requestAnimFrame(bgCanvasDraw);
+
+  particlesFinalCoords = particlesCoords.slice()
 }
 
-function bgCanvas() {
-  bgCanvasResize();
-  bgCanvasInit();
-  bgCanvasDraw();
+
+function windowResized () {
+  resizeCanvas(windowWidth, windowHeight)
 }
 
-bgCanvas();
-});
+
+function draw () {
+  background(0)
+
+  if (particles.length <= particlesCoords.length - 20) {
+    for (let i = 0; i <= 20; i++) {
+      let [w, h, r] = [width, height, random(4)]
+      if (r < 1 || r >= 3) h = random(height)
+      else w = random(width)
+
+      const start = createVector(w, h)
+      const t = random(particlesFinalCoords)
+      particles.push(new Particle(start, t))
+      particlesFinalCoords.splice(particlesFinalCoords.indexOf(t), 1)
+    }
+  }
+
+  particles.forEach(e => {
+    e.applyForce()
+    e.update()
+    e.render()
+  })
+}

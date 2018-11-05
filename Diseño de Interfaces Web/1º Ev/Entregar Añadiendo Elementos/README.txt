@@ -1,0 +1,2 @@
+Lo que he hecho es añadir un nuevo elemento, que se situe al final de la pagina web el cual genere particulas circulares con el nombre de Connor Mcgregor
+El canvas se genera cuando carga la web, no cuando ya visualizas el canvas en si.
