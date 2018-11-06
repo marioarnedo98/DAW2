@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejemplo de Apariencia de una ventana</h1><br>
+    <input type="button" value="Abre una ventanana" onclick="
+    myWindow1=window.open('', 'Nueva ventana', 'width=300, height=200');
+    myWindow1.document.write('<html>');
+    myWindow1.document.write('<head>');
+    myWindow1.document.write('<title>Ventana Test </title>');
+    myWindow1.document.write('</head>');
+    myWindow1.document.write('<body>');
+        myWindow1.document.writeln('Se usan las propiedades: ');
+        myWindow1.document.write('<li>height=200</li><li>width=300</li>');
+    myWindow1.document.write('<body>');
+    myWindow1.document.write('</html>');">
+</body>
+</html>

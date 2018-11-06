@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type"
+	content="text/html;charset=utf-8">
+	<title>Comunicación entre ventanas</title>
+	<script type="text/javascript">
+		var NuevaVentana = window.open("https://aulavirtual-educacion.larioja.org/", "", "_blank");
+        // if(window.confirm("¿Deseas cerrar la nueva ventana?")){
+        //     NuevaVentana.close();
+        // }
+	</script>
+</head>
+<body>
+	<h1>Comunicación entre ventanas</h1>
+	<input type="button" value="Cierra" onclick="NuevaVentana.close();">
+</body>
+</html>
