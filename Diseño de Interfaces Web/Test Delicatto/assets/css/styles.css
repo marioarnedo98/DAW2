@@ -1,0 +1,12 @@
+/* footer */
+footer #footer{
+    border-top: 5px solid gold;
+}
+#footer .menu{
+    padding-left: 50px;
+}
+/* Seccion de comentarios de inicio*/
+.resenas .simple-slider .swiper-slide{
+    height: 100%;
+}
+

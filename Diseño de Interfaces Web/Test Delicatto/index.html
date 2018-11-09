@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delicatto</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -16,7 +17,7 @@
     <!-- barra de navegacion -->
     <div>
         <nav class="navbar navbar-light navbar-expand-md navigation-clean">
-            <div class="container"><a class="navbar-brand" href="#">Delicatto </a><button class="navbar-toggler"
+            <div class="container"><a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt="Logo" srcset=""> </a><button class="navbar-toggler"
                     data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
                         class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-1">
@@ -35,7 +36,8 @@
     <div class="simple-slider">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);">Holis</div>
+                <!-- Imagenes a 1920 x 725 -->
+                <div class="swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);"></div>
                 <div class="swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);"></div>
                 <div class="swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);"></div>
             </div>
@@ -48,7 +50,7 @@
     <!-- Seccion de presentacion -->
     <div class="container">
         <div class="row">
-            <div class="col inicio_familia">
+            <div class="col-md-6 inicio_familia">
                 <h3>La familia</h3>
                 <p>Delicatto ha sido impulsado por la familia Martínez-Martínez, que desde Chef Nino, han convertido en
                     realidad a lo largo de 40 años los sueños de una infinidad de parejas. Ahora ponemos a tu
@@ -57,15 +59,15 @@
                     está contemplado en estas páginas, nosotros le daremos forma para vosotros, contádnoslo.</p>
                     <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Conoce nuestros menús</a>
             </div>
-                <div class="col">
+                <div class="col-md-6">
                     <img src="assets/images/familia.jpg" alt="familia">
                 </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col-md-6">
                 <img src="assets/images/equipo.jpg" alt="">
             </div>
-            <div class="col inicio_equipo">
+            <div class="col-md-6 inicio_equipo">
                 <h3>El Equipo</h3>
                 <p>Lo que caracteriza a Delicatto es nuestro asesoramiento personalizado, el día de vuestra boda es
                     importante y único para nosotros y vosotros. Ponemos a tu disposición nuestro saber hacer y te
@@ -78,32 +80,62 @@
            <!-- Fin Seccion de presentacion -->
     </div><!-- Este div es el container -->
     <div class="row">
-        <div class="col-6">
+        <div class="col-md-6 resenas">
                 <div class="simple-slider">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">Holis</div>
-                                <div class="swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);"></div>
-                                <div class="swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);"></div>
+                                <div class="swiper-slide"><h3>Elena</h3><q>Perfecto. Los entrantes bien elaborados y atractivos a la vista, la carne en su punto y el postre delicioso. El precio correcto y el servicio muy amable. Volveremos</q></div>
+                                <div class="swiper-slide"><h3>Julio</h3><q>Estupendo restaurante para grandes eventos. Bodas.aniversarios.etc. nuevo.zonas ajardinadas.parking gratuito. Mucha limpieza e higiene en todo. Los menús bien servidos y camareros sin mucha convincion. Comida muy normal.</q></div>
+                                <div class="swiper-slide"><h3>Joaquin</h3><q>Bajo mi punto de vista es el mejor Restaurante de Logroño para realizar todo tipo de eventos. Posee unas instalaciones increíbles para realizar bodas civiles en sus jardines, tiene 2 discotecas y es el sitio ideal para eventos de empresa. El personal muy profesional y con un trato increíble. Otro punto fuerte a destacar es su comida, se nota que se le pone mucho cariño.
+                                    Un sitio de 10!!</q></div>                           
                             </div>
                             <div class="swiper-pagination"></div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
+                            <!-- <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div> -->
                         </div>
                     </div>
             </div>
-        <div class="col-6">
+        <div class="col-md-6">
             <h3>¿Has estado recientemente?</h3>
             <h3>¿Tienes alguna duda?</h3>
             <p>No dudes en contarnos tus experiencias o tus inquietudes en la seccion de contacto</p>
             <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Contacto</a>
         </div>
     </div>
-     
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
-    <script src="assets/js/Simple-Slider1.js"></script>
-</body>
-
+     <!-- Footer -->
+<footer>
+    <div class="row" id="footer">
+        <div class="col-md-4 menu">
+            <h3>Menu</h3>
+            <ul style="list-style-type: none;">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Reservas</a></li>
+                <li><a href="#">Carta</a></li>
+                <li><a href="#">Comunion</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="col-md-4 desc-delicatto">
+            <h3>Delicatto</h3>
+            <p>Llevamos mas de 40 años, haciendo que vuestros sueños, se hagan realidad. Ponemos a vuestra disposición nuestro saber hacer, contádnos cual es vuestro sueño, y nosotros le daremos forma para vosotros. </br>
+                Nos caracterizamos por un servicio personalizado para cada uno de vosotros.</p>
+        </div>
+        <div class="col-md-4 contacto-footer">
+            <h3>Contacto</h3>
+            <p><b>Restaurante Delicatto </b></p>
+            <p>Horario de atencion al cliente: </p>
+            <p>Martes a viernes 11.00h a 13.00h / 16.00h a 20.00h</p>
+            <ul>
+                <li><a href="tel:+34941217912"></a> 941 217 912</li>
+                <li>C/ Pradoviejo nº 66. Logroño, La Rioja</li>
+                <li> <a href="mailto:info@delicatto.com">info@delicatto.com</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+    </body>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+<script src="assets/js/Simple-Slider1.js"></script>
 </html>

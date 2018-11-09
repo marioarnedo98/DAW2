@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function ventana(){
+        myWindow1=window.open('', 'Nueva ventana', 'width=300, height=200');
+        }
+        function desplazar_ventana(){
+            myWindow1.moveBy(Math.random()*15, Math.random()*145);
+            myWindow1.focus();
+        }
+    </script>
+</head>
+<body>
+    <h1>Ejemplo de Apariencia de una ventana</h1><br>
+    <input type="button" value="Abre una ventanana" onclick="ventana()">
+    <input type="button" value="Redimensiona" onclick="desplazar_ventana()">
+</body>
+</html>
