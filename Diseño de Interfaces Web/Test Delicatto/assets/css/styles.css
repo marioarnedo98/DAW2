@@ -10,3 +10,7 @@ footer #footer{
     height: 100%;
 }
 
+.simple-slider.main-slider .swiper-slide{
+    height: 725px;
+}
+
