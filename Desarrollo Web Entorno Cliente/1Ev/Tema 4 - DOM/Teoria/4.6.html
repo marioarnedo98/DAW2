@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function ventana(){
+            var url= document.getElementById("URL").value;
+            document.getElementById("myFrame").src = url;
+        }
+    </script>
+</head>
+<body>
+    <h1>4.6</h1><br>
+    <input type="text" name="URL" id="URL">
+    <input type="button" value="Abre una ventanana" onclick="ventana()"><br>
+    <iframe id="myFrame" src=""></iframe><br>
+    <b>Puede que algunos enlaces no funciones por que el servidor los bloquea, pudes probar con http://boxofmario.es/</b>
+</body>
+</html>

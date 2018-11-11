@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function ejercicio(){
+            campoColor= parent.marco1.document.form1.color
+            if(campoColor.selectedIndex==0){
+                colorin='green';
+            }
+            else{
+                colorin='blue'
+            }
+            campoFrame = parent.marco1.document.form1.marcos
+            if(campoFrame.selectedIndex==0){
+                window.parent.marco1.document.bgcolor = colorin
+            }else{
+                window.parent.marco2.document.bgcolor = colorin
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Cambiar Color" onclick="ejercicio()">
+</body>
+</html>
