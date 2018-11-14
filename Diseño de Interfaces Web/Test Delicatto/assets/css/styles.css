@@ -115,3 +115,13 @@ ul.tabs {
 .btn-reservas{
     margin-left: 50%;
 }
+.formulario input{
+	width: 100%;
+	margin-bottom: 10px;
+}
+.formulario textarea{
+	width: 100%;
+}
+.intro_comunion img{
+	width: 50%;
+}

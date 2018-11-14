@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var movimientos=1;
+        var miventana;
+        window.document.write("Coor y"+window.outerHeight+"Coord x" +window.outerWidth);
+        miventana=window.open("","", "left=10, top=10, width=400, height=200");
+        miventana.document.write("Ejemplo metodos moveto y move by");
+        idIntervalo= setInterval(desplazarventana,2000);
+        function desplazarventana(){
+            var rand1=Math.random();
+            var rand2=Math.random();
+            var y = Math.round(window.outerHeight*rand1);
+            var x= Math.round(window.outerHeight*rand2);
+            miventana.moveTo(x,y);
+            miventana.document.write("Coordenadasx"+x+"y"+y);
+            movimientos++;
+            if(movimientos>8){
+                clearInterval(idIntervalo);
+                miventana.close();
+            }
+        }
+    </script>
+</head>
+<body>
+    useo del metodo move to
+</body>
+</html>

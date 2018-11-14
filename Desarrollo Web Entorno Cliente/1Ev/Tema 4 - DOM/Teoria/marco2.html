@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function metodo(){
+        var x= parent.document.getElementById("marco1").contentDocument;
+        var y= parent.document.getElementById("marco2").contentDocument;
+        campocolor= x.form1.color;
+        if(campocolor.selectedIndex==0){
+            colorin='green';
+        }
+        else{
+            colorin='blue';
+        }
+        campoframe= x.form1.marcos;
+        if(campoframe.selectedIndex==0){
+            x.body.style.bacgroundColor=colorin;
+        }
+        else{
+            y.body.style.bacgroundColor=colorin;
+        }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="button" value="Cambiar color" onclick="metodo();">
+    </form>
+    
+</body>
+</html>
