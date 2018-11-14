@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script>
+<<<<<<< HEAD
         function metodo(){
         var x= parent.document.getElementById("marco1").contentDocument;
         var y= parent.document.getElementById("marco2").contentDocument;
@@ -23,13 +24,33 @@
         else{
             y.body.style.bacgroundColor=colorin;
         }
+=======
+        function ejercicio(){
+            campoColor= parent.marco1.document.form1.color
+            if(campoColor.selectedIndex==0){
+                colorin='green';
+            }
+            else{
+                colorin='blue'
+            }
+            campoFrame = parent.marco1.document.form1.marcos
+            if(campoFrame.selectedIndex==0){
+                window.parent.marco1.document.bgcolor = colorin
+            }else{
+                window.parent.marco2.document.bgcolor = colorin
+            }
+>>>>>>> fceb044bafc6bba6eb9c5698c3c9a08d54caa916
         }
     </script>
 </head>
 <body>
+<<<<<<< HEAD
     <form>
         <input type="button" value="Cambiar color" onclick="metodo();">
     </form>
     
+=======
+    <input type="button" value="Cambiar Color" onclick="ejercicio()">
+>>>>>>> fceb044bafc6bba6eb9c5698c3c9a08d54caa916
 </body>
 </html>
