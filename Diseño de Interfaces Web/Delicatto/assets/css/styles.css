@@ -6,7 +6,7 @@
 	font-family: Montserrat, sans-serif;
 }
 footer #footer{
-	border-top: 5px solid gold;
+	border-top: 5px solid #d39e00;
 	padding-top: 15px;
 }
 #footer .menu{
@@ -115,8 +115,8 @@ ul.tabs {
 		user-select: none;
 	}
 	#pasos .d_active {
-		background-color: #666;
-		color: #fff;
+		background-color: #d39e00;
+		color: black;
 	}
 }
 .btn-reservas{
@@ -238,7 +238,97 @@ div.intro_text h1{
 .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
 	bottom: 0px;
 }
-.intro_text{
-	background-color: gold;
+.texto_intro{
+	background-color: #d39e00;
     margin-top: 5%;
+}
+.reservasform{
+	margin-top: 115px;
+	padding: 10px;
+	border: 2px solid rgb(110, 110, 110);
+	border-radius: 25px;
+	margin-bottom: 100px;
+}
+.reservasform input{
+	margin-bottom: 15px;
+}
+#pasos{
+	margin-top: 50px;
+}
+.btn-reservas{
+	border-color: black;
+	color: black;
+	background: white;
+	transition: 1s ease all;
+}
+.btn-reservas:hover{
+	border-color: white;
+	color: white;
+	background: black;
+	transition: 1s ease all;
+}
+.btn-primary.focus, .btn-primary:focus{
+	box-shadow: none;
+}
+.image_comunion{
+	margin-bottom: 50px;
+}
+.sombra-comu{
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.formulario{
+    padding: 21px;
+}
+
+@media screen and (max-width:1000px){
+	.inicio_familia .btn-primary, .inicio_equipo .btn-primary, .estado .btn-primary{
+		font-size: 20px;
+	}
+	.inicio_equipo{
+		margin: 0px;
+	}
+	.inicio_familia{
+
+	}
+	.img_familia{
+		padding-left: 0px;
+	}
+	.img_familia img, .img_equipo img{
+		height: 94%;
+		border-radius: 100%;
+	}
+}
+	@media screen and (max-width:993px){
+		.img_familia img, .img_equipo img{
+			height: 68%;
+			border-radius: 100%;
+		}
+		.inicio_familia h3,
+		.inicio_equipo h3{
+			font-size: 35px;
+		}
+		.inicio_familia p,
+		.inicio_equipo p{
+			font-size: 17px;
+			text-align: justify;
+		}
+		.inicio_familia .btn-primary, .inicio_equipo .btn-primary, .estado .btn-primary{
+			font-size: 15px;
+		}
+		.img_familia{
+			padding-left: 7%;
+		}
+}
+@media screen and (max-width:767px){
+	.img_familia img, .img_equipo img {
+		height: 68%;
+		border-radius: 0%;
+		height: 100%;
+	}
+	.img_familia{
+		padding-left: 15
+		px;
+	}
 }
