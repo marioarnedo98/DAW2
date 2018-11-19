@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+  <input type="text" name="Nombre" id="nombre">
+  <input type="text" name="Edad" id="edad">
+  <button onclick="ejercicio12()">Enviar</button>
+  <div id="lista">
+      <h1>La lista</h1>
+      <p><span id="nombre_lista"></span>&nbsp;<span id="edad_lista"></span></p>
+  </div>
+</body>
+<script>
+        function ejercicio12(){
+            var nombre= document.getElementById("nombre").value;
+            var edad= document.getElementById("edad").value;
+            document.getElementById("nombre_lista").innerHTML=nombre;
+            document.getElementById("edad_lista").innerHTML=edad;
+            if(edad>18 && edad<65){
+                document.getElementById("nombre_lista").style.color="green";
+                document.getElementById("edad_lista").style.color="green";
+            }
+            else if(edad<=65){
+                document.getElementById("nombre_lista").style.color="red";
+                document.getElementById("edad_lista").style.color="red";
+            }
+        }
+    </script>
+</html>

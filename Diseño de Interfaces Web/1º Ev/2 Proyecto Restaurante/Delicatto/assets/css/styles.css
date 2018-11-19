@@ -332,3 +332,6 @@ div.intro_text h1{
 		padding-left: 15px;
 	}
 }
+.formulario input.politica{
+	width: 10%;
+}

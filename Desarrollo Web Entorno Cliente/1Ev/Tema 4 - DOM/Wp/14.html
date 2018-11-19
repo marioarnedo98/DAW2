@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="insertImage(imgArray)">Crear imagenes</button>
+</body>
+<script>
+    var imgArray= new Array();
+    imgArray [0]= new Image();
+    imgArray[0].src='11/1.jpg';
+    imgArray [1]= new Image();
+    imgArray[1].src='11/2.jpg';
+    imgArray [2]= new Image();
+    imgArray[2].src='11/3.png';
+    function insertImage(imgArray){
+        imgArray.forEach(function(element) {
+            // alert(element.src);
+            var x = document.createElement("IMG");
+    x.setAttribute("src", element.src);
+    x.setAttribute("width", "304");
+    x.setAttribute("height", "228");
+    x.setAttribute("alt", "Imagen");
+    document.body.appendChild(x);
+        });
+    }
+</script>
+</html>
