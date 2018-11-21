@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <span>texto</span>
+    <input type="text" name="" id="txtCaja">
+    <input type="button" value="Insertar Cod Nuevo" onclick="insertar()">
+<table id="tabla" style="border:1px dashed green;"></table>
+</body>
+<script>
+    function insertar(){
+        var codigofila= "<td>"+document.getElementById('txtCaja').value+"</td>";
+        codigofila+= "<td><input type='button' onclick='copiarencima(this)' value='copiar Encima'/> </td>";
+        codigofila+= "<td><input type='button' onclick='borrar(this)' value='Borrar'/> </td>";
+        var fila=document.createElement('tr');
+        fila.innerHTML=codigofila;
+        document.getElementById('tabla').appendChild(fila);
+    }
+    function copiarencima(boton){
+        var fila= boton.parentNode.parentNode;
+        document.getElementById('tabla').insertBefore(fila.cloneNode(true),fila);
+    }
+    function borrar(boton){
+        var fila=boton.parentNode.parentNode;
+        document.getElementById('tabla').removeChild(fila);
+    }
+</script>
+</html>

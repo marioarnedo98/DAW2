@@ -278,7 +278,8 @@ div.intro_text h1{
        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
-.formulario{
+.formulario, 
+.info_contacto{
     padding: 21px;
 }
 
@@ -328,7 +329,9 @@ div.intro_text h1{
 		height: 100%;
 	}
 	.img_familia{
-		padding-left: 15
-		px;
+		padding-left: 15px;
 	}
+}
+.formulario input.politica{
+	width: 10%;
 }
