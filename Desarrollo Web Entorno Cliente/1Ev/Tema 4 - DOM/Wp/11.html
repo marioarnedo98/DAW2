@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <button onclick="showimage();">Mostrar imagen</button>
+    <img src="11/1.jpg" id="1" style="display:none;">
+    <img src="11/2.jpg" id="2" style="display:none;">
+    <img src="11/3.png" id="3" style="display:none;">
+</body>
+<script>
+        function showimage(){
+        var imagenamostrar=Math.round(Math.random()*3);
+        document.getElementById(imagenamostrar).style.display="block";
+        console.log(imagenamostrar);
+        }
+    </script>
+</html>
