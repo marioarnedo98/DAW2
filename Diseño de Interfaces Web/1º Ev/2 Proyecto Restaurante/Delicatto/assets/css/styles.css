@@ -209,7 +209,8 @@ div.intro_text h1{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-position: 50% 0;
+	background-position: 50% 0;
+	padding-top: 15px;
 }
 .content2{
 	padding-top: 60px;
@@ -334,4 +335,9 @@ div.intro_text h1{
 }
 .formulario input.politica{
 	width: 10%;
+}
+.nav-link.active,
+.nav-link.active:focus,
+.nav-link.active:hover{
+	border-bottom: 10px solid #d39e00;
 }
