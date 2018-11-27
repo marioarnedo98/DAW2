@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .overlay{
+            background-color: #000;
+            opacity: .5;
+            filter: alpha(opacity=50);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .msg{
+            position: absolute;
+            background: #eefeee;
+            padding: 10px;
+            width: 200px;
+            height: 200px;
+            font-size: 2em;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            margin-left: -100px;
+            margin-top: -100px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            mostrarPopUp();
+            document.getElementById("msg").addEventListener("click",quitarPopUp);
+        }
+        function mostrarPopUp(){
+            var overlay=document.createElement("div");
+            overlay.setAttribute("id","overlay");
+            overlay.setAttribute("class","overlay");
+            var body= document.getElementsByTagName("body");
+            body[0].appendChild(overlay);
+            var msg=document.createElement("div");
+            var txt= document.createTextNode("Please, join out mailing list (clic to close)");
+            msg.appendChild(txt);
+            msg.setAttribute("id","msg");
+            msg.setAttribute("class","msg");
+            body[0].appendChild(msg);
+        }
+        function quitarPopUp(){
+            //Usando removeChild, elimina el elemento con id=overlay
+
+			document.body.removeChild(document.getElementById("overlay"));
+			//Usando removeChild, elimina el elemento con id=msg
+            document.body.removeChild(document.getElementById("msg"));
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <p>Welcome!</p>
+    </div>
+</body>
+</html>

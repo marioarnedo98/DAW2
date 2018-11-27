@@ -1,0 +1,37 @@
+
+<html>
+<head>
+	<meta http-equiv="content-type"
+		 content="text/html;charset=utf-8">
+	<title>Recorrer DOM</title>
+	<script type="text/javascript">
+		function modificarSize(){
+			var parrafos= document.getElementsByTagName('p')
+			for (var i = 0; i < parrafos.length; i++) {
+				parrafos[i].style.fontSize=document.getElementById("cboSize").value;
+			};
+		}
+
+	</script>
+</head>
+<body>
+	<div id="elementosTag">
+		<h3>Modificación de tamaño texto</h3>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus alias voluptas aut saepe laudantium aperiam delectus accusamus, impedit quidem velit sequi dolores obcaecati perspiciatis magni aspernatur perferendis ipsam minus, soluta.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam fuga veritatis, fugiat. Sed fugit, totam ducimus, quod blanditiis deleniti facilis sapiente, numquam ipsa fuga perspiciatis nulla expedita aut ea sequi!
+		</p>
+	</div>
+	<div>
+		<span>Seleccionar color:</span>
+		<select id="cboSize">
+			<option id="10">Small</option>
+			<option id="12">Medium</option>
+			<option id="14">Large</option>
+		</select>
+		<button id="actualizar" onclick="modificarSize();">Cambiar</button>
+	</div>
+</body>
+</html>
