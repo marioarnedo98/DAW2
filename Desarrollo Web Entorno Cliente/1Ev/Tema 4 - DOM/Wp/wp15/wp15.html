@@ -71,22 +71,27 @@
 				for (i = 0; i < currentclass.length; i++) {
 					//añadir la clase current
 					currentclass[i].classList.add("current");
+					// currentclass[i].setAttribute('hidden', false);
 				} 
-
+				var classprev=null;
 				if (current>1) {
 					//añadir la clase prev
-					document.querySelector("#slide article:nth-of-type(" +  (current - 1) + ")").classList.add("prev");
+					classprev= document.querySelector("#slide article:nth-of-type(" +  (current - 1) + ")").classList.add("prev");
+					// classprev.setAttribute('hidden',true);
 				}else{
 					//añadir la clase prev
-					document.querySelector("#slide article:nth-of-type(" +  all + ")").classList.add("prev");
+					classprev=document.querySelector("#slide article:nth-of-type(" +  all + ")").classList.add("prev");
+					// classprev.setAttribute('hidden',true);
 				}
-
+				var classnext=null;
 				if (current < all ) {
 					//añadir la clase next
 					document.querySelector("#slide article:nth-of-type(" + ( current + 1 ) + ")").classList.add("next");
+					// classnext.setAttribute('hidden',true);
 				}else{
 					//añadir la clase next
 					document.querySelector("#slide article:nth-of-type(" +  1 + ")").classList.add("next");
+					// classnext.setAttribute('hidden',true);
 				}
 
 				index = current;
