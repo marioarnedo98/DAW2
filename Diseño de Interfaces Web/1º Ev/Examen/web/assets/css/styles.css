@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Cookie');
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+/* footer */
+*{
+	font-family: Montserrat, sans-serif;
+}
+footer #footer{
+	border-top: 5px solid #65CB5B;
+	padding-top: 15px;
+}
+#footer .menu{
+    padding-left: 50px;
+}
+
+#quienes-somos{
+	background-image: url(../images/fondoquienes.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#maincontent{
+	margin-top: 50px;
+}
+#noticias h3{
+	margin-bottom: 35px;
+	font-size: 40px;
+}
+#noticias{
+	padding: 30px;
+}
+#derecha, #noticias{
+	border-left: 2px solid rgb(0, 0, 0);
+}
+#izquierda, #noticias{
+	border-right: 2px solid rgb(0, 0, 0);
+}
+#derecha, #izquierda{
+	padding: 40px;
+}
+#izquierda .voluntariado,
+#derecha .revista{
+	margin-top: 20px;
+}
+.intro-noticia{
+	margin-top: 20px;
+	border-bottom: 5px solid #65CB5B;
+	width: 100%;
+}
+.card-body{
+	background: #65CB5B;
+}
+.navigation-clean.navbar-light .navbar-nav .nav-link.active, .navigation-clean.navbar-light .navbar-nav .nav-link.active:focus, .navigation-clean.navbar-light .navbar-nav .nav-link.active:hover{
+	background: #006633;
+	color: white;
+}
+.swiper-pagination-bullet-active{
+	background: #65CB5B;
+}
+.formulario,.info_contacto{
+	margin-top: 30px;
+	padding: 15px;
+}
+button, input {
+    margin-bottom: 10px;
+}
+

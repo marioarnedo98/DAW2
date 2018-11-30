@@ -1,0 +1,14 @@
+<body>
+    <ul id="mylist">
+        <li>Apple</li>
+    </ul>
+</body>
+<script>
+    const mylist= document.getElementById('mylist');
+    const fruitlist= ["banana", "orange", "mango", "lemon"];
+    for(let fruit of fruitlist){
+        let newlistitem= document.createElement('li');
+        newlistitem.textContent=fruit;
+        mylist.appendChild(newlistitem);
+    }
+</script>
