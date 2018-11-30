@@ -1,0 +1,8 @@
+.pepe{
+    background-color: blue;
+}
+@media screen and (min-width:700px){
+    .pepe{
+        background-color: red;
+    }
+}
