@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>RegexExpressions</title>
+
+    <script>
+
+        function regexCheckTlf(tlf) {
+            var regExp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
+
+            if (tlf.match(regExp))
+                console.log('Good TLF: ' + tlf);
+            else
+                console.log('BAD TLF:' + tlf);
+        }
+
+        //  Casos de prueba
+        regexCheckTlf('638499322');
+        regexCheckTlf('638 499 322');
+        regexCheckTlf('638-499-322');
+        regexCheckValue("El coste del equipo es de 90.25$ iva incluido. Se aceptan $ y €.");
+        regexCheckValue("El precio del artículo sin IVA es 90.25€, y con IVA 115.65€. Se admite el pago en $ y €");
+        function regexCheckValue(val) {
+            console.log(val.replace(/([0-9]{1})(\$)/, '$1€'));
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

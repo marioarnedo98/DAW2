@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+Person.prototype.nationality="English";
+Person.prototype.name_nation = function() {
+    return this.firstName + " " + this.lastName + " "+this.nationality;
+};
+Person.prototype.changename = function() {
+	this.firstname=prompt("Introduce un nombre nuevo:");
+    return this.firstname + " " + this.lastName
+};
+
+
+var myFather = new Person("John", "Doe", 50, "blue");
+document.getElementById("demo").innerHTML =
+"My father is " + myFather.changename() + myFather.nationality; 
+
+
+var myMother = new Person("Pepa", "Doe", 50, "blue");
+document.getElementById("demo").innerHTML +=
+" My mother is " + myMother.name_nation(); 
+</script>
+
+</body>
+</html>

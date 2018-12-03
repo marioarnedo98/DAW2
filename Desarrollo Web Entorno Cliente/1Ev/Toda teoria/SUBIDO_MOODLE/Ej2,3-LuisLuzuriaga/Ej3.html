@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 3</title>
+    <script>
+
+        function start() {
+            seconds = 0;
+            interval = setInterval(function () {
+                seconds++;
+            }, 1000)
+        }
+
+        function stop() {
+            clearInterval(interval);
+
+            alert(seconds);
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="start()">Iniciar contador</button>
+    <button onclick="stop()">Parar contador</button>
+</body>
+
+</html>

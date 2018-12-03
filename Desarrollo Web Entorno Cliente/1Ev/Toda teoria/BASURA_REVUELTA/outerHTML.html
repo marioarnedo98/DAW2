@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+
+        function addNuevoItem() {
+            if ((texto = document.getElementById('textoAñadir').value) != '') {
+                document.getElementsByTagName('ul')[0].innerHTML += '<li>' + texto + '</li>';
+            }
+        }
+
+        function copiarLista() {
+            var lista = document.getElementsByTagName('ul')[0];
+            lista.insertAdjacentHTML('afterend', lista.outerHTML);
+
+            console.log(lista.outerHTML)
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="textoAñadir">
+    <button id="btnParar" onclick="addNuevoItem();">Agregar</button>
+    <button id="btnCopiar" onclick="copiarLista();">Copiar</button>
+    <ul id="listaItems"></ul>
+</body>
+
+</html>

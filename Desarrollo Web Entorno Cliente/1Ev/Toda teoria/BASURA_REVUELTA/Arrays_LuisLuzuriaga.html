@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <script>
+
+        // ################################# Ejercicio 3 #################################
+        var arrayDado = [4, 0, 3, 4, 7, 3, 5, 8, 1, 8, 8, 0, 2, 3, 1, 2, 5, 7, 3, 2, 5, 1];
+        var arrayFinal = [];
+
+        for (var i = 0; i < arrayDado.length; i++)
+            if (arrayFinal.indexOf(arrayDado[i]) == -1)
+                arrayFinal.push(arrayDado[i])
+        arrayFinal.sort();
+        console.log('El array ordenado sería: ' + arrayFinal);
+        // ################################# ############ ################################
+
+
+        // ################################# Ejercicio 4 #################################
+        var arrayDado = [4, 0, 3, 4, 7, 3, 5, 8, 1, 8, 8, 0, 2, 3, 1, 2, 5, 7, 3, 2, 5, 1];
+        var numeroDeTreses = 0;
+
+        while (arrayDado.indexOf(3) != -1) {
+            numeroDeTreses++;
+
+            arrayDado = arrayDado.slice(arrayDado.indexOf(3) + 1, arrayDado.length);
+        }
+        console.log('En el array hay ' + numeroDeTreses + ' treses');
+        // ################################# ############ ################################
+
+        // ################################# Ejercicio 5 #################################
+        var arrayPares = [4, 0, 3, 4, 7, 3, 5, 8, 1, 8, 8, 0, 2, 3, 1, 2, 5, 7, 3, 2, 5, 1];
+        var arrayParesOrdenado = [];
+
+        for (var i = 0; i < arrayPares.length; i++)
+            if (arrayPares[i] % 2 == 0) {
+                arrayParesOrdenado.push(arrayPares[i]);
+            }
+
+        for (var i = 0; i < arrayPares.length; i++)
+            if (arrayPares[i] % 2 == 1) {
+                arrayParesOrdenado.push(arrayPares[i]);
+            }
+        console.log('Array con primero números pares: ' + arrayParesOrdenado);
+
+        // ################################# ############ ################################
+
+
+        // ################################# Ejercicio 6 #################################
+        var s = 'Por cien cañones por banda poema Espronceda';
+        console.log('Numero de palabras: ' + s.split(' ').length);
+        // ################################# ############ ################################
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

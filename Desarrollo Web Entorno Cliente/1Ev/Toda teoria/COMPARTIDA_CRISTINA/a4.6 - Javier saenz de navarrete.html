@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function miFuncion(){
+			var valor = document.getElementById("texto").value;
+			window.frames[0].location = "http://" + valor;
+		}  
+	</script>
+</head>
+<body>
+	<input type="text" id="texto">
+	<input type="button" onclick="miFuncion()" name="" value="pruebame">
+
+	<br><br>
+
+	<iframe src="https://www.google.com" height="500px" width="50%"></iframe>
+</body>
+</html>

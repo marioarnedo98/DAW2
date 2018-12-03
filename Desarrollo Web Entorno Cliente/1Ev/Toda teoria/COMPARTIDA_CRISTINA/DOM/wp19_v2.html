@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+	<title>Overlay</title>
+	<style>
+		.overlay
+		{
+			background-color: #000;
+			opacity: .5;
+			filter: alpha(opacity=50);
+			position: fixed; top: 0; left: 0;
+			width: 100%; height: 100%;
+			z-index: 1;
+		}
+		.msg
+		{
+			position: absolute;
+			background-color: #eeffee;
+			padding: 10px;
+			width: 200px;
+			height: 200px;
+			font-size: 2em;
+			z-index: 2;
+			top: 50%;
+			left: 50%;
+			margin-left: -100px;
+			margin-top: -100px;
+		}
+	</style>
+	<script>
+		window.onload=function() {
+			mostrarPopup();
+			document.getElementById("msg").addEventListener("click",quitarPopup);
+		}
+		function mostrarPopup() {
+			// 1. crea un overlay que ocupa todo el documento. Será de tipo div. Para ello usa el método *.createElement
+			var overlay = 
+			//2. Asignale un atributo id=overlay.
+			//...
+			//3. Asignale un atributo class=overlay.
+			//...
+			//4. Utilizando *.appenChild(), añade overlay al body.
+			//...
+
+			// 5. crea un overlay para el mensaje. Será de tipo div. Para ello usa el método *.createElement
+			var msg = 
+			// 6. crea un nodo de texto, mediante *.createTextNode con el siguiente texto: "Please join our mailing list! (Click to close.)"
+			var txt =
+			//7. Usando *.appendChild, añade txt al msg.
+			//...
+			//8. Asignale a msg un atributo id=msg.
+			//...
+			//9. Asignale a msg un atributo class=msg.
+			//...
+			//10. Utilizando *.appenChild(), añade msg al body.
+			//...
+		}
+
+		function quitarPopup() {
+			//Usando removeChild, elimina el elemento con id=overlay
+			//document.body.removeChild(...);
+			//Usando removeChild, elimina el elemento con id=msg
+			//...
+		}
+		
+	</script>
+</head>
+<body>
+	<p>Welcome!</p>
+</body>

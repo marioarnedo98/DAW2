@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>¡Ejercicios de JAVASCRIPT!</title>
+</head>
+
+<body>
+
+    <script>
+        /*                  1                  */
+        var d = new Date();
+        d.setHours(26);
+        d.setMinutes(65);
+        alert(d);
+
+        // Lo que pasa es que cuando añades 26 horas, lo que hace la función es incrementar 1 día y 2 horas.
+        // Lo que pasa cuando añades 65 minutos, lo que hace la función es incrementar 1 hora y 5 minutos.
+
+        /*                  2                  */
+        var d2 = new Date('02/20/2013');
+        d2.setDate(35);
+        alert(d2);
+        // Lo que hace es añadir días, y si hace falta incrementar el mes la propia función lo hace.
+
+    </script>
+
+</body>
+
+</html>

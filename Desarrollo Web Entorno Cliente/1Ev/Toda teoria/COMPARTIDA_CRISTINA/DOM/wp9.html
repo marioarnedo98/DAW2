@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
+	<title></title>
+	<script type="text/javascript">
+		function addItemsLista()
+		{
+			var texto=document.getElementById('txt').value;
+			document.getElementsByTagName('ul')[0].innerHTML+='<li class="list-group-item">'+texto+'</li>';
+		}
+	</script>
+</head>
+<body>
+
+	<div id="elementosTag">
+		<h3>Lista dinámica</h3>
+		<ul class="list-group"></ul>
+		<hr/>
+		<div>
+			<span>Nuevo texto</span>
+			<input type="text" id="txt">
+			<input type="button" id="actualziar" onclick="addItemsLista();" value="Añadir" class="btn btn-info" name="">
+		</div>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script type="text/javascript">
+		var indices = [];
+		var array = [4, 0, 3, 4, 7, 3, 5, 8, 1, 8, 8, 0, 2, 3, 1, 2, 5, 7, 3, 2, 5, 1];
+		var elemento = 3;
+		var idx = array.indexOf(elemento);
+		while (idx != -1) {
+			indices.push(idx);
+			idx = array.indexOf(elemento, idx + 1);
+		}
+		console.log(indices);
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

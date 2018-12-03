@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 13</title>
+
+    <script>
+
+        function añadirPersona() {
+            var n = document.getElementById('nombre').value;
+            var e = parseInt(document.getElementById('edad').value);
+
+            var color = 'blue';
+            if (e > 65) {
+                color = 'red';
+            } else if (e >= 18 && e < 65) {
+                color = 'green';
+            }
+            document.body.innerHTML += '<p><font color="' + color + '">' + n + ' => ' + e + '</font></p>';
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <input type="text" id="nombre">
+    <input type="number" id="edad">
+    <button onclick="añadirPersona()">Añadir persona</button><br>
+
+    <h2>Lista Personas: </h2>
+    <p id="lista"></p>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Ejercicio 9</title>
+
+    <style>
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    
+    </style>
+
+    <script>
+
+        function muestraPalabraDelReves(palabra) {
+
+            if (palabra == '')
+                palabra = prompt('Ingresa una palabra para mostrarla del revés: ');
+            alert(palabra.split('').reverse().join(""));
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <button type="button" onClick="muestraPalabraDelReves('Manzana');">Manzana!</button><br><br>
+    <button type="button" onClick="muestraPalabraDelReves('Pera');">Pera!</button><br><br>
+    <button type="button" onClick="muestraPalabraDelReves('Fresa');">Fresa!</button><br><br>
+    <button type="button" onClick="muestraPalabraDelReves('Nectarina');">Nectarina!</button><br><br>
+    <button type="button" onClick="muestraPalabraDelReves('Kiwi');">Kiwi!</button><br><br>
+    <button type="button" onClick="muestraPalabraDelReves('Mango');">Mango!</button><br><br>
+    <button type="button" onClick="muestraPalabraDelReves('Frambuesa');">Frambuesa!</button><br><br>
+    <button type="button" onClick="muestraPalabraDelReves('');">Ingresar palabra:</button><br><br>
+
+</body>
+
+
+</html>

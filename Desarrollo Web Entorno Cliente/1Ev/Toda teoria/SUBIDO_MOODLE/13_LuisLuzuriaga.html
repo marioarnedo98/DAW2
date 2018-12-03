@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 13</title>
+
+    <script>
+        var matricula = prompt('Escribe la matrícula del alumno: ');
+        var regexp = new RegExp(/^[13579][0-9]{4}[P|S]$/);
+
+        if (matricula.match(regexp))
+            alert('Matrícula correcta')
+        else
+            alert('Matrícula incorrecta')
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

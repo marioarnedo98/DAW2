@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>Ejercicio JAVASCRIPT</title>
+</head>
+
+<body>
+    <script>
+        var d = new Date();
+        alert(d);
+
+        var d2 = new Date('July 20 2017');
+        alert(d2);
+
+        var d3 = new Date(2017, 1, 15, 12, 35, 0);
+        alert(d3.getFullYear() + "/" + d3.getMonth() + "/" + d3.getDate());
+
+        var d4 = new Date();
+        d4.setDate(d4.getDate() + 4);
+        alert(d4);
+
+        var d5 = new Date().getTime();
+        var d6 = new Date('12/29/2018').getTime();
+        var d7 = d6 - d5;
+        alert('Segundos ' + d7 / (1000) + ' | Días ' + d7 / (1000 * 60 * 60 * 24));
+
+        if (d5 != d6)
+            alert('Es diferente!')
+        else
+            alert('Es igual!')
+    </script>
+
+
+</body>
+
+
+</html>

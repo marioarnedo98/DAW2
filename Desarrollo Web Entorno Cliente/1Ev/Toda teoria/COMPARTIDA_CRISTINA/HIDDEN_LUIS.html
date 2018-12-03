@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Document</title>
+    <style type='text/css'>
+        article {
+            transition: left 1s;
+        }
+
+        .next,
+        .prev,
+        .current {
+            position: absolute;
+            width: 100px;
+            color: white;
+            line-height: 100px;
+            text-align: center;
+        }
+
+        article.next {
+            z-index: 1;
+            top: 20px;
+            left: 20px;
+
+        }
+
+        article.prev {
+            z-index: 2;
+            top: 60px;
+            left: 60px;
+
+        }
+
+        article.current {
+            z-index: 3;
+            top: 100px;
+            left: 100px;
+
+        }
+
+        div#slide {
+            position: relative;
+            margin: 0 auto;
+            width: calc(100%/3);
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            all = document.querySelectorAll('#slide article').length;
+            index = 1;
+            current = index;
+
+            desplazar(current);
+
+            stop = setInterval(function () {
+                if (index + 1 > all) {
+                    current = 1;
+                } else {
+                    current = index + 1;
+                }
+                desplazar(current);
+            }, 5000);
+
+            function desplazar(current) {
+                //aquellos elementos de tipo article contenidos en un elemento cuyo id=slide
+                var removeclass = document.querySelectorAll('#slide article');
+
+                //aquellos elementos de tipo article contenidos en un elemento cuyo id=slide. Y de entre todos los que devuelva el selector el que está en la posicion 'current'
+                currentclass = document.querySelectorAll('#slide article:nth-of-type(' + (current) + ')');
+
+                for (i = 0; i < removeclass.length; i++) {
+                    //quitar el atributo class
+                    removeclass[i].removeAttribute('class');
+                }
+                for (i = 0; i < currentclass.length; i++) {
+                    //añadir la clase current
+                    currentclass[i].classList.add('current');
+                    currentclass[i].removeAttribute('hidden');
+                }
+
+                var prevClass = null;
+                if (current > 1) {
+                    //añadir la clase prev
+                    prevClass = document.querySelector('#slide article:nth-of-type(' + (current - 1) + ')');
+                } else {
+                    //añadir la clase prev
+                    prevClass = document.querySelector('#slide article:nth-of-type(' + all + ')');
+                }
+                prevClass.classList.add('prev');
+                prevClass.setAttribute('hidden', 'true');
+
+
+                nextClass = null;
+                if (current < all) {
+                    //añadir la clase next
+                    nextClass = document.querySelector('#slide article:nth-of-type(' + (current + 1) + ')');
+                } else {
+                    //añadir la clase next
+                    nextClass = document.querySelector('#slide article:nth-of-type(' + 1 + ')');
+                }
+                nextClass.classList.add('next');
+                nextClass.setAttribute('hidden', 'true');
+
+                index = current;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id='slide'>
+        <article class='prev'><img src='firstimage.jpg' /></article>
+        <article class='current'><img src='secondimage.jpg' /></article>
+        <article class='next'><img src='thirdimage.jpg' /></article>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PRODUCTO ALIMENTICIO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script>
+        
+        function imprimirDatos(elemento) {
+            document.write("<br>Codigo: " + elemento.codigo);
+            document.write("<br>Nombre: " + elemento.nombre);
+            document.write("<br>Precio: " + elemento.precio);
+        }
+
+        function ProductoAlimenticio(codigo_in, nombre_in, precio_in) {
+            this.codigo = codigo_in;
+            this.nombre = nombre_in;
+            this.precio = precio_in;
+            this.imprimirDatos = imprimirDatos;
+
+        }
+
+        var productos = new Array(4);
+        productos[0] = new ProductoAlimenticio("000", "Manzana", "2");
+        productos[1] = new ProductoAlimenticio("001", "Platano", "3");
+        productos[2] = new ProductoAlimenticio("002", "Naranja", "2.5");
+        productos[3] = new ProductoAlimenticio("003", "Pera", "3.1");
+
+        for (i = 0; i < (productos.length-1); i++) {
+            document.write(productos[i].imprimirDatos(this));
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

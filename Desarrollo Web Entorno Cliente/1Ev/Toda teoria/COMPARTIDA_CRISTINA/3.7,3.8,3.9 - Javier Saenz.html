@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		//3.7
+		var dias = [
+		"Lunes",
+		"Martes",
+		"Miercoles",
+		"Jueves",
+		"Viernes",
+		"Sabado",
+		"Domingo"
+		];
+		for (var i = dias.length - 1; i >= 0; i--) {
+			console.log(dias[i]);
+		}
+
+		//3.8
+		var laborables = dias.splice(0,5);
+		var festivos = dias.splice(0,2);
+		console.log(laborables);
+		console.log(festivos);
+
+		//3.9
+		var alumnos= [
+		"Javier",
+		"Eric",
+		"Marcos",
+		"Maria",
+		"Luis",
+		"Mario",
+		"David"
+		];
+		console.log(alumnos);
+		alumnos.sort();
+		console.log(alumnos);
+		console.log(alumnos.toString());
+		alumnos.reverse();
+		console.log(alumnos);
+		//console.log(alumnos[0].toString());
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

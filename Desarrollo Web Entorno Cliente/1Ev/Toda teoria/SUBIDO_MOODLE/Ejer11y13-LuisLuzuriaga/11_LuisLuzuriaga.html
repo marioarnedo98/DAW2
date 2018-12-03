@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 11</title>
+
+    <script>
+
+        var cadena = prompt('Introduce una frase para comprobar: ');
+
+        if (cadena.replace(new RegExp(' ', 'g'), '').toLowerCase().trim() == cadena.replace(new RegExp(' ', 'g'), '').split('').reverse().join('').toLowerCase().trim())
+            alert('Es palíndroma');
+        else
+            alert('No es palíndroma');
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

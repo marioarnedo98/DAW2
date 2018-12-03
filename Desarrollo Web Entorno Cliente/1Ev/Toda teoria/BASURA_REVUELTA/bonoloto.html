@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Bonoloto</title>
+
+    <script>
+
+        function generarAleatorio(from, to) {
+            return Math.floor((Math.random() * to) + from);
+        }
+
+        var numeroPremiado = [];
+        for (var i = 0; i < 7; i++) {
+            do {
+                var numero = generarAleatorio(1, 50);
+            } while (numeroPremiado.indexOf(numero) != -1);
+            numeroPremiado.push(numero);
+        }
+        numeroPremiado.push(generarAleatorio(1, 10));
+
+        console.log('Número bonoloto: ' + numeroPremiado.slice(0, 6));
+        console.log('Número complementario: ' + numeroPremiado[6]);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 12</title>
+
+    <script>
+        var fotos = ['https://www.logolynx.com/images/logolynx/a7/a730ba68e471f4fa6bf2cb618ab32c3f.png', 'https://raw.githubusercontent.com/microo8/mimir/master/logo.png', 'https://www.logolynx.com/images/logolynx/20/208e2119d57f0fc59f93dfb2d7df594d.png'];
+
+        function imagenAleatoria() {
+            document.getElementById('imagen').src = fotos[Math.floor((Math.random() * 3))];
+        }
+    </script>
+</head>
+
+<body>
+    <button onClick="imagenAleatoria()">Poner Imagen</button><br>
+    <img id="imagen" src="">
+
+</body>
+
+</html>
