@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input value="Pulse YA" id="btn" onclick="nombres();" type="button">
+
+<p id="demo"></p>
+
+<script>
+function nombres() {
+    var nombres = [];
+    for(var a=0;a<3;a++){
+    nombres[a]  =prompt("Introduce un nombre");
+    }
+    document.getElementById("demo").innerHTML = nombres;
+    }
+</script>
+
+</body>
+</html>

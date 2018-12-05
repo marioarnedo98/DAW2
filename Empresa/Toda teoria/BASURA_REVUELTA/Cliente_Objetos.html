@@ -1,0 +1,30 @@
+<html>
+
+<head>
+
+    <script>
+        function imprimirDatos() {
+            document.write('<br>Marca' + this.marca);
+            document.write('<br>Modelo' + this.modelo);
+            document.write('<br>Año' + this.anyo);
+        }
+
+        function Coche(marca_in, modelo_in, anyo_in) {
+            this.marca = marca_in;
+            this.modelo = modelo_in;
+            this.anyo = anyo_in;
+            this.imprimirDatos = imprimirDatos;
+        }
+        var miCoche = new Coche('Toledo', '260cc', '2003');
+        miCoche.imprimirDatos();
+    </script>
+
+
+</head>
+
+
+<body>
+
+</body>
+
+</html>

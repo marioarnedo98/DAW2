@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+    }
+    Person.prototype.nationality="French";
+
+    Person.prototype.name = function() {
+       return this.firstName + " " + this.lastName; 
+    }
+
+    Person.prototype.name_nation = function(){
+        return this.firstName + " " + this.lastName + " "+ this.nationality;
+    }
+    Person.prototype.change_name = function(){
+        this.firstName = prompt("Introduce el nuevo nombre");
+        document.getElementById("demo").innerHTML = person.name_nation();
+    }
+
+var person = new Person("Marcos", "Martínez", 50, "blue");    
+document.getElementById("demo").innerHTML = person.name_nation();
+
+</script>
+</body>
+<input value="Pulse YA" id="btn" onclick="person.change_name();" type="button">
+</html>

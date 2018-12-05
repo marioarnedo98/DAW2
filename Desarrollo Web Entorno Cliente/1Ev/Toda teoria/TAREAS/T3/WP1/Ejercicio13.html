@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ejercicio 13</title>
+<script type="text/javascript">
+function validarMatricula() { 
+  var m = document.getElementById("matricula").value;
+  var expreg = /^[1|3|5|7|9]{1}[0-9]{4}([P|S]){1}$/;
+  
+  if(expreg.test(m))
+	alert("La matricula es correcta"); 
+  else 
+    alert("La matricula NO es correcta"); 
+} 
+
+</script>
+</head>
+<body>
+<input type="text" id="matricula" />
+<button value="Comprobar" id="boton" name="Comprobar" onclick="validarMatricula();">Comprobar</button>
+</form>
+</body>
+</html>

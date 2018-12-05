@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Seleccione una fruta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/ejercicio9.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script type="text/javascript">
+
+
+
+ window.onload = function () {
+
+                var elementosInput = document.getElementsByTagName('input'); //Elementos input
+
+                var elementosSelect = document.getElementsByTagName('select');
+
+                var arrayNodos = Array.prototype.slice.call(elementosInput);
+
+                arrayNodos.push([].slice.call(elementosSelect));
+                var numelem = arrayNodos.length -1;
+
+                alert ('Tenemos un número de elementos input ó select en el formulario: '+ numelem);
+}
+</script>
+</head>
+<body>
+<div class="container">
+    <h1>Prueba bootstrap</h1>
+
+    <div class="row">
+        <div class="col-sm-4">
+          <input type="button" class="btn-primary btn-lg"  value="Manzana" onclick="ejercicio9(this)">
+        </div>
+        <div class="col-sm-4">
+                <input type="button" class="btn-primary btn-lg" value="Pera" onclick="ejercicio9(this)">
+        </div>
+        <div class="col-sm-4">
+                <input type="button" class="btn-primary btn-lg" value="Fresa" onclick="ejercicio9(this)">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+                <input type="button" class="btn-primary btn-lg" value="Nectarina" onclick="ejercicio9(this)">
+        </div>
+        <div class="col-sm-4">
+                <input type="button" class="btn-primary btn-lg" value="Kiwi" onclick="ejercicio9(this)">
+        </div>
+        <div class="col-sm-4">
+                <input type="button" class="btn-primary btn-lg" value="Mango" onclick="ejercicio9(this)">
+        </div>
+        <div class="col-sm-4">
+                <input type="button" class="btn-primary btn-lg" value="Frambuesa"onclick="ejercicio9(this)">
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

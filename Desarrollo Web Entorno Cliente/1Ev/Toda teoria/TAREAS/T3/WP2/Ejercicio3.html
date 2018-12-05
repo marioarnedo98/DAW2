@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+            contador=0;
+            function iniciar(){ 
+            myVar = setInterval(myTimer ,1000);
+            function myTimer() {
+                var d = new Date();
+                contador++;
+                console.log("Hora: "+d.toLocaleTimeString());
+            }
+            }
+            function stop(){
+                final = new Date();
+                clearInterval(myVar);
+               console.log("Diferencia de segundos: "+(contador-1));
+                contador=0;
+            }
+        </script>
+    </head>
+<body>
+
+<button onclick="iniciar()">Iniciar</button>
+<button onclick="stop()">Stop </button>
+
+
+</body>
+</html>

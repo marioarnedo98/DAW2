@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{ font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
+        p{
+            display: block;
+            width: 50%;
+            text-align: center;
+            margin-left:150px;
+            border: 2px solid green;
+            border-radius: 5px;
+            padding: 3px;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 1.25em;
+            color:darkslategrey;
+        }
+          p .planta {
+                color: #2cb149;          }
+        .colorplantas {
+                color:aqua;
+                background-color: rgb(177, 124, 44);
+                font-size: 1em;
+            }
+        .clasimg{
+            margin-left:15px;
+            text-align: center;
+        }
+        .centrada{
+           text-align: center; 
+        }
+    </style>
+</head>
+<body>
+        <h1 id="heading">Qué mejor que flores!</h1>
+        <p>Regala <span class="planta">flores</span> a tu amiga en su cumpleaños ¿Qué regalar a tu amiga por su cumpleaños?
+             El mejor regalo a tu amiga con EmpresasFlores.com. Elige entre nuestros ramos de <span class="planta">flores</span> para ocasiones
+             especiales y sorpréndela. Díselo con <span class="planta">flores</span><br> Haz clic dónde quieras y verás la sorpresa</p>
+        <div class="centrada">
+        <img src="flor1.png" class="clasimg" width ="200" height="150" alt="flor1.png">
+        <img src="flor2.png" class="clasimg" width ="200" height="150" alt="flor2.png">
+        <img src="flor3.png" class="clasimg" width ="200" height="150" alt="flor3.png">
+        <img src="flor4.png" class="clasimg" width ="200" height="150" alt="flor4.png">
+        <br>
+        </div>
+        <button id="myBtn">Gracias, no más flores</button>
+        <script> 
+        document.addEventListener("click", cambia);
+        document.getElementById("myBtn").removeEventListener("click", cambia);
+        // Haz una funcion llamada cambia(), en la que se consiga cambiar todas las imágenes de flores, por la imagen de un cactus.jpg.
+            // La cabecera se sustituirá por SORPRESA CACTUS!!! y también tendrá el estilo de la clase "colorplantas".
+              // Además el texto flores se sustituirá por cactus, se le cambiará el estilo a la clase "colorplantas".
+            // Posteriormente podrás añadir cactus1.jpg, cactus2.jpg, cactus3.jpg y cactus4.jpg, cuando el programa escuche un click
+        // La función cambia(), se activará cuando se escuche el click en el documento.
+        // Además el botón "Gracias no más flores",  hará que el documento deje de escuchar el click, para hacer la función cambia.
+            function cambia(){
+                //1. Recoge la coleccion de elementos cuyo tag es img
+                var imagenes=document.getElementsByTagName("img");
+                // console.log(imagenes);
+                //2. Recorre dicha colección y sustituye todas las imágenes por cactus1.jpg
+                for(var i=0; i<imagenes.length; i++){
+                    imagenes[i].src="cactus1.jpg";
+                }
+                //3. Selecciona el selector #heading
+                var titulo= document.getElementById("heading");
+                //4. Al elemento seleccionado en el paso 3:
+                        //Asígnale la clase colorplantas, 
+                        //Cambia el estilo a centrado 
+                        //Cambia el contenido textual de dicho elemento por: "SORPRESA CACTUS!!!"
+                titulo.className = "colorplantas";
+                titulo.className = "centrada"
+                titulo.innerHTML="Sorpresa Cactus!!!";
+                //5. Selecciona todos los elementos de clase planta de un p:
+                        var texto= document.getElementsByTagName("p");
+                        var elementos= texto[0].childNodes;
+                         //6. Crea elementos de tipo strong
+                         //7. Crea un nodo texto con el texto "cactus"
+                         var parrafo = document.createElement("strong").appendChild(document.createTextNode("Cactus"));
+                         //8. Añade el nodo texto al nodo elemento
+                        //  var nuevo= elementos[0].replaceChild(parrafo,elementos);
+                        //9. Añade el nodo elemento a un vector de nodos y en cada uno de ellos aplicar la clase colorplantas.
+                        // nuevo.className ="colorplantas";
+                    
+                     
+                     
+                     
+                 //10. Crea 4 imágenes, con un bucle. Los nombres de las imágenes son cactus1.jpg, cactus2.jpg, cactus3.jpg y cactus4.jpg.
+                       //Su texto alternativo será: Foto de cactus X 
+                       var imgArray= new Array();
+                       var x=0;
+    imgArray [0]= new Image();
+    imgArray[0].src='cactus.jpg';
+    imgArray [1]= new Image();
+    imgArray[1].src='cactus1.jpg';
+    imgArray [2]= new Image();
+    imgArray[2].src='cactus2.jpg';
+    imgArray [3]= new Image();
+    imgArray[3].src='cactus3.jpg';
+    imgArray [4]= new Image();
+    imgArray[4].src='cactus4.jpg';
+    imgArray.forEach(function(element){
+        console.log(element);
+    imagenes[x].src= element.src;
+    imagenes[x].setAttribute("alt", "Catus"+x);
+    // document.body.appendChild(imagenes[x]);
+    x++;
+    })
+            }
+        
+        </script>
+    
+</body>
+</html>

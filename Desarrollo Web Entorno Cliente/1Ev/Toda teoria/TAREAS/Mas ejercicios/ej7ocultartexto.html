@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        function ocultar(){
+            document.getElementById("texto").style.display = "none";
+            document.getElementById("ocultar").style.display = "none";
+            document.getElementById("mostrar").style.display = "block";
+        }
+        function mostrar(){
+            document.getElementById("texto").style.display = "block";
+            document.getElementById("ocultar").style.display = "block";
+            document.getElementById("mostrar").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <div id="elementosTag">
+        <h3>Cambiar los display con js</h3>
+        <div>
+            <span>Caja de texto</span><br>
+            <input type="text" id="texto">
+            <button id="ocultar" onclick="ocultar();">Ocultar</button>
+            <button id="mostrar" onclick="mostrar();" style="display:none;">Mostrar</button>
+        </div>
+    </div>
+</body>
+</html>

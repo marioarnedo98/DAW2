@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicios</title>
+
+    <script>
+
+        // Ejercicio 9
+        var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H',
+            'L', 'C', 'K', 'E', 'T'];
+        var DNI = prompt('Escribe el número de DNI: ');
+
+        var numeroDNI = DNI.substring(0, 8);
+        var LetraDNI = DNI.substring(8, 9).toUpperCase();
+
+        if (DNI > 99999999 || DNI < 0 || DNI.length != 9 || dni.match(/^[0-9]{8}[A-zA-z]$/))
+            alert('El DNI no tiene formato correcto');
+        else {
+            if (letraDNI = letras[numeroDNI % 23])
+                alert('El número de DNI es válido')
+            else
+                alert('La letra de DNI no es válida');
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

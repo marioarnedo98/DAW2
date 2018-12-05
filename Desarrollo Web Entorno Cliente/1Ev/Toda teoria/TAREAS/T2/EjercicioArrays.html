@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+                            /*TEORIA*/
+
+            /*
+                a)Existen algunos objetos que son similares a los arrays pero que no son exactamente arrays. 
+                Estos objetos se suelen denominar objetos tipo array-like. Entre estos objetos tenemos los NodeList o listas de nodos devueltos por 
+                los métodos populares de acceso al DOM como document.getElementById y similares.
+
+                b) Los objetos array-like tienen algunas propiedades y métodos de los arrays, pero no todos ellos (por ejemplo pueden carecer de los métodos push,
+                no pueden ser recorridos con foreach, etc.). Si tratamos de aplicar ciertos métodos de los arrays a objetos array-like podemos obtener errores del tipo:
+                Object #<NodeList> has no method. No podemos usar un objeto array-like como si fuera un array, pero en circunstancias concretas sí podemos transformar los 
+                objetos array-like en arrays verdaderos para realizar ciertas manipulaciones u operaciones.
+
+                c) Los NodeList son objetos de tipo array-like que contienen lo que se denomina live Nodes: colecciones 
+                de elementos que automáticamente se actualizan si se modifica el DOM. Podemos decir que esta ventaja de actualización automática 
+                es importante, y que por ello en algunas ocasiones nos interesa trabajar con NodeList en lugar de con arrays, a pesar de que por otro lado tengan la
+                desventaja de tener menos funcionalidad.
+            */
+
+        //Pasar un array-like a array
+
+            //Forma 1
+            window.onload = function () {
+
+                            var elementosInput = document.getElementsByTagName('input'); //Elementos input
+
+                            var elementosSelect = document.getElementsByTagName('select');
+
+                            var arrayNodos = [];
+
+                            addNodeListToArray (elementosInput, arrayNodos);         
+
+                            addNodeListToArray (elementosSelect, arrayNodos);
+
+                            alert ('Tenemos un número de elementos input ó select en el formulario: '+ arrayNodos.length);
+
+            }
+
+            
+
+            function addNodeListToArray (elNodeList, elArray) {
+
+                            for (var i=0; i< elNodeList.length; i++) {
+
+                            var elementoActual = elNodeList[i];
+
+                            elArray.push(elementoActual);
+
+                            }
+
+                            alert ('Añadidos ' + elNodeList.length +' elementos');
+
+            }
+
+            //Forma 2
+            window.onload = function () {
+
+            var elementosInput = document.getElementsByTagName('input'); //Elementos input
+
+            var elementosSelect = document.getElementsByTagName('select');
+
+            var arrayNodos = Array.prototype.slice.call(elementosInput);
+
+            arrayNodos.push([].slice.call(elementosSelect));
+
+            alert ('Tenemos un número de elementos input ó select en el formulario: '+ arrayNodos.length);
+
+            }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+body{
+    font-family: 'Amaranth', 'sans-serif';
+    font-size: 16px;
+    color: #776665;
+    background:#FAF8EF;
+}
+content{
+    width: 100%;
+    margin:0 auto;
+}
+.score
+{
+    font-size: 2em;
+    margin: 10px;
+    margin-left: 45%;
+    text-align:center;
+    padding: 0px 15px;
+    position: relative;
+    background: #776665;
+    border-radius: 25px;
+    color: #FAF8EF;
+    display:inline-block;
+}
+#Reset-button{
+    display: none;
+}

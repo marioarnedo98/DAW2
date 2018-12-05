@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    
+        function cambiar(frase){
+            frase=frase.replace(/([0-9]{1})(\$)/g, '$1€');
+            console.log(frase);
+        }
+    
+        cambiar("El coste del equipo es de 90.25$ iva incluido. Se aceptan $ y €.");
+        cambiar("El precio del artículo sin IVA es 90.25€, y con IVA 115.65€. Se admite el pago en $ y €");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

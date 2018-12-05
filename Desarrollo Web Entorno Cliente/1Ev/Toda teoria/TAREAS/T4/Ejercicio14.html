@@ -1,0 +1,37 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 14</title>
+    <script>
+    /*14.Dado un array de imágenes, implementar una función insertImage que reciba
+        como parámetro dicho array, y añada dichas imágenes al documento, cada
+        una de las cuáles debe estar en un párrafo independiente y :*/
+    var imgArray= new Array();
+        imgArray[0]=new Image();
+        imgArray[0].src='descarga1.png';
+        imgArray[1]=new Image();
+        imgArray[1].src='descarga2.png';
+        imgArray[2]=new Image();
+        imgArray[2].src='descarga3.png';
+        
+    function myFunction() {
+        for(let i=0;i<imgArray.length;i++){
+            var p=document.createElement("p");
+            var x = document.createElement("IMG");
+            x.setAttribute("src", imgArray[i].src);
+            x.setAttribute("width", "300");
+            x.setAttribute("height", "230");
+            p.appendChild(x);
+            document.body.appendChild(p);
+        }
+        
+}
+    </script>
+</head>
+<body>
+        <button onclick="myFunction()">Imagenes</button>
+</body>
+</html>
+            

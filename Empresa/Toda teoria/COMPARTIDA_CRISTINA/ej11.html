@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 11</title>
+	<script type="text/javascript">
+		function verBucle(){
+			var etiquetas = document.getElementsByTagName('p');
+			var contador=0;
+			while(contador<etiquetas.length){
+				alert(etiquetas[contador].innerHTML);
+				contador++;
+			}
+		}
+	</script>
+</head>
+<body>
+<p>Aqui hay un texto</p>
+<p>Aqui hay otro texto 2</p>
+<p>Aqui hay un texto 3</p>
+<input type="button" name="Boton" value="Boton" onclick="verBucle();">
+</body>
+</html>

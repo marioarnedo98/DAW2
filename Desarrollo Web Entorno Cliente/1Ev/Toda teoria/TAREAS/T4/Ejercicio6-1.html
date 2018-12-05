@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    function modificarColor(){
+        var x= document.getElementById("cboSize").selectedIndex;
+        var color= document.getElementsByTagName("option")[x].value;
+        document.getElementById("elementosTag").style.color = color;
+    }
+    </script>
+</head>
+<body>
+    <div id="elementosTag">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta sit accusamus molestiae similique. Consectetur, enim voluptatem non, reprehenderit, nisi iure nam veniam excepturi aspernatur magnam eos nobis beatae ipsam recusandae!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, soluta id tempora fugit corporis voluptatem ea sequi atque dolore deserunt voluptates et nemo, enim officia. Deleniti a beatae accusamus minima!</p>
+    </div>
+    <div>
+        <span>Seleccionar color:</span>
+        <select id="cboSize">
+            <option value="green">Verde</option>
+            <option value="blue">Azul</option>
+            <option value="red">Rojo</option>
+        </select>
+        <button id="actualizar" onclick="modificarColor();">Cambiar</button>
+    </div>
+</body>
+</html>

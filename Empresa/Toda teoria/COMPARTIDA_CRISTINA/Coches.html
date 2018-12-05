@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>COCHES</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js">
+        function imprimirDatos() {
+            document.write("<br>Marca" + this.marca);
+            document.write("<br>Modelo" + this.modelo);
+            document.write("<br>Año" + this.anyo);
+        }
+
+        function Coche(marca_in, modelo_in, anyo_in) {
+            this.marca = marca_in;
+            this.modelo = modelo_in;
+            this.anyo = anyo_in;
+        }
+
+        var coches = new Array(4);
+        coches[0] = new Coche("Ferrari", "Scaglietti", "2010");
+        coches[1] = new Coche("BMV", "Z4", "2010");
+        coches[2] = new Coche("Seat", "Toledo", "1999");
+        coches[3] = new Coche("Fiat", "500", "1995");
+
+        for (i = 0; i < coches.length; i++) {
+            document.write(coches[i].imprimirDatos())
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

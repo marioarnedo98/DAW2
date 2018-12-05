@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p id="demo"></p>
+
+<script>
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+    this.name = function() {
+       return this.firstName + " " + this.lastName;
+}
+}
+
+var person = new Person("MArcos", "Martínez",50, "blue");
+
+document.getElementById("demo").innerHTML = person.name();
+</script>
+</body>
+</html>

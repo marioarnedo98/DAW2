@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+        <html>
+            <script>
+                var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+                function validar(numero){
+                    var numero2 = numero.substring(0,numero.length-1);
+                    var letra = numero.substring(numero.length-1);
+
+                    if(parseInt(numero2)>0 && parseInt(numero2)<99999999){
+                        var pos = Math.ceil(numero2%23);
+                        var letra2 = letras[pos];
+                        
+                        if(letra == letra2){
+                            console.log("el numero es valido");
+                        }else{
+                            console.log("la letra no es valida")
+                        }
+                    }else{
+                        console.log("el numero no es valido")
+                    }
+                }    
+                validar("17495186Y");
+                validar("17495186P");
+                validar("1749518615Z");
+            </script>   
+            </html>
+           
+</body>
+</html>

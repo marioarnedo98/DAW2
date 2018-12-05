@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 12 </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+       function valideDate(date){
+            var expr = new RegExp(/^([0-9]{2}[\/]){2}[1-9]{4}$/);
+           
+            if(date.match(expr)){
+               alert("Es correcto");
+               
+            }else {
+               alert("Es incorrecto");
+            }
+
+        }
+
+     //valideDate("11/11/1998");
+     //valideDate("111/11/1998");
+     //valideDate("11/1100/1998");
+     //valideDate("11/11/19980");
+     //valideDate("11-11-19980");
+     //valideDate("11/11*19980");
+        
+    function validateEmail(text){
+       var expr=new RegExp(/^([A-Za-z0-9]*)([\.\=]*)([A-Za-z0-9]*)[@]{1}([A-Za-z0-9]*)[/.]{1}[a-z]{2,3}$/);
+        if(text.match(expr)){
+            alert("Email correcto");
+        }else{
+            alert("Email incorrecto");
+        }
+    }
+
+    //validateEmail("11a*.aA=A@DAFS.es")
+    //validateEmail("11a.aA=A@DAF12312/S.es")
+    //validateEmail("1/1aA@DAFS.es")
+    //validateEmail("11aaAA@DA=F.S.es")
+    //validateEmail("aaAA=af123@aaA2.ess")
+    
+
+    function validateName(text) {
+        var nombre=text.substring(0,text.indexOf(" "));
+        //console.log(nombre);
+        var apellido=text.substring(text.indexOf(" ")+1,text.length);
+        //console.log(apellido);
+
+        var name=apellido+","+nombre;
+        alert(name);
+        
+    }
+
+    //validateName("MARIA HERNANI");
+
+    /*NO ENTIENDO EL ULTIMO PUNTO*/
+    </script>
+</head>
+<body>
+        <input type="text" id="cadena" />
+        <button value="Comprobar" id="boton1" name="Comprobar" onclick="valideDate(cadena.value);">Comprobar fecha</button>
+        <button value="Comprobar" id="boton2" name="Comprobar" onclick="validateName(cadena.value);">Comprobar nombre</button>
+        <button value="Comprobar" id="boton3" name="Comprobar" onclick="validateEmail(cadena.value);">Comprobar email</button>
+</body>
+</html>

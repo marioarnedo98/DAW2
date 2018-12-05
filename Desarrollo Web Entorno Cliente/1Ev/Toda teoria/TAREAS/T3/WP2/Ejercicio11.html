@@ -1,0 +1,28 @@
+<html>
+<body>
+<script>
+    function frasePalindromo(frase){
+      // Paso la fraseUser a minusculas y quito espacios
+      frase=frase.toLowerCase().replace(/\s/g,"");
+      /* Creo otra frase partiendo de la de userFrase pero
+      la convierto en array, le doy la vuelta al array, lo paso a string*/
+      reves=frase.split("").reverse();
+      var reves1="";
+      for (var i = 0; i < (reves.length); i++) {
+        reves1+=reves[i];
+      };
+      // Comparo las dos frases.
+      if(frase==reves1){
+        console.log(frase+" es un Palindromo");
+      }
+      else{
+        console.log(frase+" no es un Palindromo");
+      }
+    }
+    frasePalindromo("hola");
+    frasePalindromo("rayar");
+    frasePalindromo("reconocer");
+</script>
+
+</body>
+</html>

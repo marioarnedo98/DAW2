@@ -1,0 +1,23 @@
+<html>
+
+<head>
+
+    <script>
+
+        function verParIpar(numero) {
+            if (numero % 2 == 0) alert(numero + ' es par')
+            else alert(numero + ' es impar');
+
+            return numero % 2 == 0 ? false : true;
+        }
+
+
+        do {
+            var numero = eval(prompt('Introduce un número: '));
+        } while (verParIpar(numero));
+
+    </script>
+
+</head>
+
+</html>

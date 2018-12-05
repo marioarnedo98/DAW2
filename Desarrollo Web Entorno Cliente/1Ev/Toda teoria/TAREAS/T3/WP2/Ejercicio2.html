@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function actualizarPagina(){
+            location.reload();
+        }
+        function nuevaVentana(){
+            window.open();
+        }
+       
+        function segundos(){
+        var myVar = setInterval(myTimer, 2000);
+
+        function myTimer() {
+        var d = new Date();
+        d.setMinutes(0);
+        d.setMinutes(0);
+        console.log(d);
+        }
+
+        }
+
+         function localizacion() {
+            var startPos;
+            var geoSuccess = function(position) {
+                 startPos = position;
+                alert("Mi latitud: "+startPos.coords.latitude+"\nMi longuitud: "+startPos.coords.longitude);
+            };
+
+            navigator.geolocation.getCurrentPosition(geoSuccess);
+        };
+        
+       
+    </script>
+</head>
+<body>
+    <button name="boton" id="boton1" onclick="actualizarPagina();">ActualizarPagina</button>
+    <button name="boton" id="boton2" onclick="segundos();">Cada 2 segundos</button>
+    <p>Esta en el consola el temporizador</p>
+    <button name="boton" id="boton3" onclick="nuevaVentana();">Ventana</button>
+    <button name="boton" id="boton4" onclick="localizacion();">localizacion</button>
+</body>
+</html>

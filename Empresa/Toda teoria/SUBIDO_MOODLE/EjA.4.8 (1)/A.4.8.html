@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 8</title>
+
+    <script>
+        document.addEventListener("readystatechange", cargaDOM, false);
+        function cargaDOM(evento) {
+            if (document.readyState == 'complete') {
+                alert("Se ha cargado el documento!");
+            } else {
+                alert("Cargando..." + document.readyState);
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

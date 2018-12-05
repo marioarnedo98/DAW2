@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Adding and Removing Elements</title>
+	<style>
+		table {
+			border-collapse: collapse;
+		}
+
+		td,
+		th {
+			padding: 5px;
+			border: 1px solid #ccc;
+		}
+
+		tr:nth-child(2n+1) {
+			background-color: #eeffee;
+		}
+	</style>
+	<script>
+		//CUANDO SE CARGUE LA VENTANA, EJECUTAR FUNCION ANÓNIMA
+		window.onload = function () {
+			//Obtener todos los tr y están en el array-like e
+			// En cada elemento, añadimos addEventListener para escuchar el clic en cada fila y llamar a borrar en ese caso
+			var e = document.getElementsByTagName("tr");
+			for (var i = 0; i < e.length; i++) {
+				e[i].addEventListener("click", borrar);
+			};
+
+			function borrar() {
+				// Cogemos el padre del tr, que es table y luego borrar el hijo de tabla, que es ese tr.
+				var parent = this.parentNode;
+				var oldrow = parent.removeChild(this);
+
+				// Construyo una variable vacía, recorro la fila borrada, recorro sus hijos (th o td), coger sus datos
+				var datastring = "";
+				for (var i = 0; i < oldrow.childNodes.length; i++) {
+					var cell = oldrow.childNodes[i]; // tengo la th o la td como celda
+					datastring += cell.firstChild.data + " "; // voy echando a la variable
+					console.log(cell.firstChild.data + " ");
+				}
+
+				var msg = document.createTextNode("removed " + datastring); //añado removed y creo el Texto nodo
+				var p = document.createElement("p");
+				p.appendChild(msg); //añado msg (texto) al padre p, cuelgo un hijo.
+				document.getElementById("result").appendChild(p); // cuelgo el hijo <p> al documento
+			}
+
+		}
+
+	</script>
+</head>
+
+<body>
+	<!--PINTAR TABLA ID MIXED-->
+	<table id="mixed">
+		<tr>
+			<th>Value One</th>
+			<th>Value two</th>
+			<th>Value three</th>
+		</tr>
+	</table>
+	<!--PINTAR DIV VACIA-->
+	<div id="result"></div>
+	<script>
+		// CREAR UN ARRAY CON LOS VALORES DE LA TABLA
+		var values = new Array(3);
+		values[0] = [123.45, "apple", true];
+		values[1] = [65, "banana", false];
+		values[2] = [1034.99, "cherry", false];
+		var mixed = document.getElementById("mixed");
+		var tbody = document.createElement("tbody");
+		// RECORRER EL VECTOR VALUES HASTA SU FINAL Y EN CADA PASO CREO UNA TR, LA GUARDO EN VARIABLE tr.
+		for (var i = 0; i < values.length; i++) {
+			var tr = document.createElement("tr");
+			// RECORRER LOS VALUES[i][0,1,2] DE UNA FILA, 	para generar un td con cada información de values[i][0] ó de [1] ó de [2]
+			for (var j = 0; j < values[i].length; j++) {
+				var td = document.createElement("td");
+				var txt = document.createTextNode(values[i][j]);
+				td.appendChild(txt); // colgar el txt del elemento celda donde va a ir <td>
+				tr.appendChild(td);  // colgar el <td> de su fila <tr> 
+			}
+
+
+
+			tbody.appendChild(tr); //colgar la fila <tr> del elemento <tbody>
+			mixed.appendChild(tbody); //colgar <tbody> a la <table id="mixed">
+		}
+	</script>
+</body>

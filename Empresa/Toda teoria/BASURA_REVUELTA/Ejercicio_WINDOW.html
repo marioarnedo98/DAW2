@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>Ejercicio JAVASCRIPT</title>
+
+    <script>
+
+        function abrir_nueva_localizacion() {
+            var localizacion = prompt('Escribe la URL: ');
+            window.open(localizacion);
+        }
+
+        function actualizar_pagina() {
+            location.reload();
+        }
+
+        function abrir_nueva_ventana() {
+            window.open();
+        }
+
+        function temporizador_hora() {
+            setInterval(function () {
+                var d = new Date();
+                var hour = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+                document.getElementById('hora').innerHTML = hour;
+            }, 2000);
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <button onclick="abrir_nueva_localizacion()">!Hazme clic para abrir una nueva localizacion!</button><br><br>
+    <button onclick="actualizar_pagina()">!Hazme clic para actualizar la página!</button><br><br>
+    <button onclick="abrir_nueva_ventana()">!Hazme clic para abrir una nueva ventana!</button><br><br>
+    <button onclick="temporizador_hora()">!Hazme clic para poner el temporizador!</button><br><br>
+
+    <p id="hora"></p>
+
+
+</body>
+
+</html>

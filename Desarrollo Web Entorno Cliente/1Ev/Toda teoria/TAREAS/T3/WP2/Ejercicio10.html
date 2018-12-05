@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    function validar(frase){
+        patronmayus= /[A-Z]/;
+        patronmin=/[a-z]/
+        patronmixto=/[a-z][A-Z]/
+        exprReg= new RegExp(patronmayus);
+        exprReg1= new RegExp(patronmin);
+        exprReg2= new RegExp(patronmixto);
+
+
+        if(frase.match(exprReg2)){
+            console.log("LeTraS MiXtas");
+        }else if(frase.match(exprReg1)){
+            console.log("letras minusculas");
+        }else if(frase.match(exprReg)){
+            console.log("LETRAS MAYUSCULAS");
+        }
+    }
+
+    validar("PEPE");
+    validar("pepe");
+    validar("eeeeEEEEe");
+    validar("eeeE");
+</script>
+</head>
+<body>
+    
+</body>
+</html>

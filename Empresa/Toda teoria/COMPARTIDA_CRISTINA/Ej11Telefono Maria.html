@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejericicio 11 Telefono </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script>
+        function validar(numero) {
+          //  patron = /^9|8|6|7[0-9]{2}[- ]?[0-9]{3}-? ?[0-9]{3}$/;
+            patron1 = /^[6-9][0-9]{2}([- ]?[0-9]{3}){2}$/;
+            exprReg = new RegExp(patron1);
+            if (numero.match(exprReg)) {
+                console.log(numero+"numero valido");
+            } else {
+                console.log(numero+"numero incorrecto");
+            }
+        }
+
+        validar("943- 852-978");
+        validar("943 852 978");
+        validar("943852978");
+        validar("643852978");
+        validar("743-852-978");
+        validar("843-852-978");
+        validar("843-852 978");
+        validar("843852 978");
+        validar("843  852 978");
+        validar("843--852 978");
+        validar("843 -852 978");
+        validar("843*-852 978");
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

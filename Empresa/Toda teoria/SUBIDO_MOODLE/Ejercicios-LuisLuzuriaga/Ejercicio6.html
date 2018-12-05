@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6</title>
+    <script>
+        function cambiar() {
+            var numeroColorElejido = document.getElementById("colores").selectedIndex;
+            var color = document.getElementsByTagName("option")[numeroColorElejido].value;
+            document.getElementById("texto").style.color = color;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="texto">
+        <p>Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
+            Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
+            Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
+            Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
+        </p>
+    </div>
+    <div>
+        <select id="colores">
+            <option value="green">Verde</option>
+            <option value="blue">Azul</option>
+            <option value="red">Rojo</option>
+        </select>
+        <button onclick="cambiar()">Cambiar</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 9</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    function validarDNI(dni){
+        var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H',
+'L', 'C', 'K', 'E', 'T'];
+    
+    var cadena_numero=dni.substring(0,(dni.length-1));
+    var numero=parseInt(cadena_numero);
+    var letra=dni.substring(dni.length-1,dni.length);
+      
+    if(numero>0 && numero<99999999){
+        var aux=Math.floor(numero%23);
+        if(letra==letras[aux]){
+            console.log("El dni es valido");
+        }else{
+            console.log("La letra no es valida");
+        }
+    }else{
+        console.log("El numero no es valido");
+    }
+    }
+    
+    </script>
+</head>
+<body>
+        <input type="text" id="dni" />
+        <button value="Comprobar" id="boton" name="Comprobar" onclick="validarDNI(dni.value);">Comprobar</button>
+</body>
+</html>

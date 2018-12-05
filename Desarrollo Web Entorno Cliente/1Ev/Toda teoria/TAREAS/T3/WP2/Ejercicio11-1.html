@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 11</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    function palindromos(cadena){
+       
+        cadena=cadena.replace(" ","");
+
+        var aux = cadena.split('');
+        var cadena_rev=aux.reverse().join();
+        var cadena_dere=aux.join();
+        //console.log(cadena_rev);
+        //console.log(cadena_dere);
+        
+        if(cadena_rev===cadena_rev){
+            alert("Es palindromo");
+        }else{
+            alert("No es palidromo");
+        }
+        
+    }
+    //palindromos("SUGUS");
+    //palindromos("SOMOS");
+    //palindromos("La ruta nos aporto otro paso natural");
+
+    </script>
+</head>
+<body>
+        <input type="text" id="texto" />
+        <button value="Comprobar" id="boton" name="Comprobar" onclick="palindromos(texto.value);">Comprobar</button>
+</body>
+</html>

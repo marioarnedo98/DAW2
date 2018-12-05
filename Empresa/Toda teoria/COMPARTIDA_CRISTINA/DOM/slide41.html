@@ -1,0 +1,23 @@
+
+<html>
+<head>
+	<meta http-equiv="content-type"
+		 content="text/html;charset=utf-8">
+	<title>Consulta DOM</title>
+	<script type="text/javascript">
+		function verAtributos(){
+			//alert(document.images[0].src);//Colecciones
+			alert(document.getElementById('imgIzquierda').src);//métodos de búsqueda
+		}
+
+	</script>
+</head>
+<body>
+	<img src="imagen1.png" id="imgIzquierda" alt="Imagen ejemplo izquierda">
+	<br/>
+	<img src="imagen2.png" id="imgDerecha" alt="Imagen ejemplo derecha">
+	<br/>
+	<hr>
+	<button type="burron" onclick="verAtributos();">Ver src de la primera imagen</button>
+</body>
+</html>

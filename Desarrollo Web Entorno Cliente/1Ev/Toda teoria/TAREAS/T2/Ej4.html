@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+
+        /*Nos devuelve cada elemento de la cadena*/
+        /*hasOwnProperty es un boolean que nos devuelvo si tiene propiedades o no*/
+        var cadena="texto";
+        for (const key in cadena) {
+            if (cadena.hasOwnProperty(key)) {
+                const element = cadena[key];
+                alert(element);
+            }
+        }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

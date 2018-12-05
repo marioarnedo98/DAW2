@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>Ejercicio 1</title>
+</head>
+
+
+<body>
+    <h1 id='textomotor'>asasd</h1>
+
+    <script>
+        var tipo = Number(prompt('Ingresa un tipo de motor: '));
+        dimeTipoMotor(tipo);
+
+        function dimeTipoMotor(tipoMotor) {
+
+            switch (tipoMotor) {
+                case 0:
+                    document.getElementById('textomotor').innerHTML = 'No hay establecido un valor definido para el tipo de bomba';
+                    break;
+
+                case 1:
+                    document.getElementById('textomotor').innerHTML = 'La bomba es una bomba de agua';
+                    break;
+
+                case 2:
+                    document.getElementById('textomotor').innerHTML = 'La bomba es una bomba de gasolina';
+                    break;
+
+                case 3:
+                    document.getElementById('textomotor').innerHTML = 'La bomba es una bomba de hormigón';
+                    break;
+
+                case 4:
+                    document.getElementById('textomotor').innerHTML = 'La bomba es una bomba de pasta alimenticia';
+                    break;
+
+                default:
+                    document.getElementById('textomotor').innerHTML = 'No existe un valor válido para tipo de bomba';
+                    break;
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 10</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function comprobarCadena(cad){
+
+            var expreMayusculas=new RegExp("[A-Z]+");
+            var expreMin=new RegExp("[a-z]+");
+            var expreMixto=new RegExp("[a-z][A-Z]");    
+
+            if(cad.match(expreMixto)){
+                alert("minúsculas y MAYUSCULAS");
+            }else{
+
+                if(cad.match(expreMin)){
+                    alert("minúsculas");
+                }else{
+                    if(cad.match(expreMayusculas)){
+                         alert("MAYUSCULAS");
+                    }
+                }
+            }
+
+}
+        
+    </script>
+</head>
+<body>
+
+        <input type="text" id="cadena" />
+        <button value="Comprobar" id="boton" name="Comprobar" onclick="comprobarCadena(cadena.value);">Comprobar</button>
+    
+</body>
+</html>

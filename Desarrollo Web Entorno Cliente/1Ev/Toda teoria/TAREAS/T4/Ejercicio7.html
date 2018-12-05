@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function ocultar(){
+            document.getElementById("txtColor").style.display = "none";
+            document.getElementById("actualizar").style.display = "none";
+            document.getElementById("mostrar").style.display = "block";
+        }
+        function mostrar(){
+            document.getElementById("txtColor").style.display = "block";
+            document.getElementById("actualizar").style.display = "block";
+            document.getElementById("mostrar").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <div id="elementosTag">
+        <h3>Modificacion propiedades css</h3>
+        <div>
+            <span>Caja de texto</span><br>
+            <input type="text" id="txtColor">
+            <button id="actualizar" onclick="ocultar(this);">Ocultar</button>
+            <button id="mostrar" onclick="mostrar(this);" style="display:none;">Mostrar</button>
+        </div>
+    </div>
+</body>
+</html>

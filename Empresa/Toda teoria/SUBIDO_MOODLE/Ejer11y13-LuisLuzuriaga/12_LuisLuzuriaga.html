@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 12</title>
+
+    <script>
+        var cadena = prompt('Ingresa la cadena: ');
+        var regexp = /[a-zA-Z]*[0-9]{2}[/][0-9]{2}[/][0-9]{4}[a-zA-Z]*/;
+
+        if (cadena.match(regexp))
+            alert('La fecha es correcta');
+        else
+            alert('La fecha es incorrecta');
+    </script>
+
+</head>
+
+<body>
+</body>
+
+</html>

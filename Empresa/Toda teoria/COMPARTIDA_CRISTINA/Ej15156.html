@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+    <script>
+        var fechahoy= new Date();
+        alert(fechahoy);
+
+        var fecha1= new Date("July 20 2017");
+        alert(fecha1);
+
+        var fecha2=new Date(2017,1,15,12,35,0);
+        alert(fecha2);
+
+        var hoy = new Date();
+        var año = hoy.getFullYear();
+        var mes = hoy.getMonth()+1;
+        var dia = hoy.getDay();
+        alert(año);
+        alert(mes);
+        alert(dia);
+
+        var dia =hoy.getDate();
+        hoy.setDate(dia+6);
+        alert(hoy);
+        
+        var hoy2 = new Date();
+        var cumple = new Date("3 30 2018");
+        var diferencia = hoy2 - cumple;
+        alert(diferencia/(1000*60));
+        alert(diferencia/(1000*60*60));
+
+        var hoy2 = new Date();
+        var cumple = new Date("3 30 1998");
+        var fecha1 = moment(cumple);
+        var fecha2 = moment(hoy2);
+        alert(fecha2.diff(fecha1,'days'));
+        var cumple = new Date("10 16 2018");
+
+        var hoy3 = new Date("10 16 2018");
+
+        var hoy3 =hoy3.getTime();
+        var cumple =cumple.getTime();
+        if(hoy3 === cumple){
+            alert("Hoy es tu cumple");
+        }else{
+            alert("No son iguales");
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

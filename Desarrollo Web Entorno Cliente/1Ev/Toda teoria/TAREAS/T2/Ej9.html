@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input value="manzana" id="manzana" onclick="nombres(this);" type="button">
+<input value="Pera" id="pera" onclick="nombres(this);" type="button">
+<input value="Fresa" id="fresa" onclick="nombres(this);" type="button">
+<input value="Nectarina" id="nectalina" onclick="nombres(this);" type="button">
+<input value="Kiwi" id="kiwi" onclick="nombres(this);" type="button">
+<input value="Mango" id="mango" onclick="nombres(this);" type="button">
+<input value="Frambuesa" id="frambuesa" onclick="nombres(this);" type="button">
+
+<p id="demo"></p>
+<script>
+function nombres(comp) {
+    let id = comp.id;
+    var cambio= [];
+    nombre  =prompt("Introduce un nombre",id);
+    var long=nombre.length;
+    for(a=0;long>=0;long--,a++){
+        cambio[a]=nombre.substring(long-1,long);
+        console.log(cambio[a]);
+    }
+    alert(nombre + "\n" +cambio);
+    }
+</script>
+</body>
+</html>

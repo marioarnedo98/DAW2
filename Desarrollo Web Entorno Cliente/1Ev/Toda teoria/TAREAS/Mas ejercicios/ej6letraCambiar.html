@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+    function CambiarColor(){
+        var x= document.getElementById("colores").selectedIndex;
+        var color= document.getElementsByTagName("option")[x].value;
+        document.getElementById("texto").style.color = color;
+    }
+    </script>
+</head>
+<body>
+    <div id="texto">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta sit accusamus molestiae similique. Consectetur, enim voluptatem non, reprehenderit, nisi iure nam veniam excepturi aspernatur magnam eos nobis beatae ipsam recusandae!Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, soluta id tempora fugit corporis voluptatem ea sequi atque dolore deserunt voluptates et nemo, enim officia. Deleniti a beatae accusamus minima!Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, soluta id tempora fugit corporis voluptatem ea sequi atque dolore deserunt voluptates et nemo, enim officia. Deleniti a beatae accusamus minima!</p>
+    </div>
+    <div>
+        <select id="colores">
+            <option value="green">Verde</option>
+            <option value="blue">Azul</option>
+            <option value="red">Rojo</option>
+        </select>
+        <button onclick="CambiarColor()">Cambiar Color</button>
+    </div>
+</body>
+</html>

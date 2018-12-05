@@ -1,0 +1,31 @@
+<html>
+<body>
+
+<p>A script on this page starts this clock:</p>
+
+<p id="demo"></p>
+<p id="segundos"></p>
+
+<button onclick="start()">Start time</button>
+<button onclick="parar()">Stop time</button>
+
+<script>
+contador=0;
+function start(){ 
+myVar = setInterval(myTimer ,1000);
+function myTimer() {
+    var d = new Date();
+    contador++;
+    document.getElementById("demo").innerHTML = d.toLocaleTimeString();    
+}
+}
+function parar(){
+    final = new Date();
+    clearInterval(myVar);
+    document.getElementById("segundos").innerHTML = "Segundos Transcurridos: "+contador;
+    contador=0;
+}
+</script>
+
+</body>
+</html>

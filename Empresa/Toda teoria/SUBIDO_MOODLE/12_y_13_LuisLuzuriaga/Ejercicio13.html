@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 13</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+
+    <script>
+        function Person(nombre, apellido, dni) {
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.dni = dni;
+        }
+        Person.prototype.nationality = 'French';
+        Person.prototype.name_nation = function () {
+            return this.nombre.concat(' ').concat(this.apellido).concat(' | ').concat(this.nationality);
+        }
+        Person.prototype.change_name = function (nombre) {
+            this.nombre = nombre;
+            return this.nombre.concat(' ').concat(this.apellido);
+        }
+
+        var p = new Person('Luis', 'Luzuriaga', '00000000N');
+        document.getElementById('demo').innerHTML = p.name_nation();
+
+
+        p.change_name(prompt('Ingrese nuevo nombre: '));
+        alert('Nombre cambiado: ' + p.name_nation());
+
+
+    </script>
+</body>
+
+</html>

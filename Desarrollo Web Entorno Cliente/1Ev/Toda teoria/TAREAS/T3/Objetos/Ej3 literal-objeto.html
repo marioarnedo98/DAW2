@@ -1,0 +1,35 @@
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<p>Creating a JavaScript Object.</p>
+
+<p id="demo"></p>
+
+<script>
+var person = {
+    firstName : "John",
+    lastName  : "Doe",
+    age       : 50,
+    eyeColor  : "blue"
+};
+var alumno = new Object();
+alumno.firstName = "Pepe";
+alumno.lastName = "Perez";
+alumno.age = 25;
+alumno.eyeColor = "blue"; 
+
+// Uso del objeto de forma literal
+document.getElementById("demo").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+
+// Uso del objeto de forma nuevo objeto
+document.getElementById("demo").innerHTML+=
+alumno.firstName + " is " + alumno.age + " years old.";
+
+</script>
+
+</body>
+</html>

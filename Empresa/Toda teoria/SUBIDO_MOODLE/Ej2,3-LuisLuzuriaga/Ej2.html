@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 2</title>
+
+    <script>
+        function open_new_location() {
+            window.location = 'http://www.aulavirtual-educacion.larioja.org';
+        }
+
+        function refresh_page() {
+            location.reload();
+        }
+
+        function open_new_page() {
+            window.open("http://www.aulavirtual-educacion.larioja.org");
+        }
+
+        function temp() {
+            setInterval(function () {
+                var d = new Date();
+                document.getElementById('time').innerHTML = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+
+            }, 2000);
+
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="open_new_location()">Cambiar página actual</button>
+    <button onclick="refresh_page()">Refrescar página actual</button>
+    <button onclick="open_new_page()">Abrir nueva página</button>
+    <button onclick="temp()">Temporizador de tiempo</button>
+    <h1 id="time"></h1>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 4.6</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <script>
+        function cargarWeb() {
+            var nuevaPagina = document.getElementById('pagina_web').value;
+            document.getElementById('iframe_web').src = nuevaPagina;
+        }
+    </script>
+</head>
+
+<body>
+    <iframe id="iframe_web" src="https://www.juegosjuegos.com/" height="600" width="900">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+    <br>
+    <input type="text" id="pagina_web">
+    <button type="button" class="btn btn-success" onclick="cargarWeb()">Cargar</button>
+</body>
+
+</html>

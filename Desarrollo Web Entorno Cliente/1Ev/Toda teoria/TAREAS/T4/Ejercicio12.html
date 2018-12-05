@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 12</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    /*12.Define una aplicación web que te permita añadir usuarios a una lista junto con
+        su edad. Aquellos usuarios mayores de edad pero menores de 65 deberán
+        tener un color de letra verde, mientras que los mayores de 65 años
+        presentarán un color rojo. El resto de usuarios presentarán el color por
+        defecto definido en el documento*/
+
+       
+
+    function users(){
+        var name=document.getElementById('nombre').value;
+        var age=document.getElementById('edad').value;
+
+        var elemento = document.createElement("p");
+        var texto = document.createTextNode("Usuario: "+name+" Edad: "+age);
+        elemento.appendChild(texto);
+
+        if(age<65 && age>18){
+            elemento.style.color='green';
+        }else if(age>65){
+            elemento.style.color='red';
+     
+        }
+
+        var contenedor = document.getElementById("usuarios");
+        contenedor.appendChild(elemento);
+
+        document.getElementById('nombre').value='';
+        document.getElementById('edad').value='';
+        
+
+    }  
+    </script>
+</head>
+<body>
+
+    <input type="text" id="nombre">
+    <input type="text" id="edad">
+    <input type="submit" value="Guardar" onclick="users();">
+    <div id="usuarios">
+
+
+    </div>
+</body>
+</html>

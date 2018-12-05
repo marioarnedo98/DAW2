@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body onresize="ejercicio10()">
+<p id="resultado"></p>
+</body>
+<script>
+function ejercicio10(){
+    var w = window.outerWidth;
+    var h = window.outerHeight;
+    var txt = "Anchura=" + w + ", altura=" + h;
+    document.getElementById("resultado").innerHTML = txt;
+}
+    </script>
+</html>

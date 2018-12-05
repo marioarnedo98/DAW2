@@ -1,0 +1,32 @@
+<!document html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+    <script type="text/javascript">
+        var numeros = [4,0,3,4,7,3,5,8,1,8,8,0,2,3,1,2,5,7,3,2,5,1];
+        var numeros2 = [];
+        var b=0;
+        for(var a=0;a<numeros.length;a++){
+            if(numeros[a]%2==0){
+                numeros2[b]=numeros[a]
+                b++
+            }
+        }
+        for(var a=0;a<numeros.length;a++){
+            if(numeros[a]%2!=0){
+                numeros2[b]=numeros[a]
+                b++
+            }
+        }
+        console.log(numeros2);
+    </script>
+
+</body>
+
+</html>

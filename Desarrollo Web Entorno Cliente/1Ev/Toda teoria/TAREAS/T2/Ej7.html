@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+    <script type="text/javascript">
+        function meses() {
+            var valor = document.getElementById("text").value;
+            console.log(valor);
+            switch (valor) {
+                case "0":
+                    alert(" No hay establecidoun valor definido para el tipo de bomba.")
+                    break;
+                case "1":
+                    alert("La bomba es unabomba de agua.")
+                    break;
+                case "2":
+                    alert("La bomba es una bomba de gasolina.")
+                    break;
+                case "3":
+                    alert("La bomba es una bomba de hormigón.")
+                    break;
+                case "4":
+                    alert("sLa bomba es unabomba de pasta alimenticia.")
+                    break;
+                default:
+                    alert("No existe un valor válido para tipo de bomba")
+            }
+
+            document.getElementById("text").value = "";
+        }
+    </script>
+    <input type="text" id="text">
+    <input value="Pulse YA" id="btn" onclick="meses();" type="button">
+    <p id="demo"></p>
+</body>
+
+</html>

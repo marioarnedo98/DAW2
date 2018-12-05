@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 12</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+
+    <script>
+        function Person(nombre, apellido, dni) {
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.dni = dni;
+
+            this.name = function () {
+                return this.nombre.concat(' ').concat(this.apellido);
+            }
+        }
+
+        var p = new Person('Luis', 'Luzuriaga', '00000000N');
+        document.getElementById('demo').innerHTML = p.name();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+    <link rel="stylesheet" href="style.css">
+   
+    <title>Cronómetro</title>
+</head>
+<body>
+    <div class="score">
+        <p>Time</p>
+        <p id="time">
+            <span id="minutes">00</span>:
+            <span id="seconds">00</span>
+        </p>
+    </div> 
+    <button class="score" id="stop-button" type="button" onclick="StartTime()">Iniciar</button>
+    <button class="score" id="stop-button" type="button" onclick="stopCountUp()">Stop</button>   
+    <button class="score" id="Reset-button" type="button" onclick="ResetTime()">Reset</button>   
+    <script>
+        var Total_secs =0;
+        var Total_mins=0;
+        var cronometer = new Date();
+
+        
+        function StartTime(){
+            myVar = setInterval(autoplay_secs ,1000);
+            mymin= setInterval(autoplay_mins ,60000);
+    }
+        function autoplay_secs(){
+            Total_secs++;
+            cronometer.setSeconds(Total_secs);
+    document.getElementById("seconds").innerHTML= cronometer.getSeconds();
+
+        }
+        function autoplay_mins(){
+            Total_mins++;
+            cronometer.setMinutes(Total_mins);
+    document.getElementById("minutes").innerHTML= cronometer.getMinutes();
+
+        }
+        var stopCountUp = function() {
+            final = new Date();
+    clearInterval(myVar);
+    document.getElementById("Reset-button").style.display="block";
+            };
+            function ResetTime(){
+                Total_mins=0;
+                Total_secs=0;
+            document.getElementById("minutes").innerHTML= Total_mins;
+    document.getElementById("seconds").innerHTML=Total_secs;
+    }  
+    </script>
+</body>
+</html>

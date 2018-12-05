@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    
+    function numAleatorio(num1,num2) {
+        var num=Math.floor(Math.random()*(num1+(num2)));
+        return num;
+    }
+
+    function bonoloto(){
+        var cupon=[];
+        
+        while(cupon.length<6){
+            var numero=numAleatorio(1,50);
+            if(cupon.indexOf(numero)==-1){
+                cupon.push(numero);
+            }
+        }
+
+        var num_complementario=numAleatorio(1,9);
+        cupon.push(num_complementario);
+        console.log(cupon.toString());
+        
+    }
+    bonoloto();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
