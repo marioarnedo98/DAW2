@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="container border formulario">
+    <form action="" name="formulario" method="get">
+        Nombre y apellidos <input type="text" name="nombre" id="nombre" > <br>
+        Curso <select name="curso" id="curso">
+        <option selected value="0">Elige una opcion</option>
+            <option value="1">DAW</option>
+            <option value="2">DAM</option>
+            <option value="3">Electromecanica</option>
+            <option value="4">Administracion</option>
+    </select><br>
+    Año<input type="radio" name="1" id="primero">1
+    <input type="radio" name="2" id="segundo">2
+    <input type="radio" name="3" id="tercero">3
+    <input type="radio" name="4" id="cuarto">4 
+    <br>
+    de <input type="text" name="anyo1" id="anyo1"> a <input type="text" name="anyo2" id="anyo2">
+        <input type="submit" value="Enviar" id="btn" name="btn" class="btn btn-primary">
+    </form>
+</div>
+<script>
+    (function(){
+        var formulario = document.getElementsByName('formulario')[0],
+        elementos = formulario.elements,
+        boton = document.getElementById('btn');
+        var validaranyo =function (e){
+            var patronanyo = /^\d{4} $/;
+            var anyo1_value=formulario.anyo1.value;
+            anyo2_value=formulario.anyo2.value;
+
+            var ok1= patronanyo.exec(anyo1_value);
+            var ok2= patronanyo.exec(anyo2_value);
+            if(ok1&&ok2 && anyo2_value-anyo1_value==2){
+                alert("Correcto");
+            }else{
+                alert("Año metido incorrectamente");
+            }
+        }
+    }())
+    </script>
+</body>
+</html>

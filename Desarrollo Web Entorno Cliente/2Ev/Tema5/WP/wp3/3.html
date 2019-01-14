@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WP 3</title>
+    <style>
+    img{
+        position: absolute;
+    }
+    </style>
+</head>
+<body>
+    <button id="Iniciar" onclick="setInterval('iniciar()',5)">Iniciar</button>
+    <button id="Aumentar" onclick="aumentar()"disabled="disabled">Aumentar</button>
+    <button id="parar" onclick="parar()"disabled="disabled">Parar</button><br>
+    <img src="rabbit-skip.gif" id="imagen">
+</body>
+<script>
+    // var intervalo= setInterval("iniciar()",5);
+        var imagen= document.getElementById("imagen");
+        var x= 0;
+        var velocidad =0.5;
+    function iniciar(){
+        if(x<=85 && x>=0){
+            x = x+velocidad;
+            imagen.style.left= x+"%";
+        }
+        else{
+            x=0;
+            imagen.style.left=x+"%";
+        }
+        document.getElementById("Iniciar").disabled=true;
+        document.getElementById("Aumentar").disabled=false;
+        document.getElementById("parar").disabled=false;
+    }
+    
+    
+    function aumentar(){
+        velocidad++;
+    }
+    function parar(){
+        x=0;
+        velocidad=0;
+        imagen.style.left=x+"%";
+    }
+</script>
+</html>
