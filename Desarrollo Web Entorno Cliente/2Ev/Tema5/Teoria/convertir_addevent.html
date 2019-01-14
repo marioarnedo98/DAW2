@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = initializer;
+        var thecount= 0;
+        function initializer(){
+           boton= document.getElementById("incrementbutton");
+           boton.addEventListener("click", increaseCount, false);
+        }
+        function increaseCount(){
+            thecount++;
+            document.getElementById("currentcount").innerHTML = thecount;
+            document.getElementById("currentcount").style.fontSize = thecount+"px";
+        }
+
+    </script>
+</head>
+<body>
+        <h1>Clic the button to count</h1>
+        <p>Current number <span id="currentcount">0</span></p>
+        <button id="incrementbutton">Increase Count</button>
+</body>
+</html>

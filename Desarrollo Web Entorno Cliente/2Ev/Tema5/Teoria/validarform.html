@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            document.formulario.nombre.focus();
+            document.formulario.addEventListener('submit', validarFormulario);
+        }
+        function validarFormulario(evento){
+            evento.preventDefault();
+            var todook=true;
+            var formulario= document.formulario;
+            for(var i=0; i<formulario.length; i++){
+                if(formulario[i].type== 'text'){
+                    if(formulario[i].value == null || formulario[i].value.length == 0 || /^\s*$/.test(formulario[i].value)){
+                        alert(formulario[i].name+ ' No puede estat vacio o contener solo expacios en blanco');
+                        todook=false;
+                    }
+                }
+            }
+            if(todook=true){
+                formulario.submit();
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="" method="POST" name="formulario" class="formulario1">
+        <p>Envia este formulario</p>
+        <label for="nombre"><span>Nombre</span><input type="text" name="nombre" id="nombre"></label>
+        <label for="apellidos"><span>apellidos</span><input type="text" name="apellidos" id="apellidos"></label>
+        <label for="email"><span>Correo Electronico</span><input type="email" name="email" id="email"></label>
+        <label><input type="submit" value="Enviar"><input type="reset" value="Cancelar"></label>
+    </form>
+</body>
+</html>
