@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,67 +8,67 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style>
-        .formulario{
+        .formulario {
             padding: 5px;
         }
     </style>
 </head>
+
 <body>
     <div class="container border formulario">
-    <form action="" name="formulario" method="get">
-        <input type="text" class="form-control" name="nombre" id="nombre" maxlength="30" placeholder="nombre"><br>
-        <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Telefono"><br>
-        <input type="text" class="form-control" name="email" id="email" placeholder="email"><br>
-        <input type="text" class="form-control" name="dni" id="dni" placeholder="dni"><br>
-        <input type="radio" name="sexo" id="hombre" value="hombre">Hombre
-        <input type="radio" name="sexo" id="mujer" value="mujer">Mujer <br>
-        <input type="checkbox" name="terminos" id="terminos"> Terminos y condiciones <br>
-        <input type="submit" value="Enviar" id="btn" name="btn" class="btn btn-primary">
-    </form>
-</div>
+        <form action="" name="formulario" method="get">
+            <input type="text" class="form-control" name="nombre" id="nombre" maxlength="30" placeholder="nombre"><br>
+            <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Telefono"><br>
+            <input type="text" class="form-control" name="email" id="email" placeholder="email"><br>
+            <input type="text" class="form-control" name="dni" id="dni" placeholder="dni"><br>
+            <input type="radio" name="sexo" id="hombre" value="hombre">Hombre
+            <input type="radio" name="sexo" id="mujer" value="mujer">Mujer <br>
+            <input type="checkbox" name="terminos" id="terminos"> Terminos y condiciones <br>
+            <input type="submit" value="Enviar" id="btn" name="btn" class="btn btn-primary">
+        </form>
+    </div>
     <script>
-        (function(){
+        (function() {
             var formulario = document.getElementsByName('formulario')[0],
-            elementos = formulario.elements,
-            boton = document.getElementById('btn');
-            var validarNombre = function(e){
-                if(formulario.nombre.value == 0){
+                elementos = formulario.elements,
+                boton = document.getElementById('btn');
+            var validarNombre = function(e) {
+                if (formulario.nombre.value == 0) {
                     alert("Completa el campo nombre");
                     e.preventDefault();
                 }
             };
-            var validarTlf = function(e){
-                if(/^[9|6|7][0-9]{8}$/.test(formulario.telefono.value)|| formulario.telefono.value ==0){
+            var validarTlf = function(e) {
+                if (/^[9|6|7][0-9]{8}$/.test(formulario.telefono.value) || formulario.telefono.value == 0) {
                     alert("El telefono esta mal");
                     e.preventDefault();
                 }
             };
-            var validarEmail = function(e){
-                if(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(formulario.email.value)|| formulario.email.value ==0){
+            var validarEmail = function(e) {
+                if (!/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(formulario.email.value) || formulario.email.value == 0) {
                     alert("El email esta mal, escribe uno bueno");
                     e.preventDefault();
                 }
             };
-            var validarDNI = function(e){
-                if(/^[0-9]{8,8}[A-Za-z]$/.test(formulario.dni.value)|| formulario.dni.value ==0){
+            var validarDNI = function(e) {
+                if (/^[0-9]{8,8}[A-Za-z]$/.test(formulario.dni.value) || formulario.dni.value == 0) {
                     alert("El DNI esta mal, introduce el DNI correctamente");
                     e.preventDefault();
                 }
             };
-            var validarRadio = function(e){
-                if(formulario.sexo[0].checked ==true || formulario.sexo[1].checked== true){
-                }else{
+            var validarRadio = function(e) {
+                if (formulario.sexo[0].checked == true || formulario.sexo[1].checked == true) {} else {
                     alert("Completa el campo sexo");
                     e.preventDefault();
                 }
             };
-            var validarCheckBox = function(e){
-                if(formulario.terminos.checked==false){
+            var validarCheckBox = function(e) {
+                if (formulario.terminos.checked == false) {
                     alert("Completa el campo de las condiciones");
                     e.preventDefault();
                 }
             };
-            var validar= function(e){
+            var validar = function(e) {
                 validarNombre(e);
                 validarTlf(e);
                 validarEmail(e);
@@ -82,4 +83,5 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 </html>

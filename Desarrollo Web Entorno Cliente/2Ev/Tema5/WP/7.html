@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container border formulario">
+        <form action="" name="formulario" method="get">
+            <p>Nombre y apellidos</p> <input type="text" name="username" id="username"> <br>
+            <p>NIF </p> <input type="text" name="NIF" id="NIF"> <br>
+            <p>Email</p> <input type="text" name="email" id="email">
+            <p>Pais de residencia</p><input type="text" name="pais" id="pais">
+            <input type="submit" value="Enviar" id="btn" name="btn" class="btn btn-primary">
+        </form>
+    </div>
+    <script>
+        (function() {
+            var formulario = document.getElementsByName('formulario')[0],
+                elementos = formulario.elements,
+                boton = document.getElementById('btn');
+            var validarpais = function(e) {
+                if (formulario.pais.value != "España" || formulario.pais.value != "Italia") {
+                    alert("Este pais no esta admitidi");
+                    e.preventDefault();
+                }
+            };
+            var validarcorreo = function(e) {
+                if (!/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@(yahoo|hotmail)*$/.test(formulario.email.value)) {
+                    alert("El correo esta mal, intentelo de nuevo");
+                    e.preventDefault();
+                }
+            };
+            var validarDNI = function(e) {
+                if (!/^[0-9]{8,8}(?:(?![IVX])[A-Z])+$/.test(formulario.NIF.value)) {
+                    alert("NIF Incorrecto, inserte uno bueno");
+                    e.preventDefault();
+                }
+            };
+            var validar = function(e) {
+                validarpais(e);
+                validarcorreo(e);
+                validarDNI(e);
+            };
+            formulario.addEventListener("submit", validar);
+        }())
+    </script>
+</body>
+
+</html>
