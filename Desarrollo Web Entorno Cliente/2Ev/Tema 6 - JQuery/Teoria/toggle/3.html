@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+    $(function(){
+        $(".alternar-respuesta").on("click", function(e){
+            $(this).parent().next().toggle("Normal");
+            e.preventDefault();
+        })
+        $("#cerrartoas").on("click", function(){
+        $(".respuesta").toggle("slow");
+        e.preventDefault();
+        })
+    })
+    </script>
+</head>
+<body>
+<p>Pregunta....1 (<a href="#" class="alternar-respuesta">Ver respuesta</a>)</p>
+<div class="respuesta" style="display:none;">Respuesta...</div>
+<p>Pregunta....2 (<a href="#" class="alternar-respuesta">Ver respuesta</a>)</p>
+<div class="respuesta" style="display:none;">Respuesta...</div>
+<p>Pregunta....3 (<a href="#" class="alternar-respuesta">Ver respuesta</a>)</p>
+<div class="respuesta" style="display:none;">Respuesta...</div>
+<p>Pregunta....4 (<a href="#" class="alternar-respuesta">Ver respuesta</a>)</p>
+<div class="respuesta" style="display:none;">Respuesta...</div>
+<a href="#" id="cerrartoas">Abrir, cerrar todas</a>
+</body>
+</html>
