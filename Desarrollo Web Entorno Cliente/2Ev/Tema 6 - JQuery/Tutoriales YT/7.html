@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+    #caja{
+        height: 120px;
+        width: 100px;
+        border: 1px solid black;
+        background: orange;
+    }
+    
+    </style>
+</head>
+
+<body>
+   <div id="caja"></div>
+   <div id="detalles"></div>
+   <br>
+   <button>Mostrar dimensiones</button>
+</body>
+<script>
+    $(document).ready(function () {
+        $("button").click(function(){
+            var texto= "";
+            texto+= $("#caja").width()+ "px"+"<br>";
+            texto+= $("#caja").height()+"px"+"<br>";
+            $("#detalles").html(texto);
+        })
+    })
+</script>
+</html>

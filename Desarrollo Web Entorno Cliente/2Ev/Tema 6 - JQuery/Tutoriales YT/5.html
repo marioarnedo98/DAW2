@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <td>Mario</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>Juan</td>
+            <td>32</td>
+        </tr>
+        <tr>
+            <td>Luis</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>Miguel</td>
+            <td>12</td>
+        </tr>
+
+    </table>
+    <script>
+        $(document).ready(function () {
+            $("tr:odd").css("background-color", "purple");
+        })
+    </script>
+</body>
+
+</html>

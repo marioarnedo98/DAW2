@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+    #p1{
+        background-color: green;
+    }
+#p2{
+background-color: yellow;
+}
+#p3{
+background-color: blue;
+}
+#p4{
+background-color: red;
+}
+    </style>
+</head>
+
+<body>
+<p>Primero</p>
+<p>Segundo</p>
+<p>Tercero</p>
+<p>Cuarto</p>
+   <button>Click</button>
+</body>
+<script>
+    $(document).ready(function () {
+        $("button").click(function(){
+            $("p").attr("id", function(index){
+                return "p" + (index+1);
+            })
+        })
+    })
+</script>
+</html>

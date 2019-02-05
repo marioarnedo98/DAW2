@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+   <p>Lista 1</p>
+   <ul>
+       <li>Rojo</li>
+       <li>Azul</li>
+       <li>Verde</li>
+   </ul>
+   <p>Lista 2</p>
+   <ul>
+       <li>uno</li>
+       <li>dos</li>
+       <li>tres</li>
+   </ul>
+   <button>Boton</button>
+    <script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("ul li:last-child").hide();
+        })
+    })
+    </script>
+</body>
+</html>
