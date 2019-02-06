@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+#p1{
+    background: green;
+    font-size: 25px;
+    padding: 5px;
+}
+.miClase{
+    background: orange;
+    font-size: 25px;
+    padding: 5px;
+}
+
+    </style>
+</head>
+
+<body>
+ <p id="p1">Primer parrafo</p>
+ <p class="miClase">Segundo parrafo</p>
+ <button>Remover atributos</button>
+</body>
+<script>
+    $(document).ready(function () {
+      $("button").click(function(){
+          $("p").removeAttr("id class");
+      })
+    })
+</script>
+</html>
