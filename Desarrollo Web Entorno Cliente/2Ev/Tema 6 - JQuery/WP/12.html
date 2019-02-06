@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+            $("#alternar-respuesta-ej12").on("click", function () {
+                $("#respuesta-ej12").toggle();
+            })
+            $("#ocultar-respuesta").on("click", function () {
+                $("#respuesta-ej12").toggle();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <p>Pregunta....</p>
+    <button id="alternar-respuesta-ej12">Ver respuesta</button>
+    <div id="respuesta-ej12" style="display:none;">
+        <p>Esta es la respuesta que se despliega</p>
+        <button id="ocultar-respuesta">Ocultar</button>
+
+    </div>
+</body>
+
+</html>
