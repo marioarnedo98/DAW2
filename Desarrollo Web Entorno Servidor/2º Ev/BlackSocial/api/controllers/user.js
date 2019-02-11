@@ -2,6 +2,7 @@
 
 var bcrypt = require('bcrypt-nodejs');
 var User = require("../models/user"); //load the model
+var jwt= require('../services/jwt');
 //routes
 function home(req, res) {
     res.status(200).send({
@@ -97,10 +98,20 @@ function login(req, res) {
                 //compare password with db
                 bcrypt.compare(password, user.password, (err, check) => {
                     if (check) {
+                        if(params.gettoken){
+                            //return the token
+                            //generate the token
+                            return res.status(200).send({
+                                token: jwt.createToken(user)
+                            });
+                        }
+                        else{
                         //return user data
+                        user.password=undefined;
                         res.status(200).send({
                             user: user
                         });
+                    }
                     } else {
                         return res.status(404).send({
                             message: "El usuario no se ha podido identificar correctamente"
@@ -114,9 +125,54 @@ function login(req, res) {
             }
         });
 }
+function getUser(req,res){
+    var userId = req.params.id;
+    User.findById(userId, (err,user)=>{
+        if(err){
+            return res.status(500).send({
+                message: 'Error en la peticion'
+            });
+        }
+        if(!user){
+            return res.status(404).send({
+                message: 'El usuario no existe'
+            });
+        }
+        return res.status(200).send({
+            user
+        });
+    })
+}
+function getUsers(req, res){
+    var identity_user_id = req.user.sub;
+    var page = 1;
+    if(req.params.page){
+        page = req.params.page;
+    }
+    var items_per_page=5;
+    user.find().sort('_id').paginate(page, items_per_page, (err, users, total)=>{
+        if(err){
+            return res.status(500).send({
+                message: 'Error en la peticion'
+        });
+    }
+    if(!users){
+        return res.status(404).send({
+            message: 'No hay usuarios disponibles'
+        })
+    }
+    return res.status(200).send({
+        users,
+        total,
+        pages:Math.ceil(total/items_per_page)
+    });
+})
+}
 module.exports = {
     home,
     pruebas,
     saveUser,
-    login
+    login,
+    getUser,
+    getUsers
 }
