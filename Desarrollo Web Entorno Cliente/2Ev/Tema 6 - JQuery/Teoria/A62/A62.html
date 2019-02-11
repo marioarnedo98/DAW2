@@ -11,10 +11,12 @@
       var enlaces= $('a');
       for(var i=0; i<enlaces.length;i++){
         var videolink = $(enlaces[i]);
-      video_enlace=videolink.attr('href');
+     var video_enlace=videolink.attr('href');
       var miniatura_src= youtube.generateThumbnailUrl(video_enlace);
+      console.log(miniatura_src);
       var miniatura = $('<img>');
       miniatura.attr('src',miniatura_src);
+      
       }
       $(enlaces).append(miniatura);
     })
