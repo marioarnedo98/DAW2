@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+    #p1{
+        background: red;
+        height: 60px;
+        width: 60px;
+        border: 2px solid black;
+        border-radius: 8px;
+        text-align: center;
+    }
+     #p2{
+        background: yellow;
+        height: 60px;
+        width: 60px;
+        border: 2px solid black;
+        border-radius: 8px;
+        text-align: center;
+    }
+     #p3{
+        background: orange;
+        height: 60px;
+        width: 60px;
+        border: 2px solid black;
+        border-radius: 8px;
+        text-align: center;
+    }
+    
+    </style>
+</head>
+<body>
+    <p id="p1">Texto 1</p>
+    <p id="p2">Texto 2</p>
+    <p id="p3">Texto 3</p>
+</body>
+<script>
+$(document).ready(function(){
+    $("#p1").dblclick(function(){
+        $(this).hide();
+    })
+    $("#p2").dblclick(function () {
+        alert("Un mensaje");
+    })
+    $("#p3").dblclick(function () {
+        $(this).hide();
+    })
+})
+
+</script>
+</html>
