@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<script src="https://use.fontawesome.com/e622d3b53e.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1><i class="fa fa-volume-up" id="icon"></i></h1>
+    </center>
+</body>
+<script>
+    $(document).ready(function () {
+$("#icon").mouseover(function () {
+$("#icon").addClass('fa-volume-off').removeClass('fa-volume-up');
+        });
+("#icon").mouseleave(function () {
+$("#icon").addClass('fa-volume-up').removeClass('fa-volume-off');
+});
+     })
+</script>
+
+</html>
