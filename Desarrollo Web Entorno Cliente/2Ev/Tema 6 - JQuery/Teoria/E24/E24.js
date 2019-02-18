@@ -13,12 +13,8 @@ $(document).ready(function () {
                         return 'learn more of ' + $(this).text() +' On wikipedia';
                     }
                 },
-                id: function () {
-                    var elementList = $("div.chapter a");
-                    for (var i = 1; i <= elementList.length; i++) {
-                        a++;
-                        return a;
-                    }
+                id: function (index) {
+                    return 'Wikipedia-'+index;
                 }
 
             })
@@ -33,10 +29,8 @@ $(document).ready(function () {
     xx.each(function(index){
         // alert($(this).text());
         var resultado = $('<sup><li>' + $(this).text()+'</li></sup>');
-        $('#notes').prepend(resultado);
+        $('#notes').append(resultado);
     })
      $('#notes').prepend("</ol>");
-
-
-      
+         xx.empty();
 });
