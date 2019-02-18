@@ -17,4 +17,13 @@ $('#switcher button').click(function(){
     
     $speech.css('fontSize',num+'px');
 })
+$('p').eq(2).hide();
+
+$('a.more').click(function () {
+    $('p').eq(2).show("slow");
+    $(this).hide();
+});
+
+//show :  Display the matched elements.
+//hide : Hide the matched elements.
 })
