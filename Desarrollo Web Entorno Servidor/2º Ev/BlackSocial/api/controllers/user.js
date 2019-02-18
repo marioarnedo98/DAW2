@@ -4,6 +4,7 @@ var bcrypt = require('bcrypt-nodejs');
 var User = require("../models/user"); //load the model
 var jwt= require('../services/jwt');
 var paginate = require ('mongoose-pagination');
+var fs = require('fs');
 //routes
 function home(req, res) {
     res.status(200).send({
@@ -214,7 +215,25 @@ function uploadImage(req, res){
         }
         if(file_ext == 'png' || file_ext == 'jpg' || file_ext == 'jpeg' || file_ext == 'gif'){
             //upload the file and update the DB Object
-            //...
+            User.findByIdAndUpdate(userId, {
+                image: file_name
+            },{
+                new: true
+            }, (error, userUpdated)  =>{
+                if(error){
+                    return res.status(500).send({
+                        message: 'Error en la peticion'
+                    });
+                }
+                if(!userUpdated){
+                    return res.status(404).send({
+                        message: 'No se ha podido actualizar el usuario'
+                    });
+                }
+                return res.status(200).send({
+                    user:userUpdated
+                });
+            });
         }else{
             //Delete the file and send the error. We need to delete it because the extension uploads anyway
             removeFileUploaded(res, file_path, 'Extension no valida');
@@ -232,6 +251,21 @@ function removeFileUploaded(res,file_path, message){
         });
     })
 }
+function getImageFile(req, res){
+    var image_file = req.params.imageFile;
+    console.log(image_file);
+    var path_file= '/uploads/users/' + image_file;
+    fs.exists(path_file,(exists) => {
+        if(exists){
+            //sendfile
+            res.sendFile(path.resolve(path_file));
+        }else{
+            res.status(200).send({
+                message: 'No existe imagen'
+            });
+        }
+    })
+}
 module.exports = {
     home,
     pruebas,
@@ -240,5 +274,6 @@ module.exports = {
     getUser,
     getUsers,
     updateUser,
-    uploadImage
+    uploadImage,
+    getImageFile
 }
