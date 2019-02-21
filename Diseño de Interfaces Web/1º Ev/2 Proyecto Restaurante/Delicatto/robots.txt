@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /asets/bootstrap/*
+Disallow: /politicadatos.html
