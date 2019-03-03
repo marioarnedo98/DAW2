@@ -5,6 +5,7 @@ var User = require("../models/user"); //load the model
 var jwt= require('../services/jwt');
 var paginate = require ('mongoose-pagination');
 var fs = require('fs');
+var path = require('path');
 //routes
 function home(req, res) {
     res.status(200).send({
@@ -254,7 +255,8 @@ function removeFileUploaded(res,file_path, message){
 function getImageFile(req, res){
     var image_file = req.params.imageFile;
     console.log(image_file);
-    var path_file= '/uploads/users/' + image_file;
+    var path_file= './uploads/users/' + image_file;
+    console.log(path_file);
     fs.exists(path_file,(exists) => {
         if(exists){
             //sendfile
