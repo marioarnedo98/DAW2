@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My sound</title>
+  <link rel="stylesheet" type="text/css" href="bootstrap.css">
+  <script type="text/javascript" src="youtube.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script>
+    /*window.onload = function () {
+        var videoLinks = document.getElementsByTagName('a');
+        for (var i = 0; i < videoLinks.length; i++) {
+          var videoLink = videoLinks[i];
+          var linkUrl = videoLink.getAttribute('href');
+          var thumbnailUrl = youtube.generateThumbnailUrl(linkUrl);
+          var thumbnailImg = document.createElement('img');
+          thumbnailImg.setAttribute('src', thumbnailUrl);
+          videoLink.appendChild(thumbnailImg);
+        }
+*/
+
+    $(document).ready(function () {
+      var video = $('a');
+      for (var i = 0; i < video.length; i++) {
+        var aux = $(video[i]);
+
+        var url = aux.attr('href');
+        var img = $('<img>').attr('src', youtube.generateThumbnailUrl(url));
+
+        aux.append(img);
+
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <h2 class="page-header">The Best Sound &#x2665</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span4">
+        <ul>
+          <li><a href="https://www.youtube.com/watch?v=BLRgaU9uUnA">Marlon Roudette - When The Beat Drops Out</a></li>
+          <li><a href="https://www.youtube.com/watch?v=hqQY9UkGC_A">Blonde - I Loved You (feat. Melissa Steel)</a></li>
+          <li><a href="https://www.youtube.com/watch?v=d7ypnPjz81I">Philip George - Wish You Were Mine</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
