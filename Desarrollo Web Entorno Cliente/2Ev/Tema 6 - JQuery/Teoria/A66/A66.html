@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>My sound</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <link rel="stylesheet" type="text/css" href="bootstrap.css">
+  <script type="text/javascript" src="youtube.js"></script>
+  <script src="funText/jquery.js"></script>
+  <script src="funText/jquery.funtext.min.js"></script>
+  <script src="A66.js"></script>
+  <script>
+    $(document).ready(function () {
+      var enlaces= $('a');
+      for(var i=0; i<enlaces.length;i++){
+        var videolink = $(enlaces[i]);
+     var video_enlace=videolink.attr('href');
+      var miniatura_src= youtube.generateThumbnailUrl(video_enlace);
+      console.log(miniatura_src);
+      var miniatura = $('<img>');
+      miniatura.attr('src',miniatura_src);
+      
+      }
+      $(enlaces).append(miniatura);
+    })
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <h2 class="page-header">The Best Sound &#x2665</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span4">
+          <ul>
+            <li><a href="https://www.youtube.com/watch?v=BLRgaU9uUnA">Marlon Roudette - When The Beat Drops Out</a></li>
+            <li><a href="https://www.youtube.com/watch?v=hqQY9UkGC_A">Blonde - I Loved You (feat. Melissa Steel)</a></li>
+            <li><a href="https://www.youtube.com/watch?v=d7ypnPjz81I">Philip George - Wish You Were Mine</a></li>
+          </ul>  
+        </div>
+      </div>
+    </div>
+  </body>
+
+  </html>
