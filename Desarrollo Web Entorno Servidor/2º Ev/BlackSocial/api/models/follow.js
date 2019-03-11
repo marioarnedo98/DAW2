@@ -6,6 +6,9 @@ var followSchema = Schema({
         type: Schema.ObjectId,
         ref: 'User'
     },
-    followed: String
+    followed: {
+        type: Schema.ObjectId,
+        ref: 'User'
+    }
 });
 module.exports = moongose.model ('Follow', followSchema);
