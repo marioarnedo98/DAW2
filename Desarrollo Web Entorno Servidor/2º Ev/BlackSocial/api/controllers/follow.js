@@ -56,7 +56,7 @@ function deleteFollow(req, res){
 function getFollowedUsers(req, res){
     var userId=req.user.sub;
     if(req.params.id && req.params.page){
-
+userId = req.params.id;
     }
     var page=1;
     if(req.params.page){
@@ -87,10 +87,71 @@ function getFollowedUsers(req, res){
         });
     });
 }
-
+function getFollowingUsers(req, res){
+    var userId=req.user.sub;
+    if(req.params.id && req.params.page){
+userId = req.params.id;
+    }
+    var page=1;
+    if(req.params.page){
+        page = req.params.page;
+    }else{
+        page= req.params.id
+    }
+    var itemsPerPage =4;
+    Follow.find({
+        'follow' : userId
+    }).populate({
+        path: 'followed'
+    }).paginate(page, itemsPerPage, (err, follows, total)=>{
+        if(err){
+            return res.status(500).send({
+                message: 'Error al consular los follows'
+            });
+        }
+        if(!follows){
+            return res.status(404).send({
+                message: "No estas siguiendo ningun usuario"
+            });
+        }
+        return res.status(200).send({
+            total, 
+            pages: Math.ceil(total/itemsPerPage),
+            follows
+        });
+    });
+}
+function getMyFollows(req,res){
+    var userId= req.user.sub;
+    var find = Follow.find({
+        'user': userId
+    });
+    if(req.params.followed){
+        find= Follow.find({
+            'followed': req.params.followed
+        });
+    }
+    find.populate('user followed').exec((err, follows)=>{
+        if(err){
+            return res.status(500).send({
+                message: 'Error al consultar los follows'
+            });
+        }
+        if(!follows){
+            return res.status(404).send({
+                message: "No sigues a ningun usuario"
+            });
+        }
+        return res.status(200).send({
+            follows
+        });
+    })
+}
 module.exports ={
     prueba_follow,
     saveFollow,
     deleteFollow,
     getFollowedUsers,
+    getFollowingUsers,
+    getMyFollows
 }

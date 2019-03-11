@@ -13,5 +13,8 @@ var md_upload = multipart({
 //routes
 api.get('/pruebas-follow', FollowController.prueba_follow);
 api.post('/follow/', md_auth.ensureAuth, FollowController.saveFollow);
-api.delete('/unfollow/:id',md_auth.ensureAuth, FollowController.deleteFollow)
+api.delete('/unfollow/:id',md_auth.ensureAuth, FollowController.deleteFollow);
+api.get('/following/:id?/:page?', md_auth.ensureAuth, FollowController.getFollowedUsers);
+api.get('/getFollowingUsers/:id?/:page?', md_auth.ensureAuth, FollowController.getFollowingUsers)
+api.get('/MyFollows/:id?', md_auth.ensureAuth, FollowController.getMyFollows);
 module.exports = api;
