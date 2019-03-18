@@ -28,6 +28,17 @@ var entries = [
     "term": "CORSAIR",
     "part": "n.",
     "definition": "A politician of the seas."
+  },
+  {
+    "term": "Kamaritos",
+    "part": "n.",
+    "definition": "Mejor asociacion de empresas, dispuestos a sacar proyectos para adelante como Conor Mcgregor",
+    "quote": [
+      "Is public worship, then, a sin,",
+      "That for devotions paid to Bacchus",
+      "The lictors dare to run us in,",
+      "And resolutely thump and whack us?"
+    ]
   }
 ];
 
@@ -37,8 +48,19 @@ $.each(entries, function() {
   html += '<div class="entry">';
   html += '<h3 class="term">' + this.term + '</h3>';
   html += '<div class="part">' + this.part + '</div>';
-  html += '<div class="definition">' + this.definition + '</div>';
+  html += '<div class="definition">' + this.definition;
+  if (this.quote) {
+    html += '<div class="quote">';
+    $.each(this.quote, function(lineIndex, line) {
+      html += '<div class="quote-line">' + line + '</div>';
+    });
+    if (this.author) {
+      html += '<div class="quote-author">' + this.author + '</div>';
+    }
+    html += '</div>';
+  }
   html += '</div>';
+  html += '</div>'; 
 });
 
 $('#dictionary').html(html);
