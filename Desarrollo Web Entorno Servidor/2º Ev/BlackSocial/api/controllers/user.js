@@ -146,6 +146,85 @@ function getUser(req,res){
         });
     })
 }
+async function followThisUser(identity_user_id, userId){
+    try{
+        var following= await Follow.findOne({
+            "user":identity_user_id,
+            "followed": userId
+        }).exec().then((following)=>{
+            return following;
+        }).catch((err)=>{
+            return handleError(err);
+        })
+        console.log(following);
+        var followed= await Follow.findOne({
+            "user":userId,
+            "followed": identity_user_id
+        }).exec().then((followed)=>{
+            return follwed;
+        }).catch((err)=>{
+            return handleError(err);
+        })
+        return{
+            following: following,
+            followed: followed
+        };
+    }catch (error){
+        return handleError(err);
+    }
+}
+
+async function followUsersId(userId){
+    try{
+        var follows= await Follow.findOne({
+            "followes": userId
+        }).exec().then((follows)=>{
+            var follows_clean=[];
+            follows.forEach(follow=>{
+                follows_clean.push(follow.follwed);
+            })
+            return follows_clean;
+        }).catch((err)=>{
+            return handleError(err);
+        })
+    }catch (error){
+        return handleError(err);
+    }
+}
+async function getCountFollows(userId){
+    try{
+        var following = await Follow.countDocuments({
+            "user": userId
+        }).exec().then((count)=>{
+            return count;
+        }).catch((err)=>{
+            return handleError(err);
+        });
+        var followed = await Follow.countDocuments({
+            "followed": userId
+        }).exec().then((count)=>{
+            return count;
+        }).catch((err)=>{
+            return handleError(err);
+        });
+        return {
+            following: following,
+            followed: followed
+        };
+    }catch (err){
+        return handleError(err);
+    }
+}
+function getCounters(req, res){
+    var id= req.params.id;
+    getCountFollows(id).then((value)=>{
+        return res.status(200).send({
+            id,
+            following: value.following,
+            followed: value.followed
+        })
+    })
+}
 function getUsers(req, res){
     var identity_user_id = req.user.sub;
     var page = 1;
@@ -164,11 +243,23 @@ function getUsers(req, res){
             message: 'No hay usuarios disponibles'
         })
     }
-    return res.status(200).send({
-        users,
-        total,
-        pages:Math.ceil(total/items_per_page)
-    });
+    followThisUser(req.user.sub, userId).then((value)=>{
+     user.password = undefined;
+     return res.status(200).send({
+         user,
+         following: value.following,
+         followed: value.followed
+     })   
+    })
+    followUsersId(identity_user_id).then((value)=>{
+        return res.status(200).send({
+            users,
+            users_following: value.following,
+            users_follow_me: value.followed,
+            pages: Math.ceil(total / items_per_page),
+
+        })
+    })
 })
 }
 function updateUser(req,res){
@@ -277,5 +368,6 @@ module.exports = {
     getUsers,
     updateUser,
     uploadImage,
-    getImageFile
+    getImageFile,
+    getCounters
 }
