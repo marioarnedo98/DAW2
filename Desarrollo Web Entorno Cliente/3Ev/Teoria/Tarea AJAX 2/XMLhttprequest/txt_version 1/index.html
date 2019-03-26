@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+    function solicitar() {
+        
+var req= new XMLHttpRequest();
+req.open('get','file.txt', true);
+req.send();
+req.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status==200){
+        document.querySelector("#texto").innerHTML= this.responseText;
+    }
+}
+    }
+</script>
+</head>
+<body>
+    <p id="texto">
+    </p>
+    <br><br>
+    <input type="button" value="Obtner Texto" onclick="solicitar();">
+</body>
+</html>
