@@ -1,0 +1,22 @@
+$ORIGIN 
+@	IN SOA servidor.32F.es. daw1202.32F.es. (
+    M-20192912    ; numero de serie
+    2H        ; actualizacion cada 2 horas
+    3M        ; reintentos cada 3 minutos
+    3D        ; caducidad 3 dias
+    10H        ; TTL por defecto 20 horas
+)
+
+6.168.192.in-addr-arpa.		IN 	NS 	dns.32F.es.
+6.168.192.in-addr-arpa.		IN 	NS 	dns2.32F.es.
+
+1.6.168.192.in-addr-arpa.	IN 	PRT 	servidor.32F.es.
+11.6.168.192.in-addr-arpa.	IN 	PRT 	dns.32F.es.
+12.6.168.192.in-addr-arpa.	IN 	PRT 	dns2.32F.es.
+35.6.168.192.in-addr-arpa.	IN 	PRT 	mail.32F.es.
+32.6.168.192.in-addr-arpa.	IN 	PRT 	eric.32F.es.
+42.6.168.192.in-addr-arpa.	IN 	PRT 	luis.32F.es.
+2.6.168.192.in-addr-arpa.	IN 	PRT 	marcos.32F.es.
+62.6.168.192.in-addr-arpa.	IN 	PRT 	david.32F.es.
+12.6.168.192.in-addr-arpa.	IN 	PRT 	mario.32F.es.
+1.6.168.192.in-addr-arpa.	IN 	PRT 	www.32F.es.
