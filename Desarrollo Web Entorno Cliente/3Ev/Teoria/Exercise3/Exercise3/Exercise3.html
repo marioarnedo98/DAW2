@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery AJAX</title>
+	</head>
+	<body>
+
+		<label>
+			Name:
+			<input type="text" id="name">
+		</label>
+		<input type="submit" id="fetch">
+
+		<dl>
+			<dt>Age</dt>
+			<dd class="age">-</dd>
+
+			<dt>Location</dt>
+			<dd class="location">-</dd>
+
+			<dt>Job</dt>
+			<dd class="job">-</dd>
+		</dl>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<script>
+			$('#fetch').on('click', function() {
+				var name = $('#name').val();
+
+				//make an ajax request to 'lookup.php', with returned datatype being 'json', request type 'get', send 'name' as data of the request, set cache to false, and finally defined a success callback function where you just print out console.log(data.information) if data is returned or create an alert ('Not found') if not.
+				
+			});
+		</script>
+	</body>
+</html>
