@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery AJAX</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+	<nav> 
+		<ul>
+			<li><a href="#" data-page="home">Home</a></li>
+			<li><a href="#" data-page="downloads">Downloads</a></li>
+			<li><a href="#" data-page="tutorials">Tutorials</a></li>
+		</ul>
+	</nav>
+
+	<section id="main"></section>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script>
+
+		$(document).ready(function() {
+
+			myPage.init();
+
+		});
+
+		var myPage= (function(){
+
+			//Define app object attributes
+			var app = {
+				nav: $('nav ul li a'),
+				content: $('section#main')
+			};
+			$("nav a").click(function(){
+				var pulsado= $(this).attr("data-page");
+				app.loadPage(pulsado)
+			})
+			app.loadPage = function(page) {
+				$.ajax({
+					url: 'page.php',
+					type: 'get',
+					cache: true,
+					data: {page: page},
+					success: function(data) {
+						$('section#main').html(data);
+					},
+					error: function() {
+						$('section#main').html("<h3>Error </h3>");
+					}
+				});
+			}
+
+		})();
+	</script>
+</body>
+</html>
