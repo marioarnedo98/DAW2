@@ -13,5 +13,5 @@ var md_upload = multipart({
 //routes
 api.get('/testeo', md_auth.ensureAuth, publicationController.prueba_publication);
 api.post('/publicacion', md_auth.ensureAuth, publicationController.savePublication);
-api.post('/getpublications', md_auth.ensureAuth, publicationController.getPublications);
+api.get('/publication/:id', md_auth.ensureAuth, publicationController.getPublications);
 module.exports = api;
