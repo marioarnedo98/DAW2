@@ -4,7 +4,7 @@ var bodyparser = require('body-parser');
 
 var user_routes= require('./routes/user');
 var follow_routes= require ('./routes/follow');
-
+var publication_routes = require('./routes/publication')
 var app = express();
 //middlewares
 app.use(bodyparser.urlencoded({
@@ -17,5 +17,6 @@ app.use(bodyparser.json());
 //rutes
 app.use('/api', user_routes);
 app.use('/api', follow_routes);
+app.use('/api', publication_routes);
 //exportar la conf
 module.exports = app;
