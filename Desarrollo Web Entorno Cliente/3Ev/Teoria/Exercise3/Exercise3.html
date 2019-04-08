@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery AJAX</title>
+	</head>
+	<body>
+
+		<label>
+			Name:
+			<input type="text" id="name">
+		</label>
+		<input type="submit" id="fetch">
+
+		<dl>
+			<dt>Age</dt>
+			<dd class="age">-</dd>
+
+			<dt>Location</dt>
+			<dd class="location">-</dd>
+
+			<dt>Job</dt>
+			<dd class="job">-</dd>
+		</dl>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<script>
+			$('#fetch').on('click', function() {
+				var name = $('#name').val();
+				$.ajax({
+    
+						data: {
+							name
+							},
+						type: "GET",
+						cache: false,
+						
+						dataType: "json",
+						url: "lookup.php",
+					})
+					.done(function( data, textStatus, jqXHR ) {
+						if ( console && console.log ) {
+							console.log( "La solicitud se ha completado correctamente." );
+						}
+					})
+					.success(function( data ) {
+							console.log(data['information']);
+							if(data['information']){
+							$('.age').html(data['information'].age);
+							$('.location').html(data['information'].location);
+							$('.job').html(data['information'].job);
+							}
+							else{
+								$('.age').html(name+" no esta");
+							$('.location').html(name+" no esta");
+							$('.job').html(name+" no esta");
+							}
+					})
+					
+					.fail(function( jqXHR, textStatus, errorThrown ) {
+						if ( console && console.log ) {
+							console.log( "La solicitud a fallado: " +  textStatus);
+						}
+					});
+								});
+		</script>
+	</body>
+</html>

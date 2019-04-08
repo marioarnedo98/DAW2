@@ -26,9 +26,26 @@
 		<script>
 			$('#fetch').on('click', function() {
 				var name = $('#name').val();
-
-				//make an ajax request to 'lookup.php', with returned datatype being 'json', request type 'get', send 'name' as data of the request, set cache to false, and finally defined a success callback function where you just print out console.log(data.information) if data is returned or create an alert ('Not found') if not.
-				
+				$.ajax({
+    
+    data: {"parametro1" : name},
+    //Cambiar a type: POST si necesario
+    type: "GET",
+    // Formato de datos que se espera en la respuesta
+    dataType: "json",
+    // URL a la que se enviará la solicitud Ajax
+    url: "lookup.php",
+})
+ .done(function( data, textStatus, jqXHR ) {
+     if ( console && console.log ) {
+         console.log( "La solicitud se ha completado correctamente." );
+     }
+ })
+ .fail(function( jqXHR, textStatus, errorThrown ) {
+     if ( console && console.log ) {
+         console.log( "La solicitud a fallado: " +  textStatus);
+     }
+});
 			});
 		</script>
 	</body>
