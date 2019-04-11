@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 08-04-2019 a las 11:09:31
--- Versión del servidor: 5.7.21
--- Versión de PHP: 7.2.4
+-- Tiempo de generación: 10-04-2019 a las 08:56:10
+-- Versión del servidor: 5.7.19
+-- Versión de PHP: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -37,7 +37,16 @@ CREATE TABLE IF NOT EXISTS `chat` (
   `user_id` int(11) NOT NULL,
   `message_id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`message_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `chat`
+--
+
+INSERT INTO `chat` (`message`, `timestamp`, `user_id`, `message_id`) VALUES
+('Este es un mensaje de prueba', '2019-04-09 22:00:00', 1, 1),
+('fdsfdsf', '2019-04-09 22:00:00', 1, 2),
+('Que tal?', '2019-04-09 22:00:00', 2, 3);
 
 -- --------------------------------------------------------
 
