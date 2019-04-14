@@ -34,8 +34,15 @@ footer #footer{
     opacity: 0.5;
     top: 50%;
     transform: translateY(-50%);
-    max-width: 100%;
+	max-width: 100%;
+	transition: 1s ease all;
 }
+.img-intro img:hover {
+	transform: scale(5);
+	transition: 1s ease all;
+}
+
+
 ul.tabs {
 	margin: 0;
 	padding: 0;
