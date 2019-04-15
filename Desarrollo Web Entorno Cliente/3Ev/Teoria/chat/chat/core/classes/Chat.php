@@ -19,9 +19,10 @@ class Chat extends Core
 	}
 	public function throwMessage($user_id,$message){
 		//insert in DB
+		$timestamp = date('Y-m-d G:i:s');
 		$sql="
 		INSERT INTO `chat` (`user_id`,`message`, `timestamp`)
-		VALUES('$user_id','$message',CURRENT_DATE())";
+		VALUES('$user_id','$message','$timestamp')";
 		$this->query($sql);
 	}
 }
