@@ -167,7 +167,8 @@ async function followThisUser(identity_user_id, userId){
         })
         return{
             following: following,
-            followed: followed
+            followed: followed,
+            publications:publications
         };
     }catch (error){
         return handleError(err);

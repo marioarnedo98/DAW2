@@ -81,8 +81,124 @@ function getPublications(req,res){
         });
     });
 }
+function getPublication(req,res){
+    var publicationId = req.params.id;
+    Publication.findById(publicationId, (err,publication)=>{
+        if(err){
+            return res.status(500).send({
+                message: 'Error en la peticion'
+            });
+        }
+        if(!publication){
+            return res.status(404).send({
+                message: 'El usuario no existe'
+            });
+        }
+        return res.status(200).send({
+            publication
+        });
+    })
+}
+function deletePublication(req,res){
+    var publicationId= req.params.id;
+    Publication.find({
+        'user': req.user.sub,
+        '_id': publicationId
+    }).remove((err) =>{
+        if(err){
+            return res.status(500).send({
+                message: "Error al eliminar la publicacion"
+            });
+        }
+        return res.status(200).send({
+            message: "La publicacion se ha eliminado"
+        });
+    })
+}
+function uploadImage(req, res){
+    var publicationId= req.params.id;
+    if(req.files){
+        var file_path = req.files.image.path;
+        console.log(file_path);
+        var file_split= file_path.split('\\');
+        var file_name = file_split[2];
+        console.log(file_split);
+        var ext_spli = file_name.split("\.");
+        console.log(ext_spli);
+        var file_ext= ext_spli[1];
+        console.log(file_ext);
+        if(file_ext == 'png' || file_ext == 'jpg' || file_ext == 'jpeg' || file_ext == 'gif'){
+            //upload the file and update the DB Object
+            Publication.findOne({
+                'user':req.user.sub,
+                '_id': publicationId
+            }).exec((err, publication)=>{
+                console.log(publication+"eeee");
+                if(publication){
+                    Publication.findByIdAndUpdate(publicationId, {
+                        file: file_name
+                    },{
+                        new: true
+                    }, (error, publicationUpdated)  =>{
+                        if(error){
+                            return res.status(500).send({
+                                message: 'Error en la peticion'
+                            });
+                        }
+                        if(!publicationUpdated){
+                            return res.status(404).send({
+                                message: 'No se ha podido actualizar la publicacion'
+                            });
+                        }
+                        return res.status(200).send({
+                            publication:publicationUpdated
+                        });
+                    });
+                }else{
+                    return removeFileUploaded(res,file_path, 'No tienes permiso para realizar esta accion');
+                }
+            })
+            
+        }else{
+            //Delete the file and send the error. We need to delete it because the extension uploads anyway
+            removeFileUploaded(res, file_path, 'Extension no valida');
+        }
+    }else{
+        return res.status(200).send({
+            message: 'No se ha subido tu archivo'
+        });
+    }
+}
+function getImageFile(req, res){
+    var image_file = req.params.image;
+    console.log(image_file);
+    var path_file= './uploads/publications/' + image_file;
+    console.log(path_file);
+    fs.exists(path_file,(exists) => {
+        if(exists){
+            //sendfile
+            res.sendFile(path.resolve(path_file));
+        }else{
+            res.status(200).send({
+                message: 'No existe imagen'
+            });
+        }
+    })
+}
+function removeFileUploaded(res,file_path, message){
+    fs.unlink(file_path, (error)=> {
+        return res.status(200).send({
+            message
+        });
+    })
+}
+
 module.exports ={
     prueba_publication,
     savePublication,
-    getPublications
+    getPublications,
+    getPublication,
+    deletePublication,
+    uploadImage,
+    getImageFile,
 }
