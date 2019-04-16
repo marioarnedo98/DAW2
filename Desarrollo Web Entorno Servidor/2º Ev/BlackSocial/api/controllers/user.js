@@ -6,6 +6,7 @@ var jwt= require('../services/jwt');
 var paginate = require ('mongoose-pagination');
 var fs = require('fs');
 var path = require('path');
+var publications = require("../models/publication");
 //routes
 function home(req, res) {
     res.status(200).send({
@@ -168,7 +169,7 @@ async function followThisUser(identity_user_id, userId){
         return{
             following: following,
             followed: followed,
-            publications:publications
+            publications: Publication
         };
     }catch (error){
         return handleError(err);
