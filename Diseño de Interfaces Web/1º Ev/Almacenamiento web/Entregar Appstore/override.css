@@ -1,0 +1,138 @@
+body {
+    background: #c2c2c2;
+}
+
+.entrada {
+    background: rgb(59, 59, 59);
+    margin-top: 15px;
+    border: 3px solid white;
+}
+
+.entrada h3 {
+    text-align: center;
+    color: white;
+}
+
+.rojo {
+    color: red;
+}
+
+.presentacion, #mensajes {
+    margin-top: 10px;
+    padding: 5px;
+    background: rgb(117, 117, 117);
+    border: 3px solid white;
+    border-radius: 25px;
+}
+.comentarios_title{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#mensajes{
+    background: rgb(160, 160, 160);
+}
+.texto {
+    background: rgb(206, 206, 206);
+    margin-top: 15px;
+    padding: 5px;
+    border: 3px solid rgb(206, 206, 206);
+    ;
+    border-radius: 25px;
+}
+
+.texto h6 {
+    text-align: center;
+}
+
+.texto #editable {
+    width: 95%;
+    margin: 0 auto;
+    background: rgb(117, 117, 117);
+    border: 3px solid black;
+    height: 100px;
+}
+
+.texto .enviar {
+    margin-top: 5px;
+}
+/*Bototnes del editor*/
+#negrita {
+    background: url(botones/negrita.png);
+}
+
+#cursiva {
+    background: url(botones/cursiva.png);
+}
+
+#subrayado {
+    background: url(botones/subrayado.png);
+
+}
+
+#izquierda {
+    background: url(botones/izquierda.png);
+
+}
+
+#centrado {
+    background: url(botones/centrado.png);
+
+}
+
+#derecha {
+    background: url(botones/derecha.png);
+
+}
+
+#justificado {
+    background: url(botones/justificado.png);
+
+}
+
+#lista {
+    background: url(botones/lista.png);
+
+}
+
+#numeracion {
+    background: url(botones/numeracion.png);
+
+}
+
+#subindice {
+    background: url(botones/subindice.png);
+
+}
+
+#hiperindice {
+    background: url(botones/hiperindice.png);
+
+}
+
+#color {
+    background: url(botones/color.png);
+
+}
+
+#marcado {
+    background: url(botones/remarcado.png);
+
+}
+
+#imagen {
+    background: url(botones/imagen.png);
+
+}
+
+#hipervinculo {
+    background: url(botones/hipervinculo.png);
+
+}
+.botones input{
+    width: 30px;
+}
+/*Fin de Botones del editor*/
+#editable img{
+    max-width: 100%;
+    max-height: 100%;
+}

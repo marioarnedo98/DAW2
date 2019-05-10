@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Texto inline</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="override.css">
+    <script>
+    function negrita(){
+        document.execCommand("bold", false, null);
+    }
+    function cursiva(){
+        document.execCommand("italic", false, null);
+    }
+    function subrayado(){
+        document.execCommand("underline", false, null);
+    }
+    function izquierda(){
+        document.execCommand("justifyLeft" , false,null);
+    }
+    function centrado(){
+        document.execCommand("justifyCenter" , false,null);
+    }
+    function derecha(){
+        document.execCommand("justifyRight" , false,null);
+    }
+    function justificado(){
+        document.execCommand("justifyFull" , false,null);
+    }
+    function lista(){
+        document.execCommand("insertUnorderedList" , false,null);
+    }
+    function numeracion(){
+        document.execCommand("insertOrderedList" , false,null);
+    }
+    function subindice(){
+        document.execCommand("subscript" , false,null);
+    }
+    function hiperindice(){
+        document.execCommand("superscript" , false,null);
+    }
+    function hiperindice(){
+        document.execCommand("superscript" , false,null);
+    }
+    function color(){
+        document.execCommand('foreColor', false, "red");
+    }
+    function imagen(){
+        var url_image= prompt("Introduce la URL de la imagen");
+        document.execCommand("insertImage",false,url_image);
+    }
+    function marcado(){
+        document.execCommand("styleWithCSS", true, null);
+        document.execCommand("hiliteColor",false, "yellow");
+    }
+    function hipervinculo(){
+        var direccion= prompt("Introduce la url");
+        if (!document.execCommand("HiliteColor", false, "Yellow")) {
+        document.execCommand("BackColor", false, "Yellow");
+    }
+    }
+    function get_codigo(){
+        var conte= document.getElementById("editable").innerHTML;
+        document.getElementById('mensajes').innerHTML=conte;
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="entrada">
+    <h3>Mensajes publicados</h3>
+</div>
+   <div class="presentacion">
+       <p>La <a href="https://www.apple.com/es/ios/app-store/">App Store</a> es <u>quizas</u> la tienda de aplicaciones con mejores <b>clientes de Twitter</b>, 
+        grandes ejemplos como <i>Tweetbot</i> o <i>Twittelator Neue </i><span class="rojo">son</span> simplemente excepcionales</p>
+   </div>
+   <div class="comentarios_title">
+   <h3>Comentarios:</h3>
+    </div> 
+   <div id="mensajes">
+   </div>
+   <div class="texto">
+    <h6>Publica aquí tu mensaje</h6>
+    <div class="botones col-md-12">
+        <input type="button" id="negrita" onclick="negrita()">
+        <input type="button" id="cursiva" onclick="cursiva()">
+        <input type="button" id="subrayado" onclick="subrayado()">
+        <input type="button" id="izquierda" onclick="izquierda()">
+        <input type="button" id="centrado" onclick="centrado()">
+        <input type="button" id="derecha" onclick="derecha()">
+        <input type="button" id="justificado" onclick="justificado()">
+        <input type="button" id="lista" onclick="lista()">
+        <input type="button" id="numeracion" onclick="numeracion()">
+        <input type="button" id="subindice" onclick="subindice()">
+        <input type="button" id="hiperindice" onclick="hiperindice()">
+        <input type="button" id="color" onclick="color()">
+        <input type="button" id="marcado" onclick="marcado()">
+        <input type="button" id="imagen" onclick="imagen()">
+        <input type="button" id="hipervinculo" onclick="hipervinculo()">
+        <input type="button" id="hipervinculo" onclick="alert(document.getElementById('editable').value)">
+    </div>
+    <!-- <div id="editable" contenteditable="true"></div> -->
+    <textarea name="" id="editable" cols="30" rows="10" contenteditable="true"></textarea>
+    <div class="col-md-12 text-center"> 
+    <input type="button" class="enviar" value="Enviar" onclick="get_codigo()">
+</div>
+</div>
+</body>
+</html>
