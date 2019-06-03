@@ -1,0 +1,8 @@
+redirect 301 /models/ http://htmlmania.es/
+redirect 301 /controllers/ http://htmlmania.es/
+ErrorDocument 404 /var/www/html/views/404.html
+# Url Amigables
+
+RewriteEngine on
+
+RewriteRule ^(\w+)$ index.php?action=$1

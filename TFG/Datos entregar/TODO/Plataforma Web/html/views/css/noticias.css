@@ -1,0 +1,19 @@
+.container-fluid.cabezote {
+    padding: 0px;
+}
+#noticias .thumb img{
+    max-width: 100%;
+}
+#noticias{
+        padding-top: 50px;
+}
+.noticias-articulo {
+    clear: both;
+}
+#logo a{
+    width: 100%;
+}
+#logo img{
+    margin: 0 auto;
+    display: block;
+}
