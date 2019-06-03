@@ -1,0 +1,8 @@
+PHPMyAdmin
+http://htmlmania.es/phpmyadmin/
+	Usuario: root
+	Contraseña: 9fdlIhWmXfCSobxE
+Backend 
+http://htmlmania.es/backend/
+	Usuario: admin
+	Contraseña: admin
