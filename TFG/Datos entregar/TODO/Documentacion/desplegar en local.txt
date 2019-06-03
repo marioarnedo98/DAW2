@@ -1,0 +1,5 @@
+Para desplegar en local, tendremos que cambiar el archivo que hace la conexion con la base de datos
+Para ello tendremos que entrar en la estructura de carpetas del trabajo y situarnos en la siguiente ruta:
+backend > models > conexion.php, donde tendremos que cambiar los credenciales, en la linea 7
+Tambien tendremos que modificar todas las rutas que tenemos en el .htaccess del frontend (situado en la carpeta raiz), solamente los redirect 301
+Cambiando la url de html http://htmlmania.es/ a la ruta que tengamos en nuestro servidor local
